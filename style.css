@@ -1,0 +1,25 @@
+/* Set the size of the div element that contains the map */
+#map {
+  height: 600px;  /* The height is 600 pixels */
+  width: 100%;  /* The width is the width of the web page */
+  background-color: yellow;
+  position: absolute;
+  transition: 2s all ease-out;
+ }
+ #map:hover{
+
+ }
+ h1{
+   font-size: 40px;
+   text-align: center;
+   font-family: sans-serif;
+   padding-top: 5%;
+ }
+ #main-container{
+   width: 100%;
+   height: 600px;
+   background-image: url('images/road.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+ }

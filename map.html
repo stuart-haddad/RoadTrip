@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="key.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Baton Rouge
+        var batonRouge = {lat: 30.4515, lng: -91.1871};
+        // The map, centered at Baton Rouge
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 10, center: batonRouge});
+        // The marker, positioned at Baton Rouge
+        var marker = new google.maps.Marker({position: batonRouge, map: map});
+      }
+    </script>
+  </head>
+  <body>
+    <div id="main-container">
+      <h1>Welcome to Road Trip</h1>
+    </div>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <!-- <script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAmo3DOyFkNQL8UeZOUQnR7n3xdVgqeZLI&callback=initMap"></script> -->
+  </body>
+</html>
