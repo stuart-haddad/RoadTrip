@@ -32,7 +32,7 @@ p{ font-size: 20px; }
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
-   background-position-y: -150px;
+   background-position-y: 0px;
  }
 
 /*Stylize the Welcome Message along with an animation*/
