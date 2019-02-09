@@ -11,14 +11,21 @@
 
  }
 
- h1, p, #team-section{
+html{
+  scroll-behavior: smooth;
+}
+
+h1, p.welcome-p, #features-section, #team-section{
    text-align: center;
    font-family: sans-serif;
    color: white;
-   padding-top: 5%;
+   padding-top: 20px;
  }
 
-h1{ font-size: 40px; }
+h1{
+  font-size: 40px;
+  padding-top: 5%;
+}
 
 p{ font-size: 20px; }
 
@@ -97,8 +104,7 @@ p{ font-size: 20px; }
   font-family: sans-serif;
   background-color: #1a1a1a;
   color: white;
-  width: 100px;
-  max-width: 100px;
+  width: 120px;
   height: 75px;
   border: none;
   display: inline-block;
@@ -141,11 +147,9 @@ p{ font-size: 20px; }
   background-color: #00ccff;
 }
 
-/*Design for block section*/
-#block-section1{
-  width: 100%;
-  height: 600px;
-  background-color: #99ff99;
+.faq-tab:hover{
+  color: #66004d;
+  background-color: #ff33cc;
 }
 
 /*Set size of horizontal line in the Welcome message*/
@@ -156,20 +160,26 @@ hr.welcome-hr{
   border-radius: 2px;
 }
 
-/*Set size of horizontal line in the Roap Trip Team section*/
-hr.team-hr{
-  margin-top: 7px;
-  margin-bottom: -40px;
-  border-top: 2px solid white;
-  border-radius: 2px;
+.title-bar{
+  width: 100%;
+  height: 50px;
+  background-color: #002233;
 }
 
-/*Design for the Road Trip Team section*/
-#team-section{
+p.title-p{
+  text-align: center;
+  font-family: sans-serif;
+  padding-top: 20px;
+}
+
+/*Design for Features section*/
+#features-section{
   font-size: 40px;
+  color: #99ff99;
   width: 100%;
-  height: 800px;
-  background-color: #002233;
+  height: 600px;
+  padding-top: 0px;
+  background-color: white;
 }
 
 /*Design for footer*/

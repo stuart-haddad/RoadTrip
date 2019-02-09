@@ -25,11 +25,12 @@
         <img src="images/roadtrip-logo-small.png" alt="Road Trip Logo" title="Road Trip Logo" class="logo">
         <img src="images/roadtrip-sign-logo.png" alt="Road Trip Logo" title="Road Trip Logo" class="logo">
        <button class="button-tab home-tab" title="Home">Home</button>
-        <button class="button-tab about-tab" title="About Us">About Us</button>
+       <button class="button-tab about-tab" title="About Us">About Us</button>
+       <button class="button-tab faq-tab" title="Frequently Asked Questions">FAQ</button>
       </div>
       <div id="welcome-message">
       <h1>Welcome to Road Trip!</h1><hr class="welcome-hr" width="600px">
-        <p>Ever wanted a convenient way to plan your road trips to your liking?<br><br>
+        <p class="welcome-p">Ever wanted a convenient way to plan your road trips to your liking?<br><br>
            With the Road Trip Web App, we offer users a quick, easy way to<br>
            plan out your trips, find entertaining stops along your route,<br>
            and help you budget your money.
@@ -37,13 +38,13 @@
         <button class="start-button">Get Started</button>
       </div>
     </div>
-    <div id="block-section1"></div>
-    <div id="team-section"><b>Road Trip Team</b><hr class="team-hr" width="850px">
-      <p>
-        This application was made by a collaborative team of Computer Science students.
+    <div id="features-section">
+      <div class="title-bar"><b>Features</b>
+      </div>
+      <p class="title-p" style="color: #008055">
+        <b>Everything you can expect from Road Trip</b>
       </p>
     </div>
-    <div id="" class="group-member"></div>
     <!--The div element for the map -->
     <div id="map"></div>
     <!-- <script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAmo3DOyFkNQL8UeZOUQnR7n3xdVgqeZLI&callback=initMap"></script> -->
@@ -60,6 +61,7 @@
           document.getElementById("top-pin").style.bottom = "-80px";
         }
         else{
+          document.getElementById("top-pin").style.transition = "0.5s";
           document.getElementById("top-pin").style.bottom = "-220px";
         }
       }
@@ -68,7 +70,6 @@
       function goToTop(){
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
-        document.getElementById("top-pin").style.bottom = "-220px";
       }
     </script>
   </body>
