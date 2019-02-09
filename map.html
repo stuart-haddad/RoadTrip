@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-size=1.0">
+    <title>Road Trip</title>
     <script src="key.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="images/roadtrip-logo-small.png"/>
@@ -21,9 +22,10 @@
   <body>
     <div id="main-container">
       <div id="header-tab">
-        <img src='images/roadtrip-logo-small.png'>
-       <button class="button-tab home-tab">Home</button>
-        <button class="button-tab about-tab">About Us</button>
+        <img src="images/roadtrip-logo-small.png" alt="Road Trip Logo" title="Road Trip Logo" class="logo">
+        <img src="images/roadtrip-sign-logo.png" alt="Road Trip Logo" title="Road Trip Logo" class="logo">
+       <button class="button-tab home-tab" title="Home">Home</button>
+        <button class="button-tab about-tab" title="About Us">About Us</button>
       </div>
       <div id="welcome-message">
       <h1>Welcome to Road Trip!</h1><hr class="welcome-hr" width="600px">
@@ -47,5 +49,27 @@
     <!-- <script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAmo3DOyFkNQL8UeZOUQnR7n3xdVgqeZLI&callback=initMap"></script> -->
     <div id="footer">
     </div>
+    <div onclick="goToTop()" id="top-pin" title="Go to top"></div>
+    <script>
+      // When the user scrolls from the top of the page, the element will show up
+      window.onscroll = function() {showTopPin()};
+
+      function showTopPin(){
+        if (document.body.scrollTop > 75 || document.documentElement.scrollTop > 75){
+          document.getElementById("top-pin").style.transition = "0.5s";
+          document.getElementById("top-pin").style.bottom = "-80px";
+        }
+        else{
+          document.getElementById("top-pin").style.bottom = "-220px";
+        }
+      }
+
+      // When the user clicks on the element, the page will scroll to the top of the page
+      function goToTop(){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        document.getElementById("top-pin").style.bottom = "-220px";
+      }
+    </script>
   </body>
 </html>

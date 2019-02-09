@@ -28,6 +28,7 @@ p{ font-size: 20px; }
    height: 600px;
    bottom: -40px;
    background-image: url('images/roadtrip-banner.jpg');
+   max-height: 600px;
    background-attachment: fixed;
    background-size: cover;
    background-repeat: no-repeat;
@@ -78,6 +79,14 @@ p{ font-size: 20px; }
   height: 75px;
   color: white;
   background-color: #1a1a1a;
+  white-space: nowrap;
+}
+
+.logo{
+  position: relative;
+  left: 2%;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .button-tab{
@@ -94,18 +103,19 @@ p{ font-size: 20px; }
   border: none;
   display: inline-block;
   margin-right: -4px;
-  left: 40%;
+  left: 30%;
   position: relative;
   cursor: pointer;
 }
 
 .start-button{
+  transition: 0.1s;
   text-align: center;
   font-weight: bold;
   text-decoration: none;
   font-size: 20px;
   font-family: sans-serif;
-  background-color: #00cccc;
+  background-color: #00b300;
   color: white;
   width: 150px;
   height: 50px;
@@ -117,22 +127,25 @@ p{ font-size: 20px; }
 }
 
 .start-button:hover{
-  transform: scale(1.2);
+  transform: scale(1.1);
+  background-color: #00e600;
 }
 
 .home-tab:hover{
-  background-color: #00cc99;
+  color: #003300;
+  background-color: #99ff99;
 }
 
 .about-tab:hover{
-  background-color: #007a99;
+  color: #002933;
+  background-color: #00ccff;
 }
 
 /*Design for block section*/
 #block-section1{
   width: 100%;
   height: 600px;
-  background-color: #fff7e6;
+  background-color: #99ff99;
 }
 
 /*Set size of horizontal line in the Welcome message*/
@@ -165,4 +178,34 @@ hr.team-hr{
   height: 150px;
   bottom: 0px;
   background-color: #004d4d;
+}
+
+#top-pin{
+  transition: 0.5s;
+  width: 105px;
+  height: 216px;
+  bottom: -220px;
+  right: 20px;
+  position: fixed;
+  background-image: url('images/Top-pin.png');
+  display: block;
+  cursor: pointer;
+  z-index: 99;
+}
+
+#top-pin:hover{
+  -webkit-animation: pin-bounce 0.8s infinite;
+  animation: pin-bounce 0.8s infinite;
+}
+
+@-webkit-keyframes pin-bounce{
+  0% {bottom: -80px; animation-timing-function: ease-out;}
+  50% {bottom: -10px;animation-timing-function: ease-in;}
+  100% {bottom: -80px;}
+}
+
+@keyframes pin-bounce{
+  0% {bottom: -80px;animation-timing-function: ease-out;}
+  50% {bottom: -10px;animation-timing-function: ease-in;}
+  100% {bottom: -80px;}
 }
