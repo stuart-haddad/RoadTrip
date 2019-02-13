@@ -1,13 +1,40 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
-      <link rel="stylesheet" href="style.css">
-  </head>
-
+    <meta name="viewport" content="width=device-width, initial-size=1.0">
+    <title>Road Trip</title>
+    <script src="key.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="images/roadtrip-logo-small.png"/>
+    <script>
+    // Initialize and add the map
+    function initMap() {
+      // The location of Baton Rouge
+      var batonRouge = {lat: 30.4515, lng: -91.1871};
+      // The map, centered at Baton Rouge
+      var map = new google.maps.Map(
+          document.getElementById('map'), {zoom: 10, center: batonRouge});
+      // The marker, positioned at Baton Rouge
+      var marker = new google.maps.Marker({position: batonRouge, map: map});
+    }
+  </script>
+</head>
   <body>
-    <div style=text-align:center;>
-      <a href="newtrip.html">
-        <button class="button1">Home</button>
-      </a>
+    <div class="boxhead a">
+        <div id="main-container-tripinfo">
+          <div id="header-tab">
+            <img src="images/roadtrip-logo-small.png" alt="Road Trip Logo" title="Road Trip Logo" class="logo">
+            <img src="images/roadtrip-sign-logo.png" alt="Road Trip Logo" title="Road Trip Logo" class="logo">
+            <a href="frontpage.html">
+             <button class="button-tab home-tab" title="Home">Home</button>
+           </a>
+           <a href="aboutus.html">
+             <button class="button-tab about-tab" title="About Us">About Us</button>
+           </a>
+           <button class="button-tab faq-tab" title="Frequently Asked Questions">FAQ</button>
+          </div>
+      <div id="map">
+      </div>
     </div>
+
   </body>
