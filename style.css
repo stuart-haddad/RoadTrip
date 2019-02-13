@@ -1,14 +1,4 @@
-/* Set the size of the div element that contains the map */
-#map {
-  height: 300px;  /* The height is 600 pixels */
-  width: 60%;  /* The width is the width of the web page */
-  background-color: blue;
-  position: sticky;
-  margin: auto;
-  border: 3px solid black;
-  transition: 2s all ease-out;
- }
- #map:hover{
+
 
  }
  h1{
@@ -48,14 +38,7 @@
    margin-top: 5px;
  }
 
- #main-container{
-   width: 100%;
-   height: 150px;
-   background-image: url('images/road.jpg');
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center;
- }
+ 
 
  .button1 {
    height: 15%;
