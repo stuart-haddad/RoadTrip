@@ -10,7 +10,19 @@
 #map:hover{
 
  }
+ form{
+   text-align: center;
+   font-family: sans-serif;
+   color: white;
+   font-size: 20px;
+   padding-top: 20px
+ }
 
+input{
+  font-family: sans-serif;
+  color: black;
+  margin-top: 4px;
+}
 /*Make scroll behavior scroll smoothly*/
 html{
   scroll-behavior: smooth;
@@ -22,6 +34,14 @@ h1, p.welcome-p, #features-section, #team-section{
    color: white;
    padding-top: 20px;
  }
+
+ h1, p.new-trip-p{
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+    padding-top: 20px;
+  }
+
 
 /*Format for Heading 1 tag*/
 h1{
@@ -60,6 +80,18 @@ p{ font-size: 20px; }
   animation: welcome 1s ease;
 }
 
+#new-trip{
+  margin: 0 auto;
+  width: 600px;
+  height: 400px;
+  background-color: hsla(200, 100%, 10%, 0.6);
+  top: 80px;
+  padding: 0px 25px 0px 25px;
+  position: relative;
+  border-radius: 10px;
+  -webkit-animation: welcome 1s ease;
+  animation: welcome 1s ease;
+}
 /*Fade animation code: Support for WebKit*/
 @-webkit-keyframes welcome{
   from{
@@ -138,6 +170,11 @@ p{ font-size: 20px; }
   cursor: pointer;
 }
 
+.boxhead a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
 .start-button:hover{
   transform: scale(1.1);
   background-color: #00e600;
@@ -163,7 +200,13 @@ hr.welcome-hr{
   margin-top: -20px;
   margin-bottom: -20px;
   border-top: 2px solid white;
-  border-radius: 2px;
+  border-radius: 3px;
+}
+hr.new-trip-hr{
+  margin-top: -20px;
+  margin-bottom: 20px;
+  border-top: 2px solid white;
+  border-radius: 3px;
 }
 
 /*Create another rectangle under the background*/
