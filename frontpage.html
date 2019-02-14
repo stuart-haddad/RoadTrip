@@ -6,101 +6,7 @@
     <script src="key.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="images/roadtrip-logo-small.png"/>
-    <script>
-      // Initialize and add the map
-      function initMap() {
-        // The location of Baton Rouge
-        var batonRouge = {lat: 30.4515, lng: -91.1871};
-        // The map, centered at Baton Rouge
-        var map = new google.maps.Map(
-            document.getElementById('map'),
-            { zoom: 10,
-              center: batonRouge,
-              styles: [
-           {elementType: 'geometry', stylers: [{color: '#A5E39E'}]},
-           {elementType: 'labels.text.stroke', stylers: [{color: '#123C5C'}]},
-           {elementType: 'labels.text.fill', stylers: [{color: '#9ca5b3'}]},
-           {
-             featureType: 'administrative.locality',
-             elementType: 'labels.text.fill',
-             stylers: [{color: '#9ca5b3'}]
-           },
-           {
-             featureType: 'poi',
-             elementType: 'labels.text.fill',
-             stylers: [{color: '#9ca5b3'}]
-           },
-           {
-             featureType: 'poi.park',
-             elementType: 'geometry',
-             stylers: [{color: '#72CD68'}]
-           },
-           {
-             featureType: 'poi.park',
-             elementType: 'labels.text.fill',
-             stylers: [{color: '#9ca5b3'}]
-           },
-           {
-             featureType: 'road',
-             elementType: 'geometry',
-             stylers: [{color: '#D6F3D3'}]
-           },
-           {
-             featureType: 'road',
-             elementType: 'geometry.stroke',
-             stylers: [{color: '#D6F3D3'}]
-           },
-           {
-             featureType: 'road',
-             elementType: 'labels.text.fill',
-             stylers: [{color: '#9ca5b3'}]
-           },
-           {
-             featureType: 'road.highway',
-             elementType: 'geometry',
-             stylers: [{color: '#D6F3D3'}]
-           },
-           {
-             featureType: 'road.highway',
-             elementType: 'geometry.stroke',
-             stylers: [{color: '#D6F3D3'}]
-           },
-           {
-             featureType: 'road.highway',
-             elementType: 'labels.text.fill',
-             stylers: [{color: '#9ca5b3'}]
-           },
-           {
-             featureType: 'transit',
-             elementType: 'geometry',
-             stylers: [{color: '4E738F'}]
-           },
-           {
-             featureType: 'transit.station',
-             elementType: 'labels.text.fill',
-             stylers: [{color: '#9ca5b3'}]
-           },
-           {
-             featureType: 'water',
-             elementType: 'geometry',
-             stylers: [{color: '#57B8CF'}]
-           },
-           {
-             featureType: 'water',
-             elementType: 'labels.text.fill',
-             stylers: [{color: '#515c6d'}]
-           },
-           {
-             featureType: 'water',
-             elementType: 'labels.text.stroke',
-             stylers: [{color: '#17263c'}]
-           }
-         ]
-            });
-        // The marker, positioned at Baton Rouge
-        var marker = new google.maps.Marker({position: batonRouge, map: map});
-      }
-    </script>
+    <script src="directions.js"></script>
   </head>
   <body>
     <div class="boxhead a">
@@ -136,31 +42,31 @@
         <div class="features">
           <div class="location" style="font-weight: bold"><img src="images/location-icon.png">
             <br>Location
-            <p class="title-p" style="color: #666666; font-weight: normal; font-size: 16px">
+            <p class="title-p">
               Insert description here
             </p>
           </div>
           <div class="gas-mileage" style="font-weight: bold"><img src="images/gas-icon.png">
             <br>Gas Mileage
-            <p class="title-p" style="color: #666666; font-weight: normal; font-size: 16px">
+            <p class="title-p">
               Insert description here
             </p>
           </div>
           <div class="budget" style="font-weight: bold"><img src="images/budget-icon.png">
             <br>Budget
-            <p class="title-p" style="color: #666666; font-weight: normal; font-size: 16px">
+            <p class="title-p">
               Insert description here
             </p>
           </div>
           <div class="gmi" style="font-weight: bold"><img src="images/google-maps-icon.png">
             <br>Google Maps
-            <p class="title-p" style="color: #666666; font-weight: normal; font-size: 16px">
+            <p class="title-p">
               Insert description here
             </p>
           </div>
           <div class="yelp" style="font-weight: bold"><img src="images/yelp-icon.png">
             <br>Yelp
-            <p class="title-p" style="color: #666666; font-weight: normal; font-size: 16px">
+            <p class="title-p">
               Insert description here
             </p>
           </div>
@@ -168,7 +74,6 @@
       </div>
       <!--The div element for the map -->
       <div id="map"></div>
-      <!-- <script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAmo3DOyFkNQL8UeZOUQnR7n3xdVgqeZLI&callback=initMap"></script> -->
       <div id="footer">
       </div>
       <div onclick="goToTop()" id="top-pin" title="Go to top"></div>
