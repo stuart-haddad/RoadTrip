@@ -2,9 +2,10 @@
 <html>
   <head>
       <link rel="stylesheet" href="style.css">
+      <script src="directions.js"></script>
   </head>
   <body>
-    <div class="boxhead a">
+    <div class="boxhead">
       <div id="main-container">
         <div id="header-tab">
           <img src="images/roadtrip-logo-small.png" alt="Road Trip Logo" title="Road Trip Logo" class="logo">
@@ -19,18 +20,24 @@
         </div>
         <div id="new-trip">
           <h1>New Trip</h1><hr class="new-trip-hr" width="298px">
-          <form style="text-align: left;">
+          <form style="text-align: left;" action="tripinfopage.html">
             <!-- can use labels instead of plain text for heading -->
             Name your new trip:<br>
             <input type="text" name="tripname"><br><br>
-            Enter the dates (MM/DD/YYYY):<br>
-            <input type="date" name="dates"><br><br>
+            Starting Point:<br>
+            <input type="text" id="start" name="dates"><br><br>
+            Destination:<br>
+            <input type="text" id="end" name="dates"><br><br>
+            Enter Starting Date:<br>
+            <input type="date" name="start-date"><br><br>
+            Enter Ending Date:<br>
+            <input type="date" name="end-date"><br><br>
             Enter the M.P.G. of your vehicle:<br>
             <input type="number" name="mpg"><br><br>
+            <button type="submit" onclick="calcRoute()" class="start-button">Submit</button>
           </form>
-            <a href="tripinfopage.html">
-              <button class="start-button">Submit</button>
-            </a>
+        </div>
+        <div id="map"></div>
       </div>
-    </div>
   </div>
+</body>

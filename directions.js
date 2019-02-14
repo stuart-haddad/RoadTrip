@@ -3,6 +3,7 @@ function initMap() {
   var directionsDisplay = new google.maps.DirectionsRenderer();
   // The location of Baton Rouge
   var batonRouge = new google.maps.LatLng(30.4515, -91.1871);
+  var oceanBeach = new google.maps.LatLng(37.7683909618184, -122.51089453697205);
   var mapOptions = {
     zoom: 10,
     center: batonRouge,
@@ -92,8 +93,10 @@ function initMap() {
 }
 
 function calcRoute() {
-  var start = document.getElementById('start').value;
-  var end = document.getElementById('end').value;
+  document.getElementById('map').display;
+  var start = document.getElementById('start').value; //batonRouge
+  var end = document.getElementById('end').value; //oceanBeach
+  alert("Start Point: " + start);
   var request = {
     origin: start,
     destination: end,
@@ -102,6 +105,9 @@ function calcRoute() {
   directionsService.route(request, function(result, status) {
     if (status == 'OK') {
       directionsDisplay.setDirections(result);
+    }
+    else {
+      alert(status);
     }
   });
 }
