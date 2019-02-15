@@ -3,6 +3,40 @@
   <head>
       <link rel="stylesheet" href="style.css">
       <script src="directions.js"></script>
+      <script>
+      function validateForm(){
+        var x = document.forms["TripForm"]["tripname"].value;
+        var y = document.forms["TripForm"]["name"].value;
+        var z = document.forms["TripForm"]["email"].value;
+        var a = document.forms["TripForm"]["start-date"].value;
+        var b = document.forms["TripForm"]["end-date"].value;
+        var c = document.forms["TripForm"]["mpg"].value;
+        if (x == "") {
+          alert("Trip Name Must be Filled Out");
+          return false;
+        }
+        if (y == "") {
+          alert("Please Enter Your Name");
+          return false;
+        }
+        if (z == "") {
+          alert("Please Enter a Valid Email");
+          return false;
+        }
+        if (a == "") {
+          alert("Please Enter a Starting Date");
+          return false;
+        }
+        if (b == "") {
+          alert("Please Enter an Ending Date");
+          return false;
+        }
+        if (c == "") {
+          alert("Please Enter a Value for M.P.G");
+          return false;
+        }
+      }
+      </script>
   </head>
   <body>
     <div class="boxhead">
@@ -20,20 +54,20 @@
         </div>
         <div id="new-trip">
           <h1>New Trip</h1><hr class="new-trip-hr" width="298px">
-          <form style="text-align: left;" action="tripinfopage.html">
+          <form name="TripForm" style="text-align: left;" action="tripinfopage.html" onsubmit="return validateForm()">
             <!-- can use labels instead of plain text for heading -->
             Name your new trip:<br>
-            <input type="text" name="tripname"><br><br>
-            Starting Point:<br>
-            <input type="text" id="start" name="dates"><br><br>
-            Destination:<br>
-            <input type="text" id="end" name="dates"><br><br>
+            <input type="text" name="tripname" id="tripname"><br><br>
+            Your Name:<br>
+            <input type="text" id="name" name="name"><br><br>
+            Email:<br>
+            <input type="email" id="email" name="email"><br><br>
             Enter Starting Date:<br>
-            <input type="date" name="start-date"><br><br>
+            <input type="date" name="start-date" id="start-date"><br><br>
             Enter Ending Date:<br>
-            <input type="date" name="end-date"><br><br>
+            <input type="date" name="end-date" id="end-date"><br><br>
             Enter the M.P.G. of your vehicle:<br>
-            <input type="number" name="mpg"><br><br>
+            <input type="number" name="mpg" id="mpg"><br><br>
             <button type="submit" onclick="calcRoute()" class="start-button">Submit</button>
           </form>
         </div>
