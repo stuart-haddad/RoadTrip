@@ -7,6 +7,8 @@ function initMap() {
   var mapOptions = {
     zoom: 10,
     center: batonRouge,
+    mapTypeControl: false,
+    disableDefaultUI: true,
     styles: [
        {elementType: 'geometry', stylers: [{color: '#A5E39E'}]},
        {elementType: 'labels.text.stroke', stylers: [{color: '#123C5C'}]},
@@ -181,7 +183,9 @@ AutocompleteDirectionsHandler.prototype.route = function() {
         if (status === 'OK') {
           me.directionsDisplay.setDirections(response);
           var dir = me.directionsDisplay.getDirections();
-          window.alert(dir.routes[0].legs[0].distance.text)
+          var mainRoute = dir.routes[0].legs[0];
+          var distance = mainRoute.distance.text;
+          window.alert("Distance: " + distance);
         } else {
           window.alert('Directions request failed due to ' + status);
         }
