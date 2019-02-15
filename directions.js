@@ -99,7 +99,11 @@ function AutocompleteDirectionsHandler(map) {
   this.destinationPlaceId = null;
   this.travelMode = 'DRIVING';
   this.directionsService = new google.maps.DirectionsService;
-  this.directionsDisplay = new google.maps.DirectionsRenderer;
+  this.directionsDisplay = new google.maps.DirectionsRenderer({
+    polylineOptions: {
+      strokeColor: 'yellow'
+    }
+  });
   this.directionsDisplay.setMap(map);
 
   var originInput = document.getElementById('origin-input');
