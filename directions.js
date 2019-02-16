@@ -185,7 +185,13 @@ AutocompleteDirectionsHandler.prototype.route = function() {
           var dir = me.directionsDisplay.getDirections();
           var mainRoute = dir.routes[0].legs[0];
           var distance = mainRoute.distance.text;
-          window.alert("Distance: " + distance);
+          var duration = mainRoute.duration.text;
+          //Eventually, we will be pulling this data from the form
+          var avgGasPrice = 2.305;
+          var mpg = 20;
+          //Convert Meters to Miles and calculate gas price
+          var gasCost = (mainRoute.distance.value * 0.000621371) / mpg * avgGasPrice;
+          window.alert("Distance: " + distance + "\nTrip Duration: " + duration + "\nGas Cost: " + gasCost.toFixed(2));
         } else {
           window.alert('Directions request failed due to ' + status);
         }

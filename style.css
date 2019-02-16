@@ -10,7 +10,7 @@ body{
   width: 75%;  /* The width is the width of the web page */
   background-color: #002233;
   position: relative;
-  margin-top: 150px;
+  margin-top: 50px;
   /* transition: 2s all ease-out;
   border: 10px solid #99ff99;
   border-radius: 20px;
@@ -115,10 +115,10 @@ p{ font-size: 20px; }
 /*Create a div element that contains a background image*/
 #main-container{
    width: 100%;
-   height: 600px;
+   height: 800px;
    bottom: -40px;
    background-image: url('images/roadtrip-banner.jpg');
-   max-height: 600px;
+   max-height: 800px;
    background-attachment: fixed;
    background-size: cover;
    background-repeat: no-repeat;
