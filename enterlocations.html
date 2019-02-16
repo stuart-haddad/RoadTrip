@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="style.css">
+      <script src="key.js"></script>
+      <script src="directions.js"></script>
+      <script>
+      function autoComplete(){
+        <script> src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+      }
+      </script>
+      <script>
+      function validateForm(){
+        var start = document.forms["Locations"]["starting location"].value;
+        var end = document.forms["Locations"]["ending location"].value;
+        if (start == ""){
+          alert("Starting Location Must Be Entered");
+          return false;
+        }
+        if (end == ""){
+          alert("Ending Location Must Be Entered");
+          return false;
+        }
+      }
+      </script>
+    </head>
+    <body>
+      <div class="boxhead">
+        <div id="main-container">
+          <div id="header-tab">
+            <img src="images/roadtrip-logo-small.png" alt="Road Trip Logo" title="Road Trip Logo" class="logo">
+            <img src="images/roadtrip-sign-logo.png" alt="Road Trip Logo" title="Road Trip Logo" class="logo">
+            <a href="frontpage.html">
+             <button class="button-tab home-tab" title="Home">Home</button>
+            </a>
+            <a href="aboutus.html">
+              <button class="button-tab about-tab" title="About Us">About Us</button>
+            </a>
+            <button class="button-tab faq-tab" title="Frequently Asked Questions">FAQ</button>
+          </div>
+          <div id="enter-locations">
+          <h1>Enter Start and Destination</h1><hr class="new-trip-hr" width="298px">
+          <form name="LocationsForm" style="text-align: left;" action="tripinfopage.html" onsubmit="return validateForm()" onkeypress="autoComplete()">
+            Enter Starting Location:<br>
+            <input type="text" name="start" id="start-location"><br><br>
+            Enter Ending Location:<br>
+            <input type="text" name="end" id="end-location"><br><br>
+            <button type="submit" onclick="newTrip.href = newTrip.html;" class="start-button">Submit</button>
+          </form>
+        </div>
+    </body>
