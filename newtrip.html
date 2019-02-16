@@ -5,6 +5,43 @@
       <script src="key.js"></script>
       <script src="directions.js"></script>
       <script>
+        function display() {
+          DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=300,height=400')
+          message = "<ul><li><b>Trip Name: </b>" + document.TripForm.tripname.value;
+          message += "<li><b>Name: </b>" + document.TripForm.name.value;
+          message += "<li><b>Email: </b>" + document.TripForm.email.value;
+          message += "<li><b>Starting Date: </b>" + document.TripForm.start-date.value;
+          message += "<li><b>Ending Date: </b>" + document.TripForm.end-date.value;
+          message += "<li><b>MPG: </b>" + document.TripForm.mpg.value + "</ul>";
+          DispWin.document.write(message);
+        }
+      </script>
+      <script type="text/javascript">
+        // Called on form's `onsubmit`
+        function tosubmit() {
+            // Getting the value of your text input
+            var tripName = document.getElementById("tripname").value;
+            localStorage.setItem("tripname", tripname);
+            return true;
+            var name = document.getElementById("name").value;
+            localStorage.setItem("name", name);
+            return true;
+            var start-date = document.getElementById("start-date").value;
+            localStorage.setItem("start-date", start-date);
+            return true;
+            var end-date = document.getElementById("end-date").value;
+            localStorage.setItem("end-date", end-date);
+            return true;
+            var email = document.getElementById("email").value;
+            localStorage.setItem("email", email);
+            return true;
+            var mpg = document.getElementById("mpg").value;
+            localStorage.setItem("mpg", mpg);
+            return true;
+        }
+
+    </script>
+      <script>
       function validateForm(){
         var x = document.forms["TripForm"]["tripname"].value;
         var y = document.forms["TripForm"]["name"].value;
@@ -69,7 +106,7 @@
             <input type="date" name="end-date" id="end-date"><br><br>
             Enter the M.P.G. of your vehicle:<br>
             <input type="number" name="mpg" id="mpg"><br><br>
-            <button type="submit" onclick="calcRoute()" class="start-button">Submit</button>
+            <button type="submit" onclick="display()" class="start-button">Submit</button>
           </form>
         </div>
         <div id="map"></div>
