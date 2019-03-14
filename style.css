@@ -264,13 +264,41 @@ p{ font-size: 20px; }
   margin: -10px auto;
   cursor: pointer;
 }
+/*  */
+.btn-group button {
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+/*  */
 
 .boxhead a {
     color: #FFFFFF;
     text-decoration: none;
 }
 
-.start-button:hover{
+ .start-button:hover{
   transform: scale(1.1);
   background-color: #00e600;
 }
