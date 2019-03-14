@@ -102,6 +102,14 @@ h1, p.welcome-p, #features-section, #team-section{
      padding-top: 20px;
    }
 
+   h2, p.interests-p{
+      text-align: left;
+      font-family: sans-serif;
+      color: white;
+      padding-top: 20px;
+      font-size: 30px;
+    }
+
 
 /*Format for Heading 1 tag*/
 h1{
@@ -160,6 +168,19 @@ p{ font-size: 20px; }
   height: auto;
   background-color: hsla(200, 100%, 10%, 0.6);
   top: 60px;
+  padding: 0px 25px 0px 25px;
+  position: relative;
+  border-radius: 10px;
+  -webkit-animation: welcome 1s ease;
+  animation: welcome 1s ease;
+}
+
+#interests{
+  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+  background-color: hsla(200, 100%, 10%, 0.6);
+  top: 80px;
   padding: 0px 25px 0px 25px;
   position: relative;
   border-radius: 10px;
@@ -279,6 +300,14 @@ hr.welcome-hr{
 hr.new-trip-hr{
   margin-left: 0px;
   margin-top: -20px;
+  margin-bottom: 20px;
+  border-top: 2px solid white;
+  border-radius: 3px;
+}
+
+hr.interests-hr{
+  margin-left: 20px;
+  margin-top: 20px;
   margin-bottom: 20px;
   border-top: 2px solid white;
   border-radius: 3px;
