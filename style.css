@@ -290,6 +290,7 @@ p{ font-size: 20px; }
 /* Add a background color on hover */
 .btn-group button:hover {
   background-color: #3e8e41;
+  transform: scale(1.1);
 }
 /*  */
 
@@ -302,6 +303,8 @@ p{ font-size: 20px; }
   transform: scale(1.1);
   background-color: #00e600;
 }
+
+
 
 .home-tab:hover{
   color: #003300;
