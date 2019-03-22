@@ -66,14 +66,15 @@ body{
    text-align: center;
    font-family: sans-serif;
    color: white;
-   font-size: 20px;
-   padding-top: 20px
+   font-size: 18px;
+   padding-top: 10px;
  }
 
 input{
   font-family: sans-serif;
   color: black;
   margin-top: 4px;
+  margin-bottom: 8px;
   width: 90%;
 }
 /*Make scroll behavior scroll smoothly*/
@@ -165,14 +166,14 @@ p{ font-size: 20px; }
 #new-trip{
   margin: 0 auto;
   width: 300px;
-  height: auto;
+  height: 510px;
   background-color: hsla(200, 100%, 10%, 0.6);
-  top: 60px;
+  top: 10px;
   padding: 0px 25px 0px 25px;
   position: relative;
   border-radius: 10px;
-  -webkit-animation: welcome 1s ease;
-  animation: welcome 1s ease;
+  /* -webkit-animation: welcome 1s ease;
+  animation: welcome 1s ease; */
 }
 
 #interests{
@@ -335,6 +336,8 @@ hr.new-trip-hr{
   border-top: 2px solid white;
   border-radius: 3px;
 }
+
+
 
 hr.interests-hr{
   margin-left: 20px;
