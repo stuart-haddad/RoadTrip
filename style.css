@@ -163,6 +163,20 @@ p{ font-size: 20px; }
   animation: welcome 1s ease;
 }
 
+/*Stylize the Enter Start & End Destinations box along with an animation*/
+#enter-locations{
+  margin: 0 auto;
+  width: 600px;
+  height: 320px;
+  background-color: hsla(200, 100%, 10%, 0.6);
+  top: 80px;
+  padding: 0px 25px 0px 25px;
+  position: relative;
+  border-radius: 10px;
+  -webkit-animation: welcome 1s ease;
+  animation: welcome 1s ease;
+}
+
 #new-trip{
   margin: 0 auto;
   width: 300px;
@@ -337,8 +351,6 @@ hr.new-trip-hr{
   border-radius: 3px;
 }
 
-
-
 hr.interests-hr{
   margin-left: 20px;
   margin-top: 20px;
@@ -401,6 +413,16 @@ p.title-p{
   position: relative;
 }
 
+/*Design for Team Members section*/
+#team-section{
+  font-size: 40px;
+  color: #0099ff;
+  width: 100%;
+  height: 600px;
+  padding-top: 20px;
+  background-color: white;
+}
+
 /*Design for footer*/
 #footer{
   width: 100%;
@@ -408,6 +430,17 @@ p.title-p{
   bottom: 0px;
   background-color: #1a1a1a;
 }
+/*Formet of footer in the paragraph tag*/
+p.footer-p{
+  text-align: center;
+  font-family: sans-serif;
+  padding-top: 35px;
+}
+.footer-p{
+  font-weight: normal;
+  font-size: 20px;
+}
+
 
 /*Design & image of a pin*/
 #top-pin{
