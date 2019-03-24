@@ -321,19 +321,9 @@ p{ font-size: 20px; }
 
 
 
-.home-tab:hover{
+.home-tab:hover, .about-tab:hover, .faq-tab:hover{
   color: #003300;
   background-color: #99ff99;
-}
-
-.about-tab:hover{
-  color: #002933;
-  background-color: #00ccff;
-}
-
-.faq-tab:hover{
-  color: #66004d;
-  background-color: #ff33cc;
 }
 
 /*Set size of horizontal line in the Welcome message*/
@@ -359,6 +349,11 @@ hr.interests-hr{
   border-radius: 3px;
 }
 
+hr.team-hr{
+  border: 2px solid #99ff99;
+  border-radius: 3px;
+}
+
 /*Create another rectangle under the background*/
 .welcome-bar{
   width: 100%;
@@ -366,7 +361,7 @@ hr.interests-hr{
   background-color: #1a1a1a;
 }
 
-/*Formet of titles in the paragraph tag*/
+/*Format of titles in the paragraph tag*/
 p.title-p{
   text-align: center;
   font-family: sans-serif;
@@ -416,17 +411,58 @@ p.title-p{
 /*Design for Team Members section*/
 #team-section{
   font-size: 40px;
-  color: #0099ff;
+  color: #008055;
   width: 100%;
   height: 600px;
   padding-top: 20px;
   background-color: white;
 }
+/*Flex container of all six team members*/
+.members{
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/*Flex items (6 team members)*/
+.members > div{
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: sans-serif;
+  height: 300px;
+  margin: 10px;
+  padding: 20px;
+  color: #99ff99;
+  background-color: #003326;
+  border: 10px solid #99ff99;
+  border-radius: 20px;
+  box-shadow: 0px 10px #008055;
+  flex: 1;
+  flex-flow: row nowrap;
+  justify-content: center;
+  position: relative;
+}
+/*Format of team members in the paragraph tag*/
+p.team-p{
+  text-align: left;
+  font-family: sans-serif;
+  padding-top: 10px;
+}
+.team-p{
+  color: white;
+  font-weight: normal;
+  font-size: 16px;
+}
+.team-b{
+  color: #99ff99;
+}
+
 
 /*Design for footer*/
 #footer{
   width: 100%;
-  height: 200px;
+  height: 220px;
   bottom: 0px;
   background-color: #1a1a1a;
 }
