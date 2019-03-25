@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-size=1.0">
+    <title>Road Trip - About Us</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="images/roadtrip-logo-small.png"/>
   </head>
   <body>
     <div class="boxhead">
@@ -84,12 +87,35 @@
           <div class="PL-logo">
             <div class="html-logo"><img src="images/logo_html.png" alt="HTML Logo" title="HTML"></div>
             <div class="css-logo"><img src="images/logo_css.png" alt="CSS Logo" title="CSS"></div>
-            <div class="js-logo"><img src="images/logo_javascript.png" alt="Javascript Logo" title="Javascript"></div>
+            <div class="js-logo"><img src="images/logo_javascript.png" alt="JavaScript Logo" title="JavaScript"></div>
             <div class="php-logo"><img src="images/logo_php.png" alt="PHP Logo" title="PHP"></div>
           </div>
         <p class="footer-p" style="color: white; padding-top: 30px">
           Thank you for using the Road Trip Web App!
         </p>
       </div>
+      <div onclick="goToTop()" id="top-pin" title="Go to top"></div>
+    </div>
+      <script>
+        // When the user scrolls from the top of the page, the element will show up
+        window.onscroll = function() {showTopPin()};
+
+        function showTopPin(){
+          if (document.body.scrollTop > 75 || document.documentElement.scrollTop > 75){
+            document.getElementById("top-pin").style.transition = "0.5s";
+            document.getElementById("top-pin").style.bottom = "-80px";
+          }
+          else{
+            document.getElementById("top-pin").style.transition = "0.5s";
+            document.getElementById("top-pin").style.bottom = "-220px";
+          }
+        }
+
+        // When the user clicks on the element, the page will scroll to the top of the page
+        function goToTop(){
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+      </script>
     </body>
   </html>
