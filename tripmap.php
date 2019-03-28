@@ -48,7 +48,36 @@
             <label for="changemode-driving">Driving</label>
           </div>
       </div>
-      <div id="map"></div>
+      <div id="map-container">
+        <div id="map"></div>
+        <div id="trip-details">
+          <h2 style="text-align: center; margin-top: 20px;">Your Trip Details</h2>
+          <h3 style="text-align: center;"><?php $tripname = $_POST["tripname"]; echo $tripname;?></h3>
+          <h4 style="text-align: center;">Created by: <?php echo $_POST["name"]?></h4>
+          <table style="width: 100%;border-collapse: separate; border-spacing: 15px;">
+            <tr>
+              <td class="data-label">MPG of Car</td>
+              <td id="mpg"><?php $mpg = $_POST["mpg"]; echo $mpg;?></td>
+            </tr>
+            <tr>
+              <td class="data-label">Trip Distance:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="data-label">Trip Costs:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="data-label">Start Date:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="data-label">End Date:</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
   </div>
   <div id="footer">
     <p class="footer-p" style="color: white; padding-top: 20px">

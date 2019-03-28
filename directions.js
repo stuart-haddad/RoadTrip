@@ -188,7 +188,7 @@ AutocompleteDirectionsHandler.prototype.route = function() {
           var duration = mainRoute.duration.text;
           //Eventually, we will be pulling this data from the form
           var avgGasPrice = 2.305;
-          var mpg = 20;
+          var mpg = document.findElementById("mpg").innerText();
           //Convert Meters to Miles and calculate gas price
           var gasCost = (mainRoute.distance.value * 0.000621371) / mpg * avgGasPrice;
           window.alert("Distance: " + distance + "\nTrip Duration: " + duration + "\nGas Cost: " + gasCost.toFixed(2));
