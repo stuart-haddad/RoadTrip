@@ -167,6 +167,8 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
   });
 };
 
+
+
 AutocompleteDirectionsHandler.prototype.route = function() {
   if (!this.originPlaceId || !this.destinationPlaceId) {
     return;
@@ -183,6 +185,15 @@ AutocompleteDirectionsHandler.prototype.route = function() {
         if (status === 'OK') {
           me.directionsDisplay.setDirections(response);
           var dir = me.directionsDisplay.getDirections();
+
+          //RouteBoxer
+          var routeboxer = new RouteBoxer();
+          var distanceOffPath= 0.01; // km
+          //Box around the overview path of the first route
+          var path = dir.routes[0].overview_path;
+          var bounds = routeBoxer.box(path, distanceOffPath);
+          searchBounds(bounds);
+
           var mainRoute = dir.routes[0].legs[0];
           var distance = mainRoute.distance.text;
           var duration = mainRoute.duration.text;
