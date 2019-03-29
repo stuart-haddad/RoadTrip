@@ -294,7 +294,7 @@ p{ font-size: 20px; }
 /*  */
 .btn-group button {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 20px;
   background-color: #3366ff; /* Green background */
   border: 1px solid #0040ff; /* Green border */
   color: white; /* White text */
@@ -304,6 +304,9 @@ p{ font-size: 20px; }
   padding-right: 5px;
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
+}
+.btn-padding button {
+  padding-right: 100px;
 }
 
 .btn-group button:not(:last-child) {
