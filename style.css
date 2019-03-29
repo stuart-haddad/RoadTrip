@@ -66,14 +66,15 @@ body{
    text-align: center;
    font-family: sans-serif;
    color: white;
-   font-size: 20px;
-   padding-top: 20px
+   font-size: 18px;
+   padding-top: 10px;
  }
 
 input{
   font-family: sans-serif;
   color: black;
   margin-top: 4px;
+  margin-bottom: 8px;
   width: 90%;
 }
 /*Make scroll behavior scroll smoothly*/
@@ -81,7 +82,7 @@ html{
   scroll-behavior: smooth;
 }
 
-h1, p.welcome-p, #features-section, #team-section{
+h1, p.welcome-p, #features-section, #team-section, p.mission-p{
    text-align: center;
    font-family: sans-serif;
    color: white;
@@ -101,6 +102,14 @@ h1, p.welcome-p, #features-section, #team-section{
      color: white;
      padding-top: 20px;
    }
+
+   h2, p.interests-p{
+      text-align: left;
+      font-family: sans-serif;
+      color: white;
+      padding-top: 20px;
+      font-size: 30px;
+    }
 
 
 /*Format for Heading 1 tag*/
@@ -154,12 +163,53 @@ p{ font-size: 20px; }
   animation: welcome 1s ease;
 }
 
+/*Stylize the Our Mission message along with an animation*/
+#mission-message{
+  margin: 0 auto;
+  width: 600px;
+  height: 420px;
+  background-color: hsla(200, 100%, 10%, 0.6);
+  top: 80px;
+  padding: 0px 25px 0px 25px;
+  position: relative;
+  border-radius: 10px;
+  -webkit-animation: welcome 1s ease;
+  animation: welcome 1s ease;
+}
+
+/*Stylize the Enter Start & End Destinations box along with an animation*/
+#enter-locations{
+  margin: 0 auto;
+  width: 600px;
+  height: 320px;
+  background-color: hsla(200, 100%, 10%, 0.6);
+  top: 80px;
+  padding: 0px 25px 0px 25px;
+  position: relative;
+  border-radius: 10px;
+  -webkit-animation: welcome 1s ease;
+  animation: welcome 1s ease;
+}
+
 #new-trip{
   margin: 0 auto;
   width: 300px;
-  height: auto;
+  height: 510px;
   background-color: hsla(200, 100%, 10%, 0.6);
-  top: 60px;
+  top: 80px;
+  padding: 0px 25px 0px 25px;
+  position: relative;
+  border-radius: 10px;
+  -webkit-animation: welcome 1s ease;
+  animation: welcome 1s ease;
+}
+
+#interests{
+  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+  background-color: hsla(200, 100%, 10%, 0.6);
+  top: 80px;
   padding: 0px 25px 0px 25px;
   position: relative;
   border-radius: 10px;
@@ -243,34 +293,55 @@ p{ font-size: 20px; }
   margin: -10px auto;
   cursor: pointer;
 }
+/*  */
+.btn-group button {
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+  transform: scale(1.1);
+}
+/*  */
 
 .boxhead a {
     color: #FFFFFF;
     text-decoration: none;
 }
 
-.start-button:hover{
+ .start-button:hover{
   transform: scale(1.1);
   background-color: #00e600;
 }
 
-.home-tab:hover{
+
+
+.home-tab:hover, .about-tab:hover, .faq-tab:hover{
   color: #003300;
   background-color: #99ff99;
 }
 
-.about-tab:hover{
-  color: #002933;
-  background-color: #00ccff;
-}
-
-.faq-tab:hover{
-  color: #66004d;
-  background-color: #ff33cc;
-}
-
 /*Set size of horizontal line in the Welcome message*/
-hr.welcome-hr{
+hr.welcome-hr, hr.mission-hr{
   margin-top: -20px;
   margin-bottom: -20px;
   border-top: 2px solid white;
@@ -284,6 +355,19 @@ hr.new-trip-hr{
   border-radius: 3px;
 }
 
+hr.interests-hr{
+  margin-left: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 2px solid white;
+  border-radius: 3px;
+}
+
+hr.team-hr{
+  border: 2px solid #99ff99;
+  border-radius: 3px;
+}
+
 /*Create another rectangle under the background*/
 .welcome-bar{
   width: 100%;
@@ -291,7 +375,7 @@ hr.new-trip-hr{
   background-color: #1a1a1a;
 }
 
-/*Formet of titles in the paragraph tag*/
+/*Format of titles in the paragraph tag*/
 p.title-p{
   text-align: center;
   font-family: sans-serif;
@@ -313,7 +397,7 @@ p.title-p{
   background-color: white;
 }
 
-/*Flex container of what the Road Trip Web App features*/
+/*Flex container of the Road Trip Web App features*/
 .features{
   max-width: 100%;
   display: flex;
@@ -338,12 +422,89 @@ p.title-p{
   position: relative;
 }
 
+/*Design for Team Members section*/
+#team-section{
+  font-size: 40px;
+  color: #008055;
+  width: 100%;
+  height: 600px;
+  padding-top: 20px;
+  background-color: white;
+}
+/*Flex container of all six team members*/
+.members{
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/*Flex items (6 team members)*/
+.members > div{
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: sans-serif;
+  height: 300px;
+  margin: 10px;
+  padding: 20px;
+  color: #99ff99;
+  background-color: #003326;
+  border: 10px solid #99ff99;
+  border-radius: 20px;
+  box-shadow: 0px 10px #008055;
+  flex: 1;
+  flex-flow: row nowrap;
+  justify-content: center;
+  position: relative;
+}
+/*Format of team members in the paragraph tag*/
+p.team-p{
+  text-align: left;
+  font-family: sans-serif;
+  padding-top: 10px;
+}
+.team-p{
+  color: white;
+  font-weight: normal;
+  font-size: 16px;
+}
+.team-b{
+  color: #99ff99;
+}
+
+
 /*Design for footer*/
 #footer{
   width: 100%;
-  height: 150px;
+  height: 220px;
   bottom: 0px;
   background-color: #1a1a1a;
+}
+/*Formet of footer in the paragraph tag*/
+p.footer-p{
+  text-align: center;
+  font-family: sans-serif;
+}
+.footer-p{
+  font-weight: normal;
+  font-size: 20px;
+}
+/*Flex container of the Programming Languages' logos*/
+.PL-logo{
+  max-width: 500px;
+  margin: -10px auto;
+  display: flex;
+
+}
+/*Flex items (4 Programming Languages)*/
+.PL-logo > div{
+  flex: 1;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  left: 10px;
+  position: relative;
 }
 
 /*Design & image of a pin*/

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-size=1.0">
+    <title>Road Trip - About Us</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="images/roadtrip-logo-small.png"/>
   </head>
   <body>
     <div class="boxhead">
@@ -17,7 +20,102 @@
               <button class="button-tab faq-tab" title="Frequently Asked Questions">FAQ</button>
             </a>
           </div>
+          <div id="mission-message">
+          <h1>~Our Mission~</h1><hr class="mission-hr" width="600px">
+            <p class="mission-p">To offer users a convenient way to personalize their road trips.<br><br>
+               Our team has worked on this web app throughout the course of<br>
+               CSC 3380 (Object Oriented Design). Trying to organize a road trip<br>
+               to your favorite vacation spot can be a huge hassle. Something that<br>
+               can be even more difficult is searching and planning for activities<br>
+               without going over your budget. As a team, we aim to solve the<br>
+               problem by offering users a quick, easy way to plan out their trip,<br>
+               find entertaining stops along their route, and help them budget<br>
+               their money. The paths we had to take to deliver a promising final<br>
+               product were great learning experiences. We take the long way to<br>
+               give users a shortcut to a personalize their experience.
+            </p>
+          </div>
         </div>
+        <div class="welcome-bar"></div>
+        <div id="team-section"><b>&#x25CF Team Members &#x25CF;</b>
+          <p class="title-p" style="color: #666666; font-size: 20px">
+            This app was made by a group of professional Computer Science students
+          </p>
+          <div class="members">
+            <div class="member-1">
+              Stuart Haddad<hr class="team-hr">
+              <p class="team-p"><b class="team-b">Major: </b>Computer Science<br>
+                <b class="team-b">Minor: </b>None<br>
+                <b class="team-b">Concentration: </b>2nd Discipline Entrepreneurship</p>
+            </div>
+            <div class="member-2">
+              Tara Leger<hr class="team-hr">
+              <p class="team-p"><b class="team-b">Major: </b>Computer Science<br>
+                <b class="team-b">Minor: </b>None<br>
+                <b class="team-b">Concentration: </b>Data Science & Analytics</p>
+            </div>
+            <div class="member-3">
+              Kevin Quebedeaux<hr class="team-hr">
+              <p class="team-p"><b class="team-b">Major: </b>Computer Science<br>
+                <b class="team-b">Minor: </b>None<br>
+                <b class="team-b">Concentration: </b>Data Science & Analytics</p>
+            </div>
+            <div class="member-4">
+              Diamonick Dunn<hr class="team-hr">
+              <p class="team-p"><b class="team-b">Major: </b>Computer Science<br>
+                <b class="team-b">Minor: </b>Digital Media Avatar Arts<br>
+                <b class="team-b">Concentration: </b>Software Engineering</p>
+            </div>
+            <div class="member-5">
+              Christopher Mosol<hr class="team-hr">
+              <p class="team-p"><b class="team-b">Major: </b>Computer Science<br>
+                <b class="team-b">Minor: </b>None<br>
+                <b class="team-b">Concentration: </b>Digital Media Avatar Arts</p>
+            </div>
+            <div class="member-6">
+              Josh Svec<hr class="team-hr">
+              <p class="team-p"><b class="team-b">Major: </b>Computer Science<br>
+                <b class="team-b">Minor: </b>Mathematics<br>
+                <b class="team-b">Concentration: </b>Data Science & Analytics</p>
+            </div>
+          </div>
       </div>
+      <div id="footer">
+        <p class="footer-p" style="color: white; padding-top: 20px">
+          Programming languages used to make Road Trip:
+        </p>
+          <div class="PL-logo">
+            <div class="html-logo"><img src="images/logo_html.png" alt="HTML Logo" title="HTML"></div>
+            <div class="css-logo"><img src="images/logo_css.png" alt="CSS Logo" title="CSS"></div>
+            <div class="js-logo"><img src="images/logo_javascript.png" alt="JavaScript Logo" title="JavaScript"></div>
+            <div class="php-logo"><img src="images/logo_php.png" alt="PHP Logo" title="PHP"></div>
+          </div>
+        <p class="footer-p" style="color: white; padding-top: 30px">
+          Thank you for using the Road Trip Web App!
+        </p>
+      </div>
+      <div onclick="goToTop()" id="top-pin" title="Go to top"></div>
+    </div>
+      <script>
+        // When the user scrolls from the top of the page, the element will show up
+        window.onscroll = function() {showTopPin()};
+
+        function showTopPin(){
+          if (document.body.scrollTop > 75 || document.documentElement.scrollTop > 75){
+            document.getElementById("top-pin").style.transition = "0.5s";
+            document.getElementById("top-pin").style.bottom = "-80px";
+          }
+          else{
+            document.getElementById("top-pin").style.transition = "0.5s";
+            document.getElementById("top-pin").style.bottom = "-220px";
+          }
+        }
+
+        // When the user clicks on the element, the page will scroll to the top of the page
+        function goToTop(){
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+      </script>
     </body>
   </html>

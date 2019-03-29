@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <meta name="viewport" content="width=device-width, initial-size=1.0">
+      <title>Road Trip - Enter Locations</title>
       <link rel="stylesheet" href="style.css">
       <script src="key.js"></script>
       <script src="directions.js"></script>
+      <link rel="shortcut icon" type="image/png" href="images/roadtrip-logo-small.png"/>
       <script>
       function autoComplete(){
-        <script> src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
       }
       </script>
       <script>
@@ -39,7 +42,7 @@
             <button class="button-tab faq-tab" title="Frequently Asked Questions">FAQ</button>
           </div>
           <div id="enter-locations">
-          <h1>Enter Start and Destination</h1><hr class="new-trip-hr" width="298px">
+          <h1>Enter Start & End Destinations</h1><hr class="new-trip-hr" width="595px">
           <form name="LocationsForm" style="text-align: left;" action="tripinfopage.html" onsubmit="return validateForm()" onkeypress="autoComplete()">
             Enter Starting Location:<br>
             <input type="text" name="start" id="start-location"><br><br>
@@ -48,4 +51,20 @@
             <button type="submit" onclick="newTrip.href = newTrip.html;" class="start-button">Submit</button>
           </form>
         </div>
+      </div>
+    </div>
+    <div id="footer">
+      <p class="footer-p" style="color: white; padding-top: 20px">
+        Programming languages used to make Road Trip:
+      </p>
+        <div class="PL-logo">
+          <div class="html-logo"><img src="images/logo_html.png" alt="HTML Logo" title="HTML"></div>
+          <div class="css-logo"><img src="images/logo_css.png" alt="CSS Logo" title="CSS"></div>
+          <div class="js-logo"><img src="images/logo_javascript.png" alt="JavaScript Logo" title="JavaScript"></div>
+          <div class="php-logo"><img src="images/logo_php.png" alt="PHP Logo" title="PHP"></div>
+        </div>
+      <p class="footer-p" style="color: white; padding-top: 30px">
+        Thank you for using the Road Trip Web App!
+      </p>
+    </div>
     </body>

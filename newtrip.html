@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <meta name="viewport" content="width=device-width, initial-size=1.0">
+      <title>Road Trip - New Trip</title>
       <link rel="stylesheet" href="style.css">
       <script src="key.js"></script>
       <script src="directions.js"></script>
+      <link rel="shortcut icon" type="image/png" href="images/roadtrip-logo-small.png"/>
       <script>
         function display() {
           DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=300,height=400')
@@ -92,23 +95,39 @@
         </div>
         <div id="new-trip">
           <h1>New Trip</h1><hr class="new-trip-hr" width="298px">
-          <form name="TripForm" style="text-align: left;" action="tripmap.html" onsubmit="return validateForm()">
-            <!-- can use labels instead of plain text for heading -->
-            Name your new trip:<br>
-            <input type="text" name="tripname" id="tripname"><br><br>
-            Your Name:<br>
-            <input type="text" id="name" name="name"><br><br>
-            Email:<br>
-            <input type="email" id="email" name="email"><br><br>
-            Enter Starting Date:<br>
-            <input type="date" name="start-date" id="start-date"><br><br>
-            Enter Ending Date:<br>
-            <input type="date" name="end-date" id="end-date"><br><br>
-            Enter the M.P.G. of your vehicle:<br>
-            <input type="number" name="mpg" id="mpg"><br><br>
-            <button type="submit" class="start-button">Submit</button>
+          <div id = "form">
+            <form name="TripForm" style="text-align: left;" action="tripmap.html" onsubmit="return validateForm()">
+              <!-- can use labels instead of plain text for heading -->
+              Name your new trip:<br>
+              <div id = "input"><input type="text" name="tripname" id="tripname"><br></div>
+              Your Name:<br>
+              <div id = "input"><input type="text" id="name" name="name"><br></div>
+              Email:<br>
+              <div id = "input"><input type="email" id="email" name="email"><br></div>
+              Enter Starting Date:<br>
+              <div id = "input"><input type="date" name="start-date" id="start-date"><br></div>
+              Enter Ending Date:<br>
+              <div id = "input"><input type="date" name="end-date" id="end-date"><br></div>
+              Enter the M.P.G. of your vehicle:<br>
+              <input type="number" name="mpg" id="mpg"><br><br>
+              <button type="submit" class="start-button">Submit</button>
+            </div>
           </form>
         </div>
       </div>
+  </div>
+  <div id="footer">
+    <p class="footer-p" style="color: white; padding-top: 20px">
+      Programming languages used to make Road Trip:
+    </p>
+      <div class="PL-logo">
+        <div class="html-logo"><img src="images/logo_html.png" alt="HTML Logo" title="HTML"></div>
+        <div class="css-logo"><img src="images/logo_css.png" alt="CSS Logo" title="CSS"></div>
+        <div class="js-logo"><img src="images/logo_javascript.png" alt="JavaScript Logo" title="JavaScript"></div>
+        <div class="php-logo"><img src="images/logo_php.png" alt="PHP Logo" title="PHP"></div>
+      </div>
+    <p class="footer-p" style="color: white; padding-top: 30px">
+      Thank you for using the Road Trip Web App!
+    </p>
   </div>
 </body>
