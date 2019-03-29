@@ -16,7 +16,7 @@
         var EndDate = localStorage.getItem("end-date");
         var MPG = localStorage.getItem("mpg");
     </script>
-    <script type="text/javascript" src="../../routeboxer/src/RouteBoxer.js"></script>
+    <script type="text/javascript" src="../routeboxer/src/RouteBoxer.js"></script>
   </head>
   <body>
     <div id="main-container">
