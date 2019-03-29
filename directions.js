@@ -185,6 +185,7 @@ AutocompleteDirectionsHandler.prototype.route = function() {
           var dir = me.directionsDisplay.getDirections();
           var mainRoute = dir.routes[0].legs[0];
           var distance = mainRoute.distance.text;
+          document.findElementById('distance').innerText(distance);
           var duration = mainRoute.duration.text;
           //Eventually, we will be pulling this data from the form
           var avgGasPrice = 2.305;

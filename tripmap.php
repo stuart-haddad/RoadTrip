@@ -16,6 +16,7 @@
         var EndDate = localStorage.getItem("end-date");
         var MPG = localStorage.getItem("mpg");
     </script>
+    <script type="text/javascript" src="../../routeboxer/src/RouteBoxer.js"></script>
   </head>
   <body>
     <div id="main-container">
@@ -61,19 +62,15 @@
             </tr>
             <tr>
               <td class="data-label">Trip Distance:</td>
-              <td></td>
+              <td id="distance"> </td>
             </tr>
             <tr>
               <td class="data-label">Trip Costs:</td>
-              <td></td>
+              <td id="costs"></td>
             </tr>
             <tr>
               <td class="data-label">Start Date:</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="data-label">End Date:</td>
-              <td></td>
+              <td id="start-date"></td>
             </tr>
           </table>
         </div>
