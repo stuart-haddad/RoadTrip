@@ -183,7 +183,16 @@ AutocompleteDirectionsHandler.prototype.route = function() {
         if (status === 'OK') {
           me.directionsDisplay.setDirections(response);
           var dir = me.directionsDisplay.getDirections();
-          var mainRoute = dir.routes[0].overview_path;
+          var mainRoute = dir.routes[0].legs[0];
+
+          // Box around the overview path of the first route
+          var routeboxer = new RouteBoxer();
+          var distanceOffPath = 0.01; // km
+          var path = response.routes[0].overview_path;
+          bounds = routeBoxer.box(path, distanceOffPath);
+
+          searchBounds(bounds);
+
           var distance = mainRoute.distance.text;
           document.getElementById('distance').innerHTML = distance;
           var duration = mainRoute.duration.text;
