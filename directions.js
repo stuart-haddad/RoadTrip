@@ -195,11 +195,22 @@ AutocompleteDirectionsHandler.prototype.route = function() {
           searchBounds(bounds);
 
           var mainRoute = dir.routes[0].legs[0];
+
+          // Box around the overview path of the first route
+          var routeboxer = new RouteBoxer();
+          var distanceOffPath = 0.01; // km
+          var path = response.routes[0].overview_path;
+          bounds = routeBoxer.box(path, distanceOffPath);
+
+          searchBounds(bounds);
+
           var distance = mainRoute.distance.text;
+          document.getElementById('distance').innerHTML = distance;
           var duration = mainRoute.duration.text;
           //Eventually, we will be pulling this data from the form
           var avgGasPrice = 2.305;
-          var mpg = 20;
+          var mpg = document.getElementById("mpg").innerHTML;
+          console.log(mpg);
           //Convert Meters to Miles and calculate gas price
           var gasCost = (mainRoute.distance.value * 0.000621371) / mpg * avgGasPrice;
           window.alert("Distance: " + distance + "\nTrip Duration: " + duration + "\nGas Cost: " + gasCost.toFixed(2));
@@ -208,3 +219,47 @@ AutocompleteDirectionsHandler.prototype.route = function() {
         }
       });
 };
+
+function searchBounds(bound) {
+   for (var i = 0; i < bound; i++) {
+     (function(i) {
+       setTimeout(function() {
+
+         // Perform search on the bound and save the result
+         performSearch(bound[i]);
+
+         //If the last box
+         if ((bound.length - 1) === i) {
+           addAllMarkers(bound);
+         }
+       }, 400 * i);
+     }(i));
+   }
+ }
+
+
+ function performSearch(bound) {
+   var request = {
+     bounds: bound,
+     keyword: 'bars'
+   };
+
+   currentBound = bound;
+   service.radarSearch(request, callback);
+ }
+
+ // Call back function from the radar search
+
+ function callback(results, status) {
+   if (status !== google.maps.places.PlacesServiceStatus.OK) {
+     console.error(status);
+     return;
+   }
+
+   for (var i = 0, result; result = results[i]; i++) {
+     // Go through each result from the search and if the place exist already in our list of places then done push it in to the array
+     if (!placeExists(result.id)) {
+       allPlaces.push(result);
+     }
+   }
+ }
