@@ -224,15 +224,13 @@ p{ font-size: 20px; }
 
 #interests{
   margin: 0 auto;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 300px;
   background-color: hsla(200, 100%, 10%, 0.6);
-  top: 80px;
+  top: 20px;
   padding: 0px 25px 0px 25px;
   position: relative;
   border-radius: 10px;
-  -webkit-animation: welcome 1s ease;
-  animation: welcome 1s ease;
 }
 /*Fade animation code: Support for WebKit*/
 @-webkit-keyframes welcome{
@@ -315,12 +313,18 @@ p{ font-size: 20px; }
 .btn-group button {
   font-weight: bold;
   font-size: 20px;
-  background-color: #4CAF50; /* Green background */
-  border: 1px solid green; /* Green border */
+  background-color: #3366ff; /* Green background */
+  border: 1px solid #0040ff; /* Green border */
   color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
+  padding-top: 8px; /* Some padding */
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
+}
+.btn-padding button {
+  padding-right: 100px;
 }
 
 .btn-group button:not(:last-child) {
