@@ -22,7 +22,25 @@
           <a href="aboutus.html">
             <button class="button-tab about-tab" title="About Us">About Us</button>
           </a>
-          <button class="button-tab faq-tab" title="Frequently Asked Questions">FAQ</button>
+          <button class="button-tab faq-tab" title="budget">Budget Tool</button>
+        </div>
+        <div id="new-trip">
+          <h1>Budgeting Tool</h1><hr class="new-trip-hr" width="298px">
+          <div id = "form">
+            <!-- Use commented line below to test PHP form. Comment out the following line with "tripmap.html" -->
+            <!-- <form name="TripForm" method="post" style="text-align: left;" action="tripmap.php" onsubmit="return validateForm()"> -->
+            <form name="Budget" method="post" style="text-align: left;" onsubmit="return validateForm()">
+              <!-- can use labels instead of plain text for heading -->
+              Enter your starting Location: <br>
+              <div id = "input"><input type="text" name="start" id="starting location"><br></div>
+              Enter your destination: <br>
+              <div id = "input"><input type="text" id="name" name="name"><br></div>
+              Enter the M.P.G. of your vehicle:<br>
+              <input type= "number" name="mpg" id="mpg"><br><br>
+              <button type= "submit" class="start-button" style="position: absolute; left: 25px;">Submit</button>
+              <button type = "button" class="back-button" onClick="history.go(-1);">Back</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -36,6 +54,7 @@
           <div class="js-logo"><img src="images/logo_javascript.png" alt="JavaScript Logo" title="JavaScript"></div>
           <div class="php-logo"><img src="images/logo_php.png" alt="PHP Logo" title="PHP"></div>
         </div>
+
       <p class="footer-p" style="color: white; padding-top: 30px">
         Thank you for using the Road Trip Web App!
       </p>
