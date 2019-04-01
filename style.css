@@ -93,8 +93,8 @@ input{
   color: black;
   margin-top: 4px;
   margin-bottom: 15px;
-  width: 72%;
-  padding-left: 25px;
+  width: 80%;
+  /* padding-left: 25px; */
   padding-right: 55px;
 }
 /*Make scroll behavior scroll smoothly*/
@@ -334,6 +334,22 @@ p{ font-size: 20px; }
   border: none;
   background-color: #00b300;
 }
+.calculate-button {
+  font-weight: bold;
+  font-size: 20px;
+  font-family: sans-serif;
+  color:inherit;
+  position: absolute;
+  height: 50px;
+  cursor: pointer;
+  background-color: #00b300;
+  border: none;
+  display: block;
+  border-radius: 10px;
+  margin: -10px auto;
+  width: 130px;
+  text-decoration: none;
+}
 /*  */
 .btn-group button {
   font-weight: bold;
@@ -370,6 +386,10 @@ p{ font-size: 20px; }
 }
 
 .back-button:hover {
+  background-color: #00e600;
+  transform: scale(1.1);
+}
+.calculate-button:hover {
   background-color: #00e600;
   transform: scale(1.1);
 }

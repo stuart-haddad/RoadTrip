@@ -22,11 +22,13 @@
           <a href="aboutus.html">
             <button class="button-tab about-tab" title="About Us">About Us</button>
           </a>
+          <a href="budgettool.html">
           <button class="button-tab faq-tab" title="budget">Budget Tool</button>
+        </a>
         </div>
         <div id="new-trip">
           <h1>Budgeting Tool</h1><hr class="new-trip-hr" width="298px">
-          <div id = "form">
+          <form id = "form">
             <!-- Use commented line below to test PHP form. Comment out the following line with "tripmap.html" -->
             <!-- <form name="TripForm" method="post" style="text-align: left;" action="tripmap.php" onsubmit="return validateForm()"> -->
             <form name="Budget" method="post" style="text-align: left;" onsubmit="return validateForm()">
@@ -37,10 +39,12 @@
               <div id = "input"><input type="text" id="name" name="name"><br></div>
               Enter the M.P.G. of your vehicle:<br>
               <input type= "number" name="mpg" id="mpg"><br><br>
-              <button type= "submit" class="start-button" style="position: absolute; left: 25px;">Submit</button>
+              <button type = "button" class="calculate-button">Calculate</button>
               <button type = "button" class="back-button" onClick="history.go(-1);">Back</button>
+              <button type="button" class="calculate-button" onClick="myFunction()">Try it</button>
             </div>
           </form>
+          <p id="demo"></p>
         </div>
       </div>
     </div>
@@ -59,5 +63,17 @@
         Thank you for using the Road Trip Web App!
       </p>
     </div>
+    <script>
+      function myFunction()
+      {
+        var x = document.getElementById("form");
+        var text = "";
+        var i;
+        for (i = 0; i < x.length ;i++) {
+      text += x.elements[i].value + "<br>";
+      }
+        document.getElementById("demo").innerHTML = text;
+      }
+    </script>
   </body>
 </html>
