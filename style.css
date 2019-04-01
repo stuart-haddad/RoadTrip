@@ -84,7 +84,7 @@ body{
    text-align: center;
    font-family: sans-serif;
    color: white;
-   font-size: 18px;
+   font-size: 20px;
    padding-top: 10px;
  }
 
@@ -92,8 +92,10 @@ input{
   font-family: sans-serif;
   color: black;
   margin-top: 4px;
-  margin-bottom: 8px;
-  width: 90%;
+  margin-bottom: 15px;
+  width: 72%;
+  padding-left: 25px;
+  padding-right: 55px;
 }
 /*Make scroll behavior scroll smoothly*/
 html{
@@ -294,7 +296,6 @@ p{ font-size: 20px; }
 /*Design for the 'Get Started' button*/
 .start-button{
   transition: 0.1s;
-  text-align: center;
   font-weight: bold;
   text-decoration: none;
   font-size: 20px;
@@ -307,7 +308,26 @@ p{ font-size: 20px; }
   border-radius: 10px;
   display: block;
   margin: -10px auto;
+  position: left;
   cursor: pointer;
+}
+
+
+.back-button {
+  font-weight: bold;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: white;
+  width: 100px;
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
+  height: 50px;
+  margin: -10px auto;
+  position: absolute;
+  right: 54px;
+  border: none;
+  background-color: #00b300;
 }
 /*  */
 .btn-group button {
