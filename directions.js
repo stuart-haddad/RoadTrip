@@ -190,29 +190,23 @@ AutocompleteDirectionsHandler.prototype.route = function() {
           var routeboxer = new RouteBoxer();
           var distanceOffPath= 0.01; // km
           //Box around the overview path of the first route
-          var path = dir.routes[0].overview_path;
-          var bounds = routeBoxer.box(path, distanceOffPath);
-          searchBounds(bounds);
+           var path = dir.routes[0].overview_path;
+          // var bounds = routeBoxer.box(path, distanceOffPath);
+          // searchBounds(bounds);
 
           var mainRoute = dir.routes[0].legs[0];
-
-          // Box around the overview path of the first route
-          var routeboxer = new RouteBoxer();
-          var distanceOffPath = 0.01; // km
-          var path = response.routes[0].overview_path;
-          bounds = routeBoxer.box(path, distanceOffPath);
-
-          searchBounds(bounds);
 
           var distance = mainRoute.distance.text;
           document.getElementById('distance').innerHTML = distance;
           var duration = mainRoute.duration.text;
+          document.getElementById('duration').innerHTML = duration;
           //Eventually, we will be pulling this data from the form
           var avgGasPrice = 2.305;
           var mpg = document.getElementById("mpg").innerHTML;
           console.log(mpg);
           //Convert Meters to Miles and calculate gas price
           var gasCost = (mainRoute.distance.value * 0.000621371) / mpg * avgGasPrice;
+          document.getElementById('costs').innerHTML = "$" + gasCost.toFixed(2);
           window.alert("Distance: " + distance + "\nTrip Duration: " + duration + "\nGas Cost: " + gasCost.toFixed(2));
         } else {
           window.alert('Directions request failed due to ' + status);

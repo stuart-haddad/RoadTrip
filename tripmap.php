@@ -62,10 +62,14 @@
             </tr>
             <tr>
               <td class="data-label">Trip Distance:</td>
-              <td id="distance"> </td>
+              <td id="distance"></td>
             </tr>
             <tr>
-              <td class="data-label">Trip Costs:</td>
+              <td class="data-label">Trip Duration:</td>
+              <td id="duration"></td>
+            </tr>
+            <tr>
+              <td class="data-label">Avg. Gas Cost:</td>
               <td id="costs"></td>
             </tr>
             <tr>
