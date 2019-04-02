@@ -1,3 +1,5 @@
+var map;
+
 function initMap() {
   var directionsService = new google.maps.DirectionsService();
   var directionsDisplay = new google.maps.DirectionsRenderer();
@@ -89,10 +91,26 @@ function initMap() {
          stylers: [{color: '#17263c'}]
        }
      ]};
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
   var marker = new google.maps.Marker({position: batonRouge, map: map});
   directionsDisplay.setMap(map);
   new AutocompleteDirectionsHandler(map);
+
+  var request = {
+    query: 'bars',
+    fields: ['name', 'geometry'],
+  };
+
+  var service = new google.maps.places.PlacesService(map);
+
+  service.findPlaceFromQuery(request, function(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) {
+        createMarker(results[i]);
+      }
+      map.setCenter(results[0].geometry.location);
+    }
+  });
 }
 
 function AutocompleteDirectionsHandler(map) {
@@ -196,15 +214,36 @@ AutocompleteDirectionsHandler.prototype.route = function() {
           // drawBoxes(boxes);
 
           var mainRoute = dir.routes[0].legs[0];
+          var arrayPath = dir.routes[0].overview_path;
+          // Every tenth of the journey, make a Place Query
+          var searchInterval = Math.round(arrayPath.length / 25);
+          console.log(arrayPath.length);
+          // for(var i = 0; i < arrayPath.length; i++)
+            // console.log(arrayPath[i]);
+
+          //Paint Along Search Path
+          // var searchPoint = 0;
+          // while (searchPoint < arrayPath.length)
+          // {
+          //   var cityCircle = new google.maps.Circle({
+          //     strokeColor: '#FF0000',
+          //     strokeOpacity: 0.8,
+          //     strokeWeight: 2,
+          //     fillColor: '#FF0000',
+          //     fillOpacity: 0.35,
+          //     map: map,
+          //     center: arrayPath[searchPoint],
+          //     radius: 5000
+          //   });
+          //   searchPoint += searchInterval;
+          // }
 
           var distance = mainRoute.distance.text;
           document.getElementById('distance').innerHTML = distance;
           var duration = mainRoute.duration.text;
           document.getElementById('duration').innerHTML = duration;
-          //Eventually, we will be pulling this data from the form
-          var avgGasPrice = 2.305;
+          var avgGasPrice = 2.305; //Nationwide Average Gas Price
           var mpg = document.getElementById("mpg").innerHTML;
-          console.log(mpg);
           //Convert Meters to Miles and calculate gas price
           var gasCost = (mainRoute.distance.value * 0.000621371) / mpg * avgGasPrice;
           document.getElementById('costs').innerHTML = "$" + gasCost.toFixed(2);
