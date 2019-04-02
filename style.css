@@ -21,9 +21,8 @@ body{
   box-shadow: 0px 10px #008055; */
  }
 #trip-details{
-  border-left: 5px solid white;
-  border-right: 5px solid white;
   margin-top: 50px;
+  margin-right: 25px;
   color: white;
   background-color: #36454f;
   width: 20%;
@@ -81,20 +80,22 @@ body{
    font-weight: 300;
  }
  form{
-   text-align: center;
+   text-align: left;
    font-family: sans-serif;
    color: white;
    font-size: 20px;
    padding-top: 10px;
+   width: 95;
+   /* padding-right: 20px; */
  }
 
 input{
   font-family: sans-serif;
+  height: inherit;
+  width: 100%;
   color: black;
   margin-top: 4px;
-  margin-bottom: 15px;
-  width: 80%;
-  padding-right: 55px;
+  margin-bottom: 10px;
 }
 /*Make scroll behavior scroll smoothly*/
 html{
@@ -115,7 +116,7 @@ h1, p.welcome-p, #features-section, #team-section, p.mission-p{
     padding-top: 20px;
   }
 
-  h1, p.faq-p{
+  h1, p.budget-p{
      text-align: left;
      font-family: sans-serif;
      color: white;
@@ -215,12 +216,22 @@ p{ font-size: 20px; }
   width: 300px;
   height: 510px;
   background-color: hsla(200, 100%, 10%, 0.6);
-  top: 80px;
+  top: 20px;
   padding: 0px 25px 0px 25px;
   position: relative;
   border-radius: 10px;
-  -webkit-animation: welcome 1s ease;
-  animation: welcome 1s ease;
+}
+
+#budget-tool{
+  margin: 0 auto;
+  height: 370px;
+  width: 300px;
+  background-color: hsla(200, 100%, 10%, 0.6);
+  top: 20px;
+  padding: 0px 25px 0px 25px;
+  position: relative;
+  border-radius: 10px;
+
 }
 
 #interests{
