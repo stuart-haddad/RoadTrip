@@ -79,6 +79,11 @@
               <td id="start-date"></td>
             </tr>
           </table>
+            <div class="btn-group">
+               <a href="InterestQuery.html">
+                <button>Find Interests</button>
+              </a>
+            </div>
         </div>
       </div>
   </div>
