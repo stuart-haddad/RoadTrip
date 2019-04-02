@@ -4,8 +4,7 @@
     <title>Road Trip - Map</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <script src="key.js"></script>
-    <script src="directions.js"></script>
+    <!-- <script src="key.js"></script> -->
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="images/roadtrip-logo-small.png"/>
     <script>
@@ -16,7 +15,10 @@
         var EndDate = localStorage.getItem("end-date");
         var MPG = localStorage.getItem("mpg");
     </script>
-    <script type="text/javascript" src="../routeboxer/src/RouteBoxer.js"></script>
+    <script src="directions.js"></script>
+    <script src="key.js"></script>
+    <!-- <script src="https://cdn.rawgit.com/googlemaps/v3-utility-library/master/routeboxer/src/RouteBoxer.js"></script> -->
+    <script type="text/javascript" src="routeboxer/src/RouteBoxer.js"></script>
   </head>
   <body>
     <div id="main-container">
@@ -62,10 +64,14 @@
             </tr>
             <tr>
               <td class="data-label">Trip Distance:</td>
-              <td id="distance"> </td>
+              <td id="distance"></td>
             </tr>
             <tr>
-              <td class="data-label">Trip Costs:</td>
+              <td class="data-label">Trip Duration:</td>
+              <td id="duration"></td>
+            </tr>
+            <tr>
+              <td class="data-label">Avg. Gas Cost:</td>
               <td id="costs"></td>
             </tr>
             <tr>
