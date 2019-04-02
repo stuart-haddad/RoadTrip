@@ -112,6 +112,7 @@ function AutocompleteDirectionsHandler(map) {
 
   var originInput = document.getElementById('origin-input');
   var destinationInput = document.getElementById('destination-input');
+  var searchInput = document.getElementById('search-input');
   var modeSelector = document.getElementById('mode-selector');
 
   var originAutocomplete = new google.maps.places.Autocomplete(originInput);
@@ -132,6 +133,7 @@ function AutocompleteDirectionsHandler(map) {
 
   this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
   this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
+  this.map.controls[google.maps.ControlPosition.TOP_RIGHT].push(searchInput);
   //this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
 }
 

@@ -51,7 +51,8 @@ body{
  }
 
  #origin-input,
- #destination-input {
+ #destination-input,
+ #search-input {
    background-color: #fff;
    font-family: Roboto;
    font-size: 15px;

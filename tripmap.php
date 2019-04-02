@@ -40,6 +40,9 @@
           <input id="destination-input" class="controls" type="text"
               placeholder="Enter a destination location">
 
+          <input id="search-input" class="controls" type="text"
+              placeholder="Enter a search query">
+
           <div id="mode-selector" class="controls">
             <input type="radio" name="type" id="changemode-walking" checked="checked">
             <label for="changemode-walking">Walking</label>
