@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-size=1.0">
+    <title>Road Trip - About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="images/roadtrip-logo-small.png"/>
+  </head>
+  <body>
+    <div class="boxhead">
+       <div id="main-container">
+          <div id="header-tab">
+            <img src="images/roadtrip-logo-small.png" alt="Road Trip Logo" title="Road Trip Logo" class="logo">
+            <img src="images/roadtrip-sign-logo.png" alt="Road Trip Logo" title="Road Trip Logo" class="logo">
+            <a href="frontpage.html">
+              <button class="button-tab home-tab" title="Home">Home</button>
+            </a>
+            <button class="button-tab about-tab" title="About Us">About Us</button>
+            <a href="faq.html">
+              <button class="button-tab faq-tab" title="budget">Budgeting Tool</button>
+            </a>
+          </div>
+          <div id="unsure">
+          <h1>Unsure of where to go?</h1><hr class="unsure-hr" width="600px">
+            <p class="unsure-p">Check out the interactive table below to see popular hotspots<br>
+               within certain states. Select the state you are thinking of visiting,<br>
+               and search through our alphabetized list of attractions. Once you<br>
+               find one you are interested in, click to find more information about<br>
+               it. If you decide that is they place you wish to go, follow the link at<br>
+               the bottom to find nearby food, stay locations, and even other attractions.
+            </p>
+            <button type = "button" class="back-button" onClick="history.go(-1);">Back</div>
+          </div>
+        </div>
+        </style>
+        <div id="footer">
+          <p class="footer-p" style="color: white; padding-top: 20px">
+            Programming languages used to make Road Trip:
+          </p>
+            <div class="PL-logo">
+              <div class="html-logo"><img src="images/logo_html.png" alt="HTML Logo" title="HTML"></div>
+              <div class="css-logo"><img src="images/logo_css.png" alt="CSS Logo" title="CSS"></div>
+              <div class="js-logo"><img src="images/logo_javascript.png" alt="JavaScript Logo" title="JavaScript"></div>
+              <div class="php-logo"><img src="images/logo_php.png" alt="PHP Logo" title="PHP"></div>
+            </div>
+          <p class="footer-p" style="color: white; padding-top: 30px">
+            Thank you for using the Road Trip Web App!
+          </p>
+        </div>
+        <div onclick="goToTop()" id="top-pin" title="Go to top"></div>
+        <script>
+          // When the user scrolls from the top of the page, the element will show up
+          window.onscroll = function() {showTopPin()};
+
+          function showTopPin(){
+            if (document.body.scrollTop > 75 || document.documentElement.scrollTop > 75){
+              document.getElementById("top-pin").style.transition = "0.5s";
+              document.getElementById("top-pin").style.bottom = "-80px";
+            }
+            else{
+              document.getElementById("top-pin").style.transition = "0.5s";
+              document.getElementById("top-pin").style.bottom = "-220px";
+            }
+          }
+
+          // When the user clicks on the element, the page will scroll to the top of the page
+          function goToTop(){
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+          }
+        </script>
+      </body>
+    </html>

@@ -101,7 +101,7 @@ html{
   scroll-behavior: smooth;
 }
 
-h1, p.welcome-p, #features-section, #team-section, p.mission-p{
+h1, p.welcome-p, #features-section, #team-section, p.mission-p, p.unsure-p{
    text-align: center;
    font-family: sans-serif;
    color: white;
@@ -184,6 +184,20 @@ p{ font-size: 20px; }
 
 /*Stylize the Our Mission message along with an animation*/
 #mission-message{
+  margin: 0 auto;
+  width: 600px;
+  height: 460px;
+  background-color: hsla(200, 100%, 10%, 0.6);
+  top: 80px;
+  padding: 0px 25px 0px 25px;
+  position: relative;
+  border-radius: 10px;
+  -webkit-animation: welcome 1s ease;
+  animation: welcome 1s ease;
+}
+
+/*Stylize the Unsure message along with an animation*/
+#unsure{
   margin: 0 auto;
   width: 600px;
   height: 460px;
@@ -412,7 +426,7 @@ p{ font-size: 20px; }
 }
 
 /*Set size of horizontal line in the Welcome message*/
-hr.welcome-hr, hr.mission-hr{
+hr.welcome-hr, hr.mission-hr, hr.unsure-hr{
   margin-top: -20px;
   margin-bottom: -20px;
   border-top: 2px solid white;
