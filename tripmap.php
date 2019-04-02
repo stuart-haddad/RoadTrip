@@ -59,6 +59,10 @@
           <h4 style="text-align: center;">Created by: <?php echo $_POST["name"]?></h4>
           <table style="width: 100%;border-collapse: separate; border-spacing: 15px;">
             <tr>
+              <td class="data-label">Start Date:</td>
+              <td id="start-date"><? $start = $_POST["start-date"]; echo $start; ?></td>
+            </tr>
+            <tr>
               <td class="data-label">MPG of Car</td>
               <td id="mpg"><?php $mpg = $_POST["mpg"]; echo $mpg;?></td>
             </tr>
@@ -73,10 +77,6 @@
             <tr>
               <td class="data-label">Avg. Gas Cost:</td>
               <td id="costs"></td>
-            </tr>
-            <tr>
-              <td class="data-label">Start Date:</td>
-              <td id="start-date"></td>
             </tr>
           </table>
             <div class="btn-group">
