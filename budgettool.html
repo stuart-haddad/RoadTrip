@@ -2,7 +2,7 @@
 <html>
   <head>
       <meta name="viewport" content="width=device-width, initial-size=1.0">
-      <title>Road Trip - FAQ</title>
+      <title>Road Trip - Budget</title>
       <link rel="stylesheet" href="style.css">
       <link rel="shortcut icon" type="image/png" href="images/roadtrip-logo-small.png"/>
   </head>
@@ -23,20 +23,20 @@
             <button class="button-tab about-tab" title="About Us">About Us</button>
           </a>
           <a href="budgettool.html">
-          <button class="button-tab faq-tab" title="budget">Budget Tool</button>
+          <button class="button-tab budget-tab" title="budget">Budget Tool</button>
         </a>
         </div>
-        <div id="new-trip">
+        <div id="budget-tool">
           <h1>Budgeting Tool</h1><hr class="new-trip-hr" width="298px">
           <form id = "form">
             <!-- Use commented line below to test PHP form. Comment out the following line with "tripmap.html" -->
             <!-- <form name="TripForm" method="post" style="text-align: left;" action="tripmap.php" onsubmit="return validateForm()"> -->
             <form name="Budget" method="post" style="text-align: left;" onsubmit="return validateForm()">
               <!-- can use labels instead of plain text for heading -->
-              Enter your starting Location: <br>
-              <div id = "input"><input type="search" name="start" id="starting location"><br></div>
+              Enter your starting location: <br>
+              <div id = "input"><input type="search" name="tripname" id="tripname"><br></div>
               Enter your destination: <br>
-              <div id = "input"><input type="text" id="name" name="name"><br></div>
+              <input type="text" id="end" name="destination"><br>
               Enter the M.P.G. of your vehicle:<br>
               <input type= "number" name="mpg" id="mpg"><br><br>
               <button type = "button" class="calculate-button">Calculate</button>
