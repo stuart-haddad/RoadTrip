@@ -382,8 +382,8 @@ p{ font-size: 20px; }
 .btn-group button {
   font-weight: bold;
   font-size: 20px;
-  background-color: #3366ff; /* Green background */
-  border: 1px solid #0040ff; /* Green border */
+  background-color: #3366ff; /* Blue background */
+  border: 1px solid #0040ff; /* Dark Blue border */
   color: white; /* White text */
   padding-top: 8px; /* Some padding */
   padding-bottom: 10px;
