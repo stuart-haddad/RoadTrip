@@ -28,7 +28,7 @@
         </div>
         <div id="budget-tool">
           <h1>Budgeting Tool</h1><hr class="new-trip-hr" width="298px">
-          <form id = "form">
+          <form id = "budget">
             <!-- Use commented line below to test PHP form. Comment out the following line with "tripmap.html" -->
             <!-- <form name="TripForm" method="post" style="text-align: left;" action="tripmap.php" onsubmit="return validateForm()"> -->
             <form name="Budget" method="post" style="text-align: left;" onsubmit="return validateForm()">
@@ -36,13 +36,14 @@
               Enter your starting location: <br>
               <div id = "input"><input type="search" name="tripname" id="tripname"><br></div>
               Enter your destination: <br>
-              <input type="text" id="end" name="destination"><br>
+              <div id = "input"><input type="search" id="end" name="destination"><br></div>
               Enter the M.P.G. of your vehicle:<br>
               <input type= "number" name="mpg" id="mpg"><br><br>
-              <button type = "button" class="calculate-button">Calculate</button>
+              <button type="button" class="calculate-button" onClick="myFunction()">Calculate</button>
               <button type = "button" class="back-button" onClick="history.go(-1);">Back</button>
-              <button type="button" class="calculate-button" onClick="myFunction()">Try it</button>
+           <div id = "output-box">
             <p id="demo"></p>
+           </div>
           </div>
         </form>
         </div>
@@ -66,7 +67,7 @@
     <script>
       function myFunction()
       {
-        var x = document.getElementById("form");
+        var x = document.getElementById("budget").placeholder;
         var text = "";
         var i;
         for (i = 0; i < x.length ;i++) {

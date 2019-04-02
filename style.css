@@ -97,6 +97,10 @@ input{
   margin-top: 4px;
   margin-bottom: 10px;
 }
+
+output-box{
+ /*i'll finish after 3380 class*/
+}
 /*Make scroll behavior scroll smoothly*/
 html{
   scroll-behavior: smooth;
