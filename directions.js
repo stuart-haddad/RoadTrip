@@ -195,6 +195,7 @@ AutocompleteDirectionsHandler.prototype.route = function() {
           // drawBoxes(boxes);
 
           var mainRoute = dir.routes[0].legs[0];
+          console.log(dir.routes[0].legs.length);
 
           var distance = mainRoute.distance.text;
           document.getElementById('distance').innerHTML = distance;
