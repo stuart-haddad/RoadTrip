@@ -93,6 +93,7 @@ function initMap() {
   var marker = new google.maps.Marker({position: batonRouge, map: map});
   directionsDisplay.setMap(map);
   new AutocompleteDirectionsHandler(map);
+
 }
 
 function AutocompleteDirectionsHandler(map) {
@@ -186,13 +187,14 @@ AutocompleteDirectionsHandler.prototype.route = function() {
           me.directionsDisplay.setDirections(response);
           var dir = me.directionsDisplay.getDirections();
 
-          //RouteBoxer
-          var routeboxer = new RouteBoxer();
-          var distanceOffPath= 0.01; // km
+          //Init RouteBoxer
+          var routeBoxer = new RouteBoxer();
+          var distanceOffPath = 10; // km
+
           //Box around the overview path of the first route
-           var path = dir.routes[0].overview_path;
-          // var bounds = routeBoxer.box(path, distanceOffPath);
-          // searchBounds(bounds);
+          var path = response.routes[0].overview_path;
+          var boxes = routeBoxer.box(path, distanceOffPath);
+          drawBoxes(boxes);
 
           var mainRoute = dir.routes[0].legs[0];
 
@@ -207,53 +209,77 @@ AutocompleteDirectionsHandler.prototype.route = function() {
           //Convert Meters to Miles and calculate gas price
           var gasCost = (mainRoute.distance.value * 0.000621371) / mpg * avgGasPrice;
           document.getElementById('costs').innerHTML = "$" + gasCost.toFixed(2);
-          window.alert("Distance: " + distance + "\nTrip Duration: " + duration + "\nGas Cost: " + gasCost.toFixed(2));
         } else {
           window.alert('Directions request failed due to ' + status);
         }
       });
 };
 
-function searchBounds(bound) {
-   for (var i = 0; i < bound; i++) {
-     (function(i) {
-       setTimeout(function() {
+// Draw the array of boxes as polylines on the map
+function drawBoxes(boxes) {
+  boxpolys = new Array(boxes.length);
+  for (var i = 0; i < boxes.length; i++) {
+    boxpolys[i] = new google.maps.Rectangle({
+      bounds: boxes[i],
+      fillOpacity: 0,
+      strokeOpacity: 1.0,
+      strokeColor: '#000000',
+      strokeWeight: 1,
+      map: map
+    });
+  }
+}
 
-         // Perform search on the bound and save the result
-         performSearch(bound[i]);
+// Clear boxes currently on the map
+function clearBoxes() {
+  if (boxpolys != null) {
+    for (var i = 0; i < boxpolys.length; i++) {
+      boxpolys[i].setMap(null);
+    }
+  }
+  boxpolys = null;
+}
 
-         //If the last box
-         if ((bound.length - 1) === i) {
-           addAllMarkers(bound);
-         }
-       }, 400 * i);
-     }(i));
-   }
- }
-
-
- function performSearch(bound) {
-   var request = {
-     bounds: bound,
-     keyword: 'bars'
-   };
-
-   currentBound = bound;
-   service.radarSearch(request, callback);
- }
-
- // Call back function from the radar search
-
- function callback(results, status) {
-   if (status !== google.maps.places.PlacesServiceStatus.OK) {
-     console.error(status);
-     return;
-   }
-
-   for (var i = 0, result; result = results[i]; i++) {
-     // Go through each result from the search and if the place exist already in our list of places then done push it in to the array
-     if (!placeExists(result.id)) {
-       allPlaces.push(result);
-     }
-   }
- }
+// function searchBounds(bound) {
+//    for (var i = 0; i < bound; i++) {
+//      (function(i) {
+//        setTimeout(function() {
+//
+//          // Perform search on the bound and save the result
+//          performSearch(bound[i]);
+//
+//          //If the last box
+//          if ((bound.length - 1) === i) {
+//            addAllMarkers(bound);
+//          }
+//        }, 400 * i);
+//      }(i));
+//    }
+//  }
+//
+//
+//  function performSearch(bound) {
+//    var request = {
+//      bounds: bound,
+//      keyword: 'bars'
+//    };
+//
+//    currentBound = bound;
+//    service.radarSearch(request, callback);
+//  }
+//
+//  // Call back function from the radar search
+//
+//  function callback(results, status) {
+//    if (status !== 'OK') {
+//      console.error(status);
+//      return;
+//    }
+//
+//    for (var i = 0, result; result = results[i]; i++) {
+//      // Go through each result from the search and if the place exist already in our list of places then done push it in to the array
+//      if (!placeExists(result.id)) {
+//        allPlaces.push(result);
+//      }
+//    }
+//  }
