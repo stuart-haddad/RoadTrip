@@ -187,14 +187,14 @@ AutocompleteDirectionsHandler.prototype.route = function() {
           me.directionsDisplay.setDirections(response);
           var dir = me.directionsDisplay.getDirections();
 
-          //Init RouteBoxer
-          var routeBoxer = new RouteBoxer();
-          var distanceOffPath = 10; // km
-
-          //Box around the overview path of the first route
-          var path = response.routes[0].overview_path;
-          var boxes = routeBoxer.box(path, distanceOffPath);
-          drawBoxes(boxes);
+          // //Init RouteBoxer
+          // var routeBoxer = new RouteBoxer();
+          // var distanceOffPath = 10; // km
+          //
+          // //Box around the overview path of the first route
+          // var path = response.routes[0].overview_path;
+          // var boxes = routeBoxer.box(path, distanceOffPath);
+          // drawBoxes(boxes);
 
           var mainRoute = dir.routes[0].legs[0];
 
