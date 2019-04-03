@@ -458,7 +458,7 @@ p{ font-size: 20px; }
 
 
 
-.home-tab:hover, .about-tab:hover, .faq-tab:hover{
+.home-tab:hover, .about-tab:hover, .budget-tab:hover{
   color: #003300;
   background-color: #99ff99;
 }
