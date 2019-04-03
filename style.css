@@ -51,7 +51,8 @@ body{
  }
 
  #origin-input,
- #destination-input {
+ #destination-input,
+ #search-input {
    background-color: #fff;
    font-family: Roboto;
    font-size: 15px;
@@ -382,8 +383,8 @@ p{ font-size: 20px; }
 .btn-group button {
   font-weight: bold;
   font-size: 20px;
-  background-color: #3366ff; /* Green background */
-  border: 1px solid #0040ff; /* Green border */
+  background-color: #3366ff; /* Blue background */
+  border: 1px solid #0040ff; /* Dark Blue border */
   color: white; /* White text */
   padding-top: 8px; /* Some padding */
   padding-bottom: 10px;
@@ -435,7 +436,7 @@ p{ font-size: 20px; }
 
 
 
-.home-tab:hover, .about-tab:hover, .faq-tab:hover{
+.home-tab:hover, .about-tab:hover, .budget-tab:hover{
   color: #003300;
   background-color: #99ff99;
 }

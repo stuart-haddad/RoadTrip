@@ -18,7 +18,7 @@
     <script src="directions.js"></script>
     <script src="key.js"></script>
     <!-- <script src="https://cdn.rawgit.com/googlemaps/v3-utility-library/master/routeboxer/src/RouteBoxer.js"></script> -->
-    <script type="text/javascript" src="routeboxer/src/RouteBoxer.js"></script>
+    <!-- <script type="text/javascript" src="routeboxer/src/RouteBoxer.js"></script> -->
   </head>
   <body>
     <div id="main-container">
@@ -40,6 +40,9 @@
           <input id="destination-input" class="controls" type="text"
               placeholder="Enter a destination location">
 
+          <input id="search-input" class="controls" type="text"
+              placeholder="Enter a search query">
+
           <div id="mode-selector" class="controls">
             <input type="radio" name="type" id="changemode-walking" checked="checked">
             <label for="changemode-walking">Walking</label>
@@ -59,6 +62,10 @@
           <h4 style="text-align: center;">Created by: <?php echo $_POST["name"]?></h4>
           <table style="width: 100%;border-collapse: separate; border-spacing: 15px;">
             <tr>
+              <td class="data-label">Start Date:</td>
+              <td id="start-date"><? $start = $_POST["start-date"]; echo $start; ?></td>
+            </tr>
+            <tr>
               <td class="data-label">MPG of Car</td>
               <td id="mpg"><?php $mpg = $_POST["mpg"]; echo $mpg;?></td>
             </tr>
@@ -74,11 +81,12 @@
               <td class="data-label">Avg. Gas Cost:</td>
               <td id="costs"></td>
             </tr>
-            <tr>
-              <td class="data-label">Start Date:</td>
-              <td id="start-date"></td>
-            </tr>
           </table>
+            <div class="btn-group">
+               <a href="InterestQuery.html">
+                <button>Find Interests</button>
+              </a>
+            </div>
         </div>
       </div>
   </div>
