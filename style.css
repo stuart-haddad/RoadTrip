@@ -145,6 +145,11 @@ h1{
   padding-top: 5%;
 }
 
+/*Format for Heading 3 tag*/
+.tabcontent{
+  font-family: sans-serif;
+}
+
 /*Format for <p> tag*/
 p{ font-size: 20px; }
 
@@ -320,7 +325,7 @@ p{ font-size: 20px; }
   border: none;
   display: inline-block;
   margin-right: -4px;
-  left: 5%;
+  left: 30%;
   position: relative;
   cursor: pointer;
   margin-left: 8px;
