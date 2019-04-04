@@ -204,8 +204,6 @@ AutocompleteDirectionsHandler.prototype.route = function() {
           // Every tenth of the journey, make a Place Query
           var searchInterval = Math.round(arrayPath.length / 25);
           console.log(arrayPath.length);
-          // for(var i = 0; i < arrayPath.length; i++)
-            // console.log(arrayPath[i]);
 
           //Paint Along Search Path
           var searchPoint = 0;
