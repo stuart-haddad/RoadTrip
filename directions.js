@@ -190,7 +190,7 @@ AutocompleteDirectionsHandler.prototype.route = function() {
           me.directionsDisplay.setDirections(response);
           var dir = me.directionsDisplay.getDirections();
 
-          // //Init RouteBoxer
+          //Init RouteBoxer
           // var routeBoxer = new RouteBoxer();
           // var distanceOffPath = 10; // km
           //
@@ -208,21 +208,21 @@ AutocompleteDirectionsHandler.prototype.route = function() {
             // console.log(arrayPath[i]);
 
           //Paint Along Search Path
-          // var searchPoint = 0;
-          // while (searchPoint < arrayPath.length)
-          // {
-          //   var cityCircle = new google.maps.Circle({
-          //     strokeColor: '#FF0000',
-          //     strokeOpacity: 0.8,
-          //     strokeWeight: 2,
-          //     fillColor: '#FF0000',
-          //     fillOpacity: 0.35,
-          //     map: map,
-          //     center: arrayPath[searchPoint],
-          //     radius: 5000
-          //   });
-          //   searchPoint += searchInterval;
-          // }
+          var searchPoint = 0;
+          while (searchPoint < arrayPath.length)
+          {
+            var cityCircle = new google.maps.Circle({
+              strokeColor: '#FF0000',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: '#FF0000',
+              fillOpacity: 0.35,
+              map: map,
+              center: arrayPath[searchPoint],
+              radius: 5000
+            });
+            searchPoint += searchInterval;
+          }
 
           var distance = mainRoute.distance.text;
           document.getElementById('distance').innerHTML = distance;
@@ -240,19 +240,19 @@ AutocompleteDirectionsHandler.prototype.route = function() {
 };
 
 // Draw the array of boxes as polylines on the map
-// function drawBoxes(boxes) {
-//   boxpolys = new Array(boxes.length);
-//   for (var i = 0; i < boxes.length; i++) {
-//     boxpolys[i] = new google.maps.Rectangle({
-//       bounds: boxes[i],
-//       fillOpacity: 0,
-//       strokeOpacity: 1.0,
-//       strokeColor: '#000000',
-//       strokeWeight: 1,
-//       map: map
-//     });
-//   }
-// }
+function drawBoxes(boxes) {
+  boxpolys = new Array(boxes.length);
+  for (var i = 0; i < boxes.length; i++) {
+    boxpolys[i] = new google.maps.Rectangle({
+      bounds: boxes[i],
+      fillOpacity: 0,
+      strokeOpacity: 1.0,
+      strokeColor: '#000000',
+      strokeWeight: 1,
+      map: map
+    });
+  }
+}
 //
 // // Clear boxes currently on the map
 // function clearBoxes() {

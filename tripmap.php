@@ -66,7 +66,7 @@
               <td id="start-date"><? $start = $_POST["start-date"]; echo $start; ?></td>
             </tr>
             <tr>
-              <td class="data-label">MPG of Car</td>
+              <td class="data-label">MPG of Car:</td>
               <td id="mpg"><?php $mpg = $_POST["mpg"]; echo $mpg;?></td>
             </tr>
             <tr>
