@@ -190,15 +190,6 @@ AutocompleteDirectionsHandler.prototype.route = function() {
           me.directionsDisplay.setDirections(response);
           var dir = me.directionsDisplay.getDirections();
 
-          //Init RouteBoxer
-          // var routeBoxer = new RouteBoxer();
-          // var distanceOffPath = 10; // km
-          //
-          // //Box around the overview path of the first route
-          // var path = response.routes[0].overview_path;
-          // var boxes = routeBoxer.box(path, distanceOffPath);
-          // drawBoxes(boxes);
-
           var mainRoute = dir.routes[0].legs[0];
           var arrayPath = dir.routes[0].overview_path;
           // Every tenth of the journey, make a Place Query
@@ -236,72 +227,3 @@ AutocompleteDirectionsHandler.prototype.route = function() {
         }
       });
 };
-
-// Draw the array of boxes as polylines on the map
-function drawBoxes(boxes) {
-  boxpolys = new Array(boxes.length);
-  for (var i = 0; i < boxes.length; i++) {
-    boxpolys[i] = new google.maps.Rectangle({
-      bounds: boxes[i],
-      fillOpacity: 0,
-      strokeOpacity: 1.0,
-      strokeColor: '#000000',
-      strokeWeight: 1,
-      map: map
-    });
-  }
-}
-//
-// // Clear boxes currently on the map
-// function clearBoxes() {
-//   if (boxpolys != null) {
-//     for (var i = 0; i < boxpolys.length; i++) {
-//       boxpolys[i].setMap(null);
-//     }
-//   }
-//   boxpolys = null;
-// }
-
-// function searchBounds(bound) {
-//    for (var i = 0; i < bound; i++) {
-//      (function(i) {
-//        setTimeout(function() {
-//
-//          // Perform search on the bound and save the result
-//          performSearch(bound[i]);
-//
-//          //If the last box
-//          if ((bound.length - 1) === i) {
-//            addAllMarkers(bound);
-//          }
-//        }, 400 * i);
-//      }(i));
-//    }
-//  }
-//
-//
-//  function performSearch(bound) {
-//    var request = {
-//      bounds: bound,
-//      keyword: 'bars'
-//    };
-//
-//    currentBound = bound;
-//    service.radarSearch(request, callback);
-//  }
-//
-//  // Call back function from the radar search
-//
-//  function callback(results, status) {
-//    if (status !== 'OK') {
-//      console.error(status);
-//      return;
-//    }
-//
-//    for (var i = 0, result; result = results[i]; i++) {
-//      // Go through each result from the search and if the place exist already in our list of places then done push it in to the array
-//      if (!placeExists(result.id)) {
-//        allPlaces.push(result);
-//      }
-//    }
-//  }
