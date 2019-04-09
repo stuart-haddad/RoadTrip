@@ -102,7 +102,12 @@ input{
 }
 
 output-box{
- /*i'll finish after 3380 class*/
+ height: 50px;
+ width: 100%;
+ font-family: sans-serif;
+ color: black;
+ padding-left: 50px;
+ text-align: center;
 }
 /*Make scroll behavior scroll smoothly*/
 html{
