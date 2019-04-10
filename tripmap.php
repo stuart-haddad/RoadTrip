@@ -80,11 +80,11 @@
               <td id="costs"></td>
             </tr>
           </table>
-            <div class="btn-group">
+            <!-- <div class="btn-group">
                <a href="InterestQuery.html">
                 <button>Find Interests</button>
               </a>
-            </div>
+            </div> -->
         </div>
       </div>
   </div>

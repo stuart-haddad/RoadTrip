@@ -2,6 +2,7 @@ var map;
 var geocoder;
 var delay = 200;
 var searchInterval = 0;
+var infowindow;
 
 function initMap() {
   var directionsService = new google.maps.DirectionsService();
@@ -124,10 +125,11 @@ function AutocompleteDirectionsHandler(map) {
   // Specify just the place data fields that you need.
   originAutocomplete.setFields(['place_id']);
 
-  var destinationAutocomplete =
-      new google.maps.places.Autocomplete(destinationInput);
+  var destinationAutocomplete = new google.maps.places.Autocomplete(destinationInput);
   // Specify just the place data fields that you need.
   destinationAutocomplete.setFields(['place_id']);
+
+  var searchBox = new google.maps.places.SearchBox(searchInput);
 
   this.setupClickListener('changemode-walking', 'WALKING');
   this.setupClickListener('changemode-transit', 'TRANSIT');
@@ -139,7 +141,61 @@ function AutocompleteDirectionsHandler(map) {
   this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
   this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
   this.map.controls[google.maps.ControlPosition.TOP_RIGHT].push(searchInput);
-  //this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
+
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
+
+  var markers = [];
+  // Listen for the event fired when the user selects a prediction and retrieve
+  // more details for that place.
+  searchBox.addListener('places_changed', function() {
+    var places = searchBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // Clear out the old markers.
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+    markers = [];
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      createMarker(place);
+      // var icon = {
+      //   url: place.icon,
+      //   size: new google.maps.Size(71, 71),
+      //   origin: new google.maps.Point(0, 0),
+      //   anchor: new google.maps.Point(17, 34),
+      //   scaledSize: new google.maps.Size(25, 25)
+      // };
+      //
+      // // Create a marker for each place.
+      // markers.push(new google.maps.Marker({
+      //   map: map,
+      //   icon: icon,
+      //   title: place.name,
+      //   position: place.geometry.location
+      // }));
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+  });
 }
 
 // Sets a listener on a radio button to change the filter type on Places
@@ -197,22 +253,66 @@ AutocompleteDirectionsHandler.prototype.route = function() {
 
           var mainRoute = dir.routes[0].legs[0];
           var arrayPath = dir.routes[0].overview_path;
-
+          var partway = Math.round(arrayPath.length / 20);
           // for (var i = 1; i < arrayPath.length; i++) {
           // The line below throws OVER_QUERY_LIMIT
           //   window.setTimeout(directionsQuery(arrayPath, i), 500 * i);
           // }
 
+          infowindow = new google.maps.InfoWindow();
+
+          var cityCircle = new google.maps.Circle({
+              strokeColor: '#FF0000',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: '#FF0000',
+              fillOpacity: 0.35,
+              map: map,
+              center: arrayPath[0],
+              radius: 5000
+            });
+
+          var service = new google.maps.places.PlacesService(map);
+
+          var request = {
+            query: 'Louisiana State University',
+            fields: ['name', 'geometry'],
+            locationBias: cityCircle
+          };
+
+          service.findPlaceFromQuery(request, function(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+              for (var i = 0; i < results.length; i++) {
+                createMarker(results[i]);
+              }
+              //map.setCenter(results[0].geometry.location);
+            }
+          });
+
           for (var i = 1; i < arrayPath.length; i++)
           {
-            var service = new google.maps.DistanceMatrixService();
-            service.getDistanceMatrix(
-              {
-                origins: [arrayPath[0]],
-                destinations: [arrayPath[i]],
-                travelMode: 'DRIVING'
-              }, callback);
+            // console.log(arrayPath[i]);
+            // var service = new google.maps.DistanceMatrixService();
+            // service.getDistanceMatrix(
+            //   {
+            //     origins: [arrayPath[0]],
+            //     destinations: [arrayPath[i]],
+            //     travelMode: 'DRIVING'
+            //   }, callback);
+
+
+            // var cityCircle = new google.maps.Circle({
+            //     strokeColor: '#FF0000',
+            //     strokeOpacity: 0.8,
+            //     strokeWeight: 2,
+            //     fillColor: '#FF0000',
+            //     fillOpacity: 0.35,
+            //     map: map,
+            //     center: arrayPath[i],
+            //     radius: 5000
+            //   });
           }
+          //nearbySearch('bars', arrayPath[0].lat(), arrayPath[0].lng())
 
           //Paint Along Search Path
           // var searchPoint = 0;
@@ -250,6 +350,7 @@ function callback(response, status) {
   if (status == 'OK') {
   var origins = response.originAddresses;
   var destinations = response.destinationAddresses;
+
   for (var i = 0; i < origins.length; i++) {
     var results = response.rows[i].elements;
     for (var j = 0; j < results.length; j++) {
@@ -258,6 +359,7 @@ function callback(response, status) {
       var duration = element.duration.text;
       var from = origins[i];
       var to = destinations[j];
+      console.log(distance);
       searchInterval += element.distance.value;
       // console.log(searchInterval);
       if (searchInterval >= 10000)
@@ -265,7 +367,7 @@ function callback(response, status) {
         searchInterval = 0;
         //Both of the below throw OVER_QUERY_LIMIT
         // geocodeAddress(to);
-        // window.setTimeout(codeAddress(to), 1000);
+        //codeAddress(to);
       }
     }
   }
@@ -291,48 +393,15 @@ function codeAddress(addr) {
   });
 }
 
-function geocodeAddress(addr){
-  fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + addr + '&key=')
-    .then(function(response) {
-      return response.json();
-      })
-      .then(function(myJson) {
-        console.log(JSON.stringify(myJson));
-      });
-}
+function createMarker(place) {
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
 
-function nearbySearch(keyword,lat,long){
-  fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+','+long+'&radius=5000&keyword='+keyword+'&key=')
-    .then(function(response) {
-      return response.json();
-      })
-      .then(function(myJson) {
-        console.log(JSON.stringify(myJson));
-      });
-}
-
-function directionsQuery(arr, index) {
-  arrayPath = arr;
-  var dest = index;
-  var distanceCheck = new google.maps.DirectionsService();
-  var distanceDisplay = new google.maps.DirectionsRenderer();
-  var startCheck = arrayPath[0];
-  var endCheck = arrayPath[dest];
-  distanceCheck.route(
-    {
-      origin: startCheck,
-      destination: endCheck,
-      travelMode: 'DRIVING'
-    },
-  function(response, status) {
-    if (status === 'OK') {
-      distanceDisplay.setDirections(response);
-      var segment = distanceDisplay.getDirections();
-      var segmentDistance = segment.routes[0].legs[0].distance.value;
-      console.log(segmentDistance);
-    }
-    else {
-      window.alert('Directions request failed due to ' + status);
-    }
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.setContent("Rating:" + place.rating.toString());
+    infowindow.open(map, this);
   });
 }
