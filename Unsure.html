@@ -5,6 +5,8 @@
     <title>Road Trip - About Us</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="images/roadtrip-logo-small.png"/>
+    <script src="directions.js"></script>
+    <scrip src="key.js"></script>
   </head>
   <body>
     <div class="boxhead">
@@ -30,6 +32,9 @@
             </p>
             <button type = "button" class="back-button" onClick="history.go(-1);" style="left: 50px;">Back</div>
           </div>
+        </div>
+        <div id="map-container">
+          <div id="map"></div>
         </div>
         <div class = "tab">
           <button class = "tablinks" onclick = "openTab(event,'Alabama')">Alabama</button>
@@ -85,1374 +90,1377 @@
         </div>
         <div id = "Alabama" class = "tabcontent">
           <h3>U.S Space and Rocket Center</h3>
-          <p>Located in Huntsville, Alabama, this facility is considered the birthplace</p>
-          <p>of America's space program. It was also the final place to refine and set up</p>
-          <p>the Apollo rocket. Today, it is a large mueseum that commemorates these events</p>
-          <p>and offers number of educational camps for kids to learn about the space program.</p><p></p>
-          <p>Address: 1 Tranquilty Base Huntsville, AL 35805</p>
-          <p>Hours of Operation: Everyday 9-5</p>
-          <p>Ticket Prices: Children - $17, Adults - $25</p>
-          <p>Website: <a href = "https://rocketcenter.com/">https://rocketcenter.com/</a></p>
+          <p>Located in Huntsville, Alabama, this facility is considered the birthplace<br>
+            of America's space program. It was also the final place to refine and set up<br>
+            the Apollo rocket. Today, it is a large mueseum that commemorates these events<br>
+            and offers number of educational camps for kids to learn about the space program.<br>
+            Address: 1 Tranquilty Base Huntsville, AL 35805<br>
+            Hours of Operation: Everyday 9-5<br>
+            Ticket Prices: Children - $17, Adults - $25<br>
+            Website: <a href = "https://rocketcenter.com/">https://rocketcenter.com/</a></p>
 
           <h3>USS Alabama Battleship Memorial Park</h3>
-          <p>Home to a explorable ship and submarine, as well as more than 25 military aircrafts,</p>
-          <p>this park is labeled as a "must-see" for people that like big ships and American history.</p>
-          <p>The USS Alabama Battleship and the USS DRUM Submarine, the oldest submarine on display in the world</p>
-          <p>are both open as floating museums, which both take roughly two hours to explore each.</p>
-          <p>Address: 2703 Battleship Pkwy, Mobile, AL 36603</p>
-          <p>Hours of Operation: Everyday 9-6 from April-September and 9-5 All other months.</p>
-          <p>Ticket Prices: Children - $6, Adults - $15</p>
-          <p>Website: <a href = "https://www.ussalabama.com/">https://www.ussalabama.com/</a></p>
+          <p>Home to a explorable ship and submarine, as well as more than 25 military aircrafts,<br>
+          this park is labeled as a "must-see" for people that like big ships and American history.<br>
+          The USS Alabama Battleship and the USS DRUM Submarine, the oldest submarine on display in the world<br>
+          are both open as floating museums, which both take roughly two hours to explore each.<br>
+          Address: 2703 Battleship Pkwy, Mobile, AL 36603<br>
+          Hours of Operation: Everyday 9-6 from April-September and 9-5 All other months.<br>
+          Ticket Prices: Children - $6, Adults - $15<br>
+          Website: <a href = "https://www.ussalabama.com/">https://www.ussalabama.com/</a></p>
 
           <h3>Gulf Shores</h3>
-          <p>From those that love white sandy beaches and soaking in the sun, to those that enjoy</p>
-          <p>deep sea fishing, boating, and other water activities, this gorgeous city is the place</p>
-          <p>for you. They were affected in the 2010 BP oil spill, but have since bounced back to their</p>
-          <p>stunning beauty. There are also many other attractions in the area including the Alabama</p>
-          <p>Gulf Coast Zoo, the Craft Farms Pelican Place, and the water park, Waterville USA</p>
-          <p>Address: 3150 Gulf Shores Pkwy, Gulf Shores, AL 36542</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website: <a href ="https://www.gulfshores.com/">https://www.gulfshores.com/</a></p>
+          <p>From those that love white sandy beaches and soaking in the sun, to those that enjoy<br>
+          deep sea fishing, boating, and other water activities, this gorgeous city is the place<br>
+          for you. They were affected in the 2010 BP oil spill, but have since bounced back to their<br>
+          stunning beauty. There are also many other attractions in the area including the Alabama<br>
+          Gulf Coast Zoo, the Craft Farms Pelican Place, and the water park, Waterville USA<br>
+          Address: 3150 Gulf Shores Pkwy, Gulf Shores, AL 36542<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website: <a href ="https://www.gulfshores.com/">https://www.gulfshores.com/</a></p>
 
           <h3>Huntsville Botanical Garden</h3>
-          <p>Over 112 acres of beautiful scenery full of peace in serenity, these gardens can be viewed</p>
-          <p>all year long. Visitors love to come and view the many exhibits open to the public, including</p>
-          <p>the butterfly park, multiple aqautic displays, wildflower center, and nature center. There is also</p>
-          <p>a Biblical garden which contains many of the plants mentioned in the Bible, as well as a Vegetable</p>
-          <p>garden which provides helpful tips for home gardeners</p>
-          <p>Address: 4747 Bob Wallace Ave SW, Huntsville, AL 35805</p>
-          <p>Hours of Operation: Monday-Saturday 9-5, Sunday 11-5</p>
-          <p>Ticket Prices: Children - $9, Adults - $14</p>
-          <p>Website:<a href ="http://hsvbg.org/">http://hsvbg.org/</a></p>
+          <p>Over 112 acres of beautiful scenery full of peace in serenity, these gardens can be viewed<br>
+          all year long. Visitors love to come and view the many exhibits open to the public, including<br>
+          the butterfly park, multiple aqautic displays, wildflower center, and nature center. There is also<br>
+          a Biblical garden which contains many of the plants mentioned in the Bible, as well as a Vegetable<br>
+          garden which provides helpful tips for home gardeners<br>
+          Address: 4747 Bob Wallace Ave SW, Huntsville, AL 35805<br>
+          Hours of Operation: Monday-Saturday 9-5, Sunday 11-5<br>
+          Ticket Prices: Children - $9, Adults - $14<br>
+          Website:<a href ="http://hsvbg.org/">http://hsvbg.org/</a></p>
 
           <h3>Birmingham Civil Rights Institute</h3>
-          <p>This large museum catalogs the struggle for Civil Rights, that started in Birmingham, and</p>
-          <p>and progressed from there. It also holds regular exhibitions, traveling exhibits, and sometimes</p>
-          <p>musical shows for locals and tourists alike.</p>
-          <p>Address: 520 16th St N, Birmingham, AL 35203</p>
-          <p>Hours of Operation: Tuesday-Saturday 10-5, Sunday 1-5</p>
-          <p>Ticket Prices: Children - $5, Adults - $15</p>
-          <p>Website: <a href =   "http://www.bcri.org/">http://www.bcri.org/</a></p>
+          <p>This large museum catalogs the struggle for Civil Rights, that started in Birmingham, and<br>
+          and progressed from there. It also holds regular exhibitions, traveling exhibits, and sometimes<br>
+          musical shows for locals and tourists alike.<br>
+          Address: 520 16th St N, Birmingham, AL 35203<br>
+          Hours of Operation: Tuesday-Saturday 10-5, Sunday 1-5<br>
+          Ticket Prices: Children - $5, Adults - $15<br>
+          Website: <a href =   "http://www.bcri.org/">http://www.bcri.org/</a></p>
         </div>
         <div id = "Alaska" class = "tabcontent">
           <h3>Denali National Park</h3>
-          <p>Located in the northern part of the Alaska Range, this National Park is on of the largest in the US</p>
-          <p>and encompasses North America's highest mountain, Denali (also dubbed Mount McKinley), which stands tall</p>
-          <p>at 20,320 feet. It is a popular spot for mountain climbers, as well as wildlife lovers and photographers</p>
-          <p>due to its spectacular views, from snow draped mountain ranges, to glacial rivers, to the Northern Lights</p>
-          <p>at night. It is also popular among dog lovers because of the parks Sled Dog Kennels, which offer demonstrations</p>
-          <p>and show off their energetic huskies</p>
-          <p>Address: Milepost 240, George Parks Hwy, Denali National Park, Alaska</p>
-          <p>Hours of Operation: Open all year</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href ="http://www.nps.gov/dena/index.htm">http://www.nps.gov/dena/index.htm</a></p>
+          <p>Located in the northern part of the Alaska Range, this National Park is on of the largest in the US<br>
+          and encompasses North America's highest mountain, Denali (also dubbed Mount McKinley), which stands tall<br>
+          at 20,320 feet. It is a popular spot for mountain climbers, as well as wildlife lovers and photographers<br>
+          due to its spectacular views, from snow draped mountain ranges, to glacial rivers, to the Northern Lights<br>
+          at night. It is also popular among dog lovers because of the parks Sled Dog Kennels, which offer demonstrations<br>
+          and show off their energetic huskies<br>
+          Address: Milepost 240, George Parks Hwy, Denali National Park, Alaska<br>
+          Hours of Operation: Open all year<br>
+          Ticket Prices: N/A<br>
+          Website:<a href ="http://www.nps.gov/dena/index.htm">http://www.nps.gov/dena/index.htm</a></p>
 
           <h3>Tracy Arm Fjord</h3>
-          <p>A popular destination for cruise ships and boat tours, this expansive fjord offers amazing views of glaciers,</p>
-          <p>majestic waterfalls, and a great view of the Tongass National Forest. There are often wildlife sightings</p>
-          <p>in this area, including moose, brown bears, whales, and seals.</p>
-          <p>Address: N/A</p>
-          <p>Hours of Operation: Depends on the tour guide/cruise</p>
-          <p>Ticket Prices: Depends on the tour guide/cruise</p>
-          <p>Website: N/A<a href =""></a></p>
+          <p>A popular destination for cruise ships and boat tours, this expansive fjord offers amazing views of glaciers,<br>
+          majestic waterfalls, and a great view of the Tongass National Forest. There are often wildlife sightings<br>
+          in this area, including moose, brown bears, whales, and seals.<br>
+          Address: N/A<br>
+          Hours of Operation: Depends on the tour guide/cruise<br>
+          Ticket Prices: Depends on the tour guide/cruise<br>
+          Website: N/A<a href =""></a></p>
 
           <h3>Inside Passage</h3>
-          <p>Another popular waterway destination, you can see more beautiful views of glaciers, snowcapped mountains,</p>
-          <p>and the Prince of Wales island, which is one of the largest islands in the US. Depending on your waterway</p>
-          <p>guide, you may stop in Skagway which has its Klondike Gold Rush National Historical Park, the once-chief</p>
-          <p>town of Russion America Sitka, or Ketchikan, where large totems are on display both at Totem Bight State</p>
-          <p>Historic Park and the Totem Heritage Center</p>
-          <p>Address: N/A</p>
-          <p>Hours of Operation: Depend on waterway guide</p>
-          <p>Ticket Prices: Depends on waterway guide</p>
-          <p>Website:<a href ="https://www.fs.usda.gov/tongass/">https://www.fs.usda.gov/tongass/</a></p>
+          <p>Another popular waterway destination, you can see more beautiful views of glaciers, snowcapped mountains,<br>
+          and the Prince of Wales island, which is one of the largest islands in the US. Depending on your waterway<br>
+          guide, you may stop in Skagway which has its Klondike Gold Rush National Historical Park, the once-chief<br>
+          town of Russion America Sitka, or Ketchikan, where large totems are on display both at Totem Bight State<br>
+          Historic Park and the Totem Heritage Center<br>
+          Address: N/A<br>
+          Hours of Operation: Depend on waterway guide<br>
+          Ticket Prices: Depends on waterway guide<br>
+          Website:<a href ="https://www.fs.usda.gov/tongass/">https://www.fs.usda.gov/tongass/</a></p>
 
           <h3>Totem Bight State Historic Park</h3>
-          <p>This Historic Park is home to a number of totem poles that have been restored or recreated since 1938 by cooperation</p>
-          <p>betweeen the US Forest Services and carvers from the older generations. It is a popular tourist attraction because it</p>
-          <p>shows some of the craftsmenship and culture of the native tribes that used to inhabit Alaska.</p>
-          <p>Address: Ketchikan Ranger Station, 9883 North Tongass Hwy, Ketchikan, Alaska</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href ="http://dnr.alaska.gov/parks/units/totembgh.htm">http://dnr.alaska.gov/parks/units/totembgh.htm</a></p>
+          <p>This Historic Park is home to a number of totem poles that have been restored or recreated since 1938 by cooperation<br>
+          betweeen the US Forest Services and carvers from the older generations. It is a popular tourist attraction because it<br>
+          shows some of the craftsmenship and culture of the native tribes that used to inhabit Alaska.<br>
+          Address: Ketchikan Ranger Station, 9883 North Tongass Hwy, Ketchikan, Alaska<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href ="http://dnr.alaska.gov/parks/units/totembgh.htm">http://dnr.alaska.gov/parks/units/totembgh.htm</a></p>
 
           <h3>Klondike Gold Rush National Historical Park</h3>
-          <p>Another popular National Park for tourists, this park is home to a number of restored buildings, as well as the</p>
-          <p>restored White Pass and Yukon Route Railway, which leaves from Skagway, Alaska, and climbs up to White Pass,</p>
-          <p>which sits at an elevation of 2865 feet, to the depot which houses the visitor center</p>
-          <p>Address: Skagway, Alaska</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href ="https://www.nps.gov/klgo/index.htm">https://www.nps.gov/klgo/index.htm</a></p>
+          <p>Another popular National Park for tourists, this park is home to a number of restored buildings, as well as the<br>
+          restored White Pass and Yukon Route Railway, which leaves from Skagway, Alaska, and climbs up to White Pass,<br>
+          which sits at an elevation of 2865 feet, to the depot which houses the visitor center<br>
+          Address: Skagway, Alaska<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href ="https://www.nps.gov/klgo/index.htm">https://www.nps.gov/klgo/index.htm</a></p>
         </div>
         <div id = "Arizona" class = "tabcontent">
 
           <h3>Grand Canyon</h3>
-          <p>Popular for its majestic views in the afternoon sun, the Grand Canyon is a wonder to behold. Many people</p>
-          <p>hike down the Grand Canyon, or take a helicopter flight over and through the canyon.</p>
-          <p>Address: Northwest Arizona</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website: N/A<a href =""></a></p>
+          <p>Popular for its majestic views in the afternoon sun, the Grand Canyon is a wonder to behold. Many people<br>
+          hike down the Grand Canyon, or take a helicopter flight over and through the canyon.<br>
+          Address: Northwest Arizona<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website: N/A<a href =""></a></p>
 
           <h3>Hoover Dam</h3>
-          <p>Known as one of the world's greatest engineering marvels, this massive structure was created in 1935 and links</p>
-          <p>Nevada and Arizona. It is 726 feet high and 1244 feet long, and holds back Lake Mead, the largest artificial lake</p>
-          <p>in the US.
-          <p>Address: Border of Arizona and Nevada</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website: N/A<a href =""></a></p>
+          <p>Known as one of the world's greatest engineering marvels, this massive structure was created in 1935 and links<br>
+          Nevada and Arizona. It is 726 feet high and 1244 feet long, and holds back Lake Mead, the largest artificial lake<br>
+          in the US.
+          Address: Border of Arizona and Nevada<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website: N/A<a href =""></a></p>
 
           <h3>Havasu Falls</h3>
-          <p>Located near Supai on the Havasupai Indian Reservation, these 100 foot falls, while difficult to reach, are worth</p>
-          <p>the work. The pools at the base of the falls have a bluish green tint to the water, and are popular as bathing pools</p>
-          <p>because the minerals in the water make you feel refreshed. Nearby 450 Havasupai Indians live a secluded life, so you</p>
-          <p>you must have a reservation and obtain a permit. You also can not drive there, so you either need to hike, ride</p>
-          <p>a mule or horse, or take a helicopter to reach these falls.</p>
-          <p>Address: Havasupai Indian Reservation</p>
-          <p>Hours of Operation: Reservations opened in February for this year.</p>
-          <p>Ticket Prices: Depends on reservation agency</p>
-          <p>Website:<a href ="http://theofficialhavasupaitribe.com/">http://theofficialhavasupaitribe.com/</a></p>
+          <p>Located near Supai on the Havasupai Indian Reservation, these 100 foot falls, while difficult to reach, are worth<br>
+          the work. The pools at the base of the falls have a bluish green tint to the water, and are popular as bathing pools<br>
+          because the minerals in the water make you feel refreshed. Nearby 450 Havasupai Indians live a secluded life, so you<br>
+          you must have a reservation and obtain a permit. You also can not drive there, so you either need to hike, ride<br>
+          a mule or horse, or take a helicopter to reach these falls.<br>
+          Address: Havasupai Indian Reservation<br>
+          Hours of Operation: Reservations opened in February for this year.<br>
+          Ticket Prices: Depends on reservation agency<br>
+          Website:<a href ="http://theofficialhavasupaitribe.com/">http://theofficialhavasupaitribe.com/</a></p>
 
           <h3>Tombstone</h3>
-          <p>This little town offers a modern look at an Old West town. On a daily basis, staged gunfights in the streets, and</p>
-          <p>characters walking through town in period costume recreate the glory days of this town. You can also see some of the</p>
-          <p>town's history in the number of historic sites around town, including the O.K. Corral and the Boothill Graveyard</p>
-          <p>Address: Tombstone, Arizona</p>
-          <p>Hours of Operation: Most attractions are open 9-6</p>
-          <p>Ticket Prices: N/A unless you pay for attractions</p>
-          <p>Website:<a href ="https://tombstoneweb.com/">https://tombstoneweb.com/</a></p>
+          <p>This little town offers a modern look at an Old West town. On a daily basis, staged gunfights in the streets, and<br>
+          characters walking through town in period costume recreate the glory days of this town. You can also see some of the<br>
+          town's history in the number of historic sites around town, including the O.K. Corral and the Boothill Graveyard<br>
+          Address: Tombstone, Arizona<br>
+          Hours of Operation: Most attractions are open 9-6<br>
+          Ticket Prices: N/A unless you pay for attractions<br>
+          Website:<a href ="https://tombstoneweb.com/">https://tombstoneweb.com/</a></p>
 
           <h3>Petrified Forest National Park</h3>
-          <p>Home to numerous large pieces of petrified wood, and fossilized plants, fish, and reptiles. You can drive through</p>
-          <p>the park to see the different pieces, or you can park at the Visitor Center and walk through short interpretive</p>
-          <p>trails to get close up looks at some of these fossils. You can also check out the Visitor Center for insight into</p>
-          <p>the ecology and geology of the park.</p>
-          <p>Address: 1 Park Road, #2217 Petrified Forest, AZ 86028</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href ="https://www.nps.gov/pefo/index.htm">https://www.nps.gov/pefo/index.htm</a></p>
+          <p>Home to numerous large pieces of petrified wood, and fossilized plants, fish, and reptiles. You can drive through<br>
+          the park to see the different pieces, or you can park at the Visitor Center and walk through short interpretive<br>
+          trails to get close up looks at some of these fossils. You can also check out the Visitor Center for insight into<br>
+          the ecology and geology of the park.<br>
+          Address: 1 Park Road, #2217 Petrified Forest, AZ 86028<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href ="https://www.nps.gov/pefo/index.htm">https://www.nps.gov/pefo/index.htm</a></p>
         </div>
         <div id = "Arkansas" class = "tabcontent">
 
           <h3>Hot Springs National Park</h3>
-          <p>If you are looking for a spa-like retreat, these hot springs, located in the Ouachita Mountains are the place</p>
-          <p>for you. The park contains a number old bathhouses that you can visit and experience what American Indians</p>
-          <p>believed to be healing waters. You can also check out the observation tower and numerous hiking trails around</p>
-          <p>the park.</p>
-          <p>Address: 369 Central Ave, Hot Springs, Arkansas</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href ="https://www.nps.gov/hosp/index.htm">https://www.nps.gov/hosp/index.htm</a></p>
+          <p>If you are looking for a spa-like retreat, these hot springs, located in the Ouachita Mountains are the place<br>
+          for you. The park contains a number old bathhouses that you can visit and experience what American Indians<br>
+          believed to be healing waters. You can also check out the observation tower and numerous hiking trails around<br>
+          the park.<br>
+          Address: 369 Central Ave, Hot Springs, Arkansas<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href ="https://www.nps.gov/hosp/index.htm">https://www.nps.gov/hosp/index.htm</a></p>
 
           <h3>Arkansas Air Museum</h3>
-          <p>This museum is in the form of a 1940's aircraft carrier, and houses a large display of 1920's and 1930's</p>
-          <p>racing planes, biplanes, and history of military aviation and civilian air travel. Many of the vintage</p>
-          <p>aircraft are even in flying condition and are occasionally brought to air shows.</p>
-          <p>Address: 4290 South School Avenue, Fayetteville, Arkansas</p>
-          <p>Hours of Operation: Sunday-Friday 11-4:30, Saturday 10-4:30</p>
-          <p>Ticket Prices: Children-$5, Adults-$10, Mom + Dad + kids unders 16-$25</p>
-          <p>Website:<a href = "https://www.arkansasairandmilitary.com/">https://www.arkansasairandmilitary.com/</a></p>
+          <p>This museum is in the form of a 1940's aircraft carrier, and houses a large display of 1920's and 1930's<br>
+          racing planes, biplanes, and history of military aviation and civilian air travel. Many of the vintage<br>
+          aircraft are even in flying condition and are occasionally brought to air shows.<br>
+          Address: 4290 South School Avenue, Fayetteville, Arkansas<br>
+          Hours of Operation: Sunday-Friday 11-4:30, Saturday 10-4:30<br>
+          Ticket Prices: Children-$5, Adults-$10, Mom + Dad + kids unders 16-$25<br>
+          Website:<a href = "https://www.arkansasairandmilitary.com/">https://www.arkansasairandmilitary.com/</a></p>
 
           <h3>Crater of Diamonds State Park</h3>
-          <p>Located in Southwestern Arkansas, this tourist attraction has been the only source of diamonds in the US open</p>
-          <p>to the public. Visitors can find diamonds here ranging in color from white and brown to yellow, and are allowed</p>
-          <p>to keep whatever they find. THere is also a museum about the area and a campground you can stay in.</p>
-          <p>Address: 209 State Park Road, Murfreesboro, Arkansas</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.arkansasstateparks.com/parks/crater-diamonds-state-park">https://www.arkansasstateparks.com/parks/crater-diamonds-state-park</a></p>
+          <p>Located in Southwestern Arkansas, this tourist attraction has been the only source of diamonds in the US open<br>
+          to the public. Visitors can find diamonds here ranging in color from white and brown to yellow, and are allowed<br>
+          to keep whatever they find. THere is also a museum about the area and a campground you can stay in.<br>
+          Address: 209 State Park Road, Murfreesboro, Arkansas<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.arkansasstateparks.com/parks/crater-diamonds-state-park">https://www.arkansasstateparks.com/parks/crater-diamonds-state-park</a></p>
 
         </div>
         <div id = "California" class = "tabcontent">
 
           <h3>Disneyland</h3>
-          <p>Located in Anaheim, California, this is the premeir family destination for visitors. Disneyland encompasses</p>
-          <p>a massive amusement park, as well as many resorts and a shopping district, and is where many kids "Dream's come</p>
-          <p>true."</p>
-          <p>Address: 1313 Disneyland Dr, Anaheim, CA 92802</p>
-          <p>Hours of Operation: 8AM-12AM</p>
-          <p>Ticket Prices: Vary by number of people and date</p>
-          <p>Website:<a href = "https://disneyland.disney.go.com/">https://disneyland.disney.go.com/</a></p>
+          <p>Located in Anaheim, California, this is the premeir family destination for visitors. Disneyland encompasses<br>
+          a massive amusement park, as well as many resorts and a shopping district, and is where many kids "Dream's come<br>
+          true."<br>
+          Address: 1313 Disneyland Dr, Anaheim, CA 92802<br>
+          Hours of Operation: 8AM-12AM<br>
+          Ticket Prices: Vary by number of people and date<br>
+          Website:<a href = "https://disneyland.disney.go.com/">https://disneyland.disney.go.com/</a></p>
 
           <h3>Redwood National and State Parks</h3>
-          <p>Home to the tallest trees on the planet, the jointly managed parks stretch out along a huge portion of the Northern</p>
-          <p>California Coast. You can walk, or drive through this forest of monsterous trees that are descendants of trees from</p>
-          <p>the Jurassic Period</p>
-          <p>Address: Northen California</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.nps.gov/redw/index.htm">https://www.nps.gov/redw/index.htm</a></p>
+          <p>Home to the tallest trees on the planet, the jointly managed parks stretch out along a huge portion of the Northern<br>
+          California Coast. You can walk, or drive through this forest of monsterous trees that are descendants of trees from<br>
+          the Jurassic Period<br>
+          Address: Northen California<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.nps.gov/redw/index.htm">https://www.nps.gov/redw/index.htm</a></p>
 
           <h3>Lake Tahoe</h3>
-          <p>This lake is a popular year-round vacation for boaters, beach goers, campers, and nature lovers.</p>
-          <p>The lake itself is a pristine blue color with turquoise coves and plenty of mountain scenery. Along</p>
-          <p>with the scenery of the mountains, you can also hike through on this lakes natural hiking trails, which</p>
-          <p>wind through the mountains and come up to many points along the shoreline.</p>
-          <p>Address: 3411 Lake Tahoe Blvd</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://visitinglaketahoe.com/">https://visitinglaketahoe.com/</a></p>
+          <p>This lake is a popular year-round vacation for boaters, beach goers, campers, and nature lovers.<br>
+          The lake itself is a pristine blue color with turquoise coves and plenty of mountain scenery. Along<br>
+          with the scenery of the mountains, you can also hike through on this lakes natural hiking trails, which<br>
+          wind through the mountains and come up to many points along the shoreline.<br>
+          Address: 3411 Lake Tahoe Blvd<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://visitinglaketahoe.com/">https://visitinglaketahoe.com/</a></p>
 
         </div>
         <div id = "Colorado" class = "tabcontent">
 
           <h3>Vail</h3>
-          <p>Vail is one of the top ski resorts in Colorado. During the winter you can ski down the mountain to the</p>
-          <p>cute town below and shop or eat in highend restaurants whose design makes you feel like you are in</p>
-          <p>the heart of the Alps.</p>
-          <p>Address: Vail, Colorado</p>
-          <p>Hours of Operation: Most attractions are open 9-6</p>
-          <p>Ticket Prices: Varies based on activities</p>
-          <p>Website:<a href = "https://www.vail.com/">https://www.vail.com/</a></p>
+          <p>Vail is one of the top ski resorts in Colorado. During the winter you can ski down the mountain to the<br>
+          cute town below and shop or eat in highend restaurants whose design makes you feel like you are in<br>
+          the heart of the Alps.<br>
+          Address: Vail, Colorado<br>
+          Hours of Operation: Most attractions are open 9-6<br>
+          Ticket Prices: Varies based on activities<br>
+          Website:<a href = "https://www.vail.com/">https://www.vail.com/</a></p>
 
           <h3>Garden of Gods</h3>
-          <p>This unique landscape of jagged stone towers and fins is a registed National Natural Landmark, and</p>
-          <p>contains rock structures that jut up 300 feet from the earth and massive boulders and rock piles</p>
-          <p>across its expanse. There are more than 15 miles of trails, most which are short and easy, as well</p>
-          <p>as another 10 miles of dangerous trails that attract hiking experts</p>
-          <p>Address: 1805 N 30th St, Colorado Springs, CO 80904</p>
-          <p>Hours of Operation: 5AM-9PM</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.gardenofgods.com/">https://www.gardenofgods.com/</a></p>
+          <p>This unique landscape of jagged stone towers and fins is a registed National Natural Landmark, and<br>
+          contains rock structures that jut up 300 feet from the earth and massive boulders and rock piles<br>
+          across its expanse. There are more than 15 miles of trails, most which are short and easy, as well<br>
+          as another 10 miles of dangerous trails that attract hiking experts<br>
+          Address: 1805 N 30th St, Colorado Springs, CO 80904<br>
+          Hours of Operation: 5AM-9PM<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.gardenofgods.com/">https://www.gardenofgods.com/</a></p>
 
           <h3>Durango and the Silverton Narrow Gauge Railway</h3>
-          <p>Located in southern Colorado, the town of Durango sits at the bottom of surrounding mountains</p>
-          <p>and attracts tourists interested in well-restored historical mining towns. You have the option</p>
-          <p>of hiking through a trail that leads into the mountains, or you can ride the train to the old</p>
-          <p>mining town of Silverton high in the mountains.</p>
-          <p>Address: Durango, Colorado</p>
-          <p>Hours of Operation: Most attractions run 9-5</p>
-          <p>Ticket Prices: Varies based on activities</p>
-          <p>Website:<a href = "https://www.durangotrain.com/ride-us#.XKO595hKhhE">https://www.durangotrain.com/ride-us#.XKO595hKhhE</a></p>
+          <p>Located in southern Colorado, the town of Durango sits at the bottom of surrounding mountains<br>
+          and attracts tourists interested in well-restored historical mining towns. You have the option<br>
+          of hiking through a trail that leads into the mountains, or you can ride the train to the old<br>
+          mining town of Silverton high in the mountains.<br>
+          Address: Durango, Colorado<br>
+          Hours of Operation: Most attractions run 9-5<br>
+          Ticket Prices: Varies based on activities<br>
+          Website:<a href = "https://www.durangotrain.com/ride-us#.XKO595hKhhE">https://www.durangotrain.com/ride-us#.XKO595hKhhE</a></p>
 
         </div>
         <div id = "Connecticut" class = "tabcontent">
           <h3>Gillette Castle State Park</h3>
-          <p>This unique structure spans 184-acres, and was the home of William Hooker Gillette, the actor</p>
-          <p>known for playing the original Sherlock Holmes, built in 1919. It is a fun place to visit</p>
-          <p>as William Gillette created it in the format of a medieval fortress with winding passageways,</p>
-          <p>traps, and wild tapestries designed by William Gillette himself.</p>
-          <p>Address: 67 River Road, East Haddam, Connecticut</p>
-          <p>Hours of Operation: Everyday 10-5</p>
-          <p>Ticket Prices: Children-$2, Adults-$6</p>
-          <p>Website:<a href = "http://www.ctrivervalley.com/4-Connecticut-CT-in-of/Major-attractions-in-CT/gillette_castle_state_park/">http://www.ctrivervalley.com/4-Connecticut-CT-in-of/Major-attractions-in-CT/gillette_castle_state_park/</a></p>
+          <p>This unique structure spans 184-acres, and was the home of William Hooker Gillette, the actor<br>
+          known for playing the original Sherlock Holmes, built in 1919. It is a fun place to visit<br>
+          as William Gillette created it in the format of a medieval fortress with winding passageways,<br>
+          traps, and wild tapestries designed by William Gillette himself.<br>
+          Address: 67 River Road, East Haddam, Connecticut<br>
+          Hours of Operation: Everyday 10-5<br>
+          Ticket Prices: Children-$2, Adults-$6<br>
+          Website:<a href = "http://www.ctrivervalley.com/4-Connecticut-CT-in-of/Major-attractions-in-CT/gillette_castle_state_park/">http://www.ctrivervalley.com/4-Connecticut-CT-in-of/Major-attractions-in-CT/gillette_castle_state_park/</a></p>
 
           <h3>Aldrich Contemporary Art Museum</h3>
-          <p>This peculiar museum showcases an ever changing exhibit of thought-provoking</p>
-          <p>contemporary art and does not collect, nor hold a permanent collection. This</p>
-          <p>museum showcases works based on themes and is dedicated to promoting the work</p>
-          <p>of innovative artists.</p>
-          <p>Address: 258 Main Street, Ridgefield, Connecticut</p>
-          <p>Hours of Operation: Wednesday-Monday 12-5</p>
-          <p>Ticket Prices: Children 13+ - $7, Adults - $12</p>
-          <p>Website:<a href = "http://aldrichart.org/">http://aldrichart.org/</a></p>
+          <p>This peculiar museum showcases an ever changing exhibit of thought-provoking<br>
+          contemporary art and does not collect, nor hold a permanent collection. This<br>
+          museum showcases works based on themes and is dedicated to promoting the work<br>
+          of innovative artists.<br>
+          Address: 258 Main Street, Ridgefield, Connecticut<br>
+          Hours of Operation: Wednesday-Monday 12-5<br>
+          Ticket Prices: Children 13+ - $7, Adults - $12<br>
+          Website:<a href = "http://aldrichart.org/">http://aldrichart.org/</a></p>
 
           <h3>Mystic Aquarium and Institution for Exploration</h3>
-          <p>This aquarium allows closeup encounters with many ocean animals and birds. You can go</p>
-          <p>beak to nose with a penguin, pet a seal lion, or touch a beluga whale. There are also</p>
-          <p>many innovative 3D films shown that give you a true feel for the watery depths of the oceans.</p>
-          <p>Address: 55 Coogan Blvd, Mystic, Connecticut </p>
-          <p>Hours of Operation: Everday 9-5</p>
-          <p>Ticket Prices: Children-$22, Adults-$32</p>
-          <p>Website:<a href = "http://www.mysticaquarium.org/">http://www.mysticaquarium.org/</a></p>
+          <p>This aquarium allows closeup encounters with many ocean animals and birds. You can go<br>
+          beak to nose with a penguin, pet a seal lion, or touch a beluga whale. There are also<br>
+          many innovative 3D films shown that give you a true feel for the watery depths of the oceans.<br>
+          Address: 55 Coogan Blvd, Mystic, Connecticut <br>
+          Hours of Operation: Everday 9-5<br>
+          Ticket Prices: Children-$22, Adults-$32<br>
+          Website:<a href = "http://www.mysticaquarium.org/">http://www.mysticaquarium.org/</a></p>
         </div>
         <div id = "Delaware" class = "tabcontent">
           <h3>The Grand Opera House</h3>
-          <p>Restored in 1871, this Victorian Theater has hosted Victorian melodramas, burlesque, vaudeville</p>
-          <p>variety shows, musical recitals, symphonies, and operas over the years. It is still in operation</p>
-          <p>and usually hosts Classical concerts and dance for year-round entertainment.</p>
-          <p>Address: 818 North Market Street, Wilmington, Delaware</p>
-          <p>Hours of Operation: Depends on presentation</p>
-          <p>Ticket Prices: Depends on artist</p>
-          <p>Website:<a href = "https://www.thegrandwilmington.org/">https://www.thegrandwilmington.org/</a></p>
+          <p>Restored in 1871, this Victorian Theater has hosted Victorian melodramas, burlesque, vaudeville<br>
+          variety shows, musical recitals, symphonies, and operas over the years. It is still in operation<br>
+          and usually hosts Classical concerts and dance for year-round entertainment.<br>
+          Address: 818 North Market Street, Wilmington, Delaware<br>
+          Hours of Operation: Depends on presentation<br>
+          Ticket Prices: Depends on artist<br>
+          Website:<a href = "https://www.thegrandwilmington.org/">https://www.thegrandwilmington.org/</a></p>
 
           <h3>Nemours Mansions and Gardens</h3>
-          <p>Built in the early 1900s, Nemours Mansion was a gift from Alfred du Pont to his wife. This beautiful</p>
-          <p>mansion has 77 rooms and is complemented by an expanisve garden, the largest formal French garden in</p>
-          <p>North America. As you walk through and around the grounds, you can follow the Long Walk to the Reflecting</p>
-          <p>Pool for an impressive display of water fountains.</p>
-          <p>Address: 1600 Rockland Road, Wilmington, Delaware </p>
-          <p>Hours of Operation: Tuesday-Saturday 10-5, Sunday 12-5</p>
-          <p>Ticket Prices: Children-$8, Adults-$18</p>
-          <p>Website:<a href = "http://nemoursestate.org/">http://nemoursestate.org/</a></p>
+          <p>Built in the early 1900s, Nemours Mansion was a gift from Alfred du Pont to his wife. This beautiful<br>
+          mansion has 77 rooms and is complemented by an expanisve garden, the largest formal French garden in<br>
+          North America. As you walk through and around the grounds, you can follow the Long Walk to the Reflecting<br>
+          Pool for an impressive display of water fountains.<br>
+          Address: 1600 Rockland Road, Wilmington, Delaware <br>
+          Hours of Operation: Tuesday-Saturday 10-5, Sunday 12-5<br>
+          Ticket Prices: Children-$8, Adults-$18<br>
+          Website:<a href = "http://nemoursestate.org/">http://nemoursestate.org/</a></p>
 
           <h3>Hagley Museum and Library</h3>
-          <p>To continue with the rich history of the du Pont's, this museum encompasses the site of the original</p>
-          <p>gunpowder mills, as well as an estate and gardens. 5 generations of du Ponts lived in the estate and worked</p>
-          <p>in the gunpowder mills. Experts there will teach you about the development of the industry and how the</p>
-          <p>the technology evolved</p>
-          <p>Address: 200 Hagley Road, Wilmington, Delaware</p>
-          <p>Hours of Operation: Everyday 10-5</p>
-          <p>Ticket Prices: Children-$6, Adults-$15</p>
-          <p>Website:<a href = "https://www.hagley.org/">https://www.hagley.org/</a></p>
+          <p>To continue with the rich history of the du Pont's, this museum encompasses the site of the original<br>
+          gunpowder mills, as well as an estate and gardens. 5 generations of du Ponts lived in the estate and worked<br>
+          in the gunpowder mills. Experts there will teach you about the development of the industry and how the<br>
+          the technology evolved<br>
+          Address: 200 Hagley Road, Wilmington, Delaware<br>
+          Hours of Operation: Everyday 10-5<br>
+          Ticket Prices: Children-$6, Adults-$15<br>
+          Website:<a href = "https://www.hagley.org/">https://www.hagley.org/</a></p>
         </div>
         <div id = "Florida" class = "tabcontent">
           <h3>Walt Disney World</h3>
-          <p>An Expansive amusment park that contains 4 different parks for you and your family to explore the magic</p>
-          <p>of Disney. Meet your favorite characters from franchises such as Star Wars, Avatar, Marvel, as well as</p>
-          <p>numerous other franchises.</p>
-          <p>Address: Walt Disney World Resort, Orlando, FL 32830</p>
-          <p>Hours of Operation: Depends on park</p>
-          <p>Ticket Prices: Depends on park</p>
-          <p>Website:<a href = "https://disneyworld.disney.go.com/">https://disneyworld.disney.go.com/</a></p>
+          <p>An Expansive amusment park that contains 4 different parks for you and your family to explore the magic<br>
+          of Disney. Meet your favorite characters from franchises such as Star Wars, Avatar, Marvel, as well as<br>
+          numerous other franchises.<br>
+          Address: Walt Disney World Resort, Orlando, FL 32830<br>
+          Hours of Operation: Depends on park<br>
+          Ticket Prices: Depends on park<br>
+          Website:<a href = "https://disneyworld.disney.go.com/">https://disneyworld.disney.go.com/</a></p>
 
           <h3>Kennedy Space Center</h3>
-          <p>One of Florida's most educational and fasinating attractions. It is a huge complex split into multiple zones</p>
-          <p>each with it's own purpose. You will be able to see multiple rockets, including the Space Shuttle Atlantis,</p>
-          <p>meet astronauts, and learn of the new missions to space.</p>
-          <p>Address: Kennedy Space Center</p>
-          <p>Hours of Operation: Monday-Saturday 9-7</p>
-          <p>Ticket Prices: Children-$47, Adults-$57</p>
-          <p>Website:<a href = "https://www.kennedyspacecenter.com/">https://www.kennedyspacecenter.com/</a></p>
+          <p>One of Florida's most educational and fasinating attractions. It is a huge complex split into multiple zones<br>
+          each with it's own purpose. You will be able to see multiple rockets, including the Space Shuttle Atlantis,<br>
+          meet astronauts, and learn of the new missions to space.<br>
+          Address: Kennedy Space Center<br>
+          Hours of Operation: Monday-Saturday 9-7<br>
+          Ticket Prices: Children-$47, Adults-$57<br>
+          Website:<a href = "https://www.kennedyspacecenter.com/">https://www.kennedyspacecenter.com/</a></p>
 
           <h3>Universal Studios</h3>
-          <p>This two park theme park is Universal Studios very own "Disneyland". You will be able to visit</p>
-          <p>Hogwarts, drift like the Drift King in Fast and the Furious, experience the harrowing attack of</p>
-          <p>Jaws, and many other exciting Universal franchises.</p>
-          <p>Address: Universal Studios</p>
-          <p>Hours of Operation: Everyday 8AM-10PM</p>
-          <p>Ticket Prices: $115 per person</p>
-          <p>Website:<a href = "https://www.universalorlando.com/web/en/us/index.html">https://www.universalorlando.com/web/en/us/index.html</a></p>
+          <p>This two park theme park is Universal Studios very own "Disneyland". You will be able to visit<br>
+          Hogwarts, drift like the Drift King in Fast and the Furious, experience the harrowing attack of<br>
+          Jaws, and many other exciting Universal franchises.<br>
+          Address: Universal Studios<br>
+          Hours of Operation: Everyday 8AM-10PM<br>
+          Ticket Prices: $115 per person<br>
+          Website:<a href = "https://www.universalorlando.com/web/en/us/index.html">https://www.universalorlando.com/web/en/us/index.html</a></p>
         </div>
         <div id = "Georgia" class = "tabcontent">
           <h3>Savannah Historic District</h3>
-          <p>The Savannah Historic District encompasses about a square mile, preserving the old city much</p>
-          <p>as it appeared at the time of the Civil War. It has lovely shaded squares surrounded by gorgeous</p>
-          <p>mansions, and its stone-paved streets are lined by trees draped in Spanish moss to create one of</p>
-          <p>the most romantic urdan scenes of any city in the world.</p>
-          <p>Address: Savannah, Georgia</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "http://www.savannah.com/savannah-historic-district/">http://www.savannah.com/savannah-historic-district/</a></p>
+          <p>The Savannah Historic District encompasses about a square mile, preserving the old city much<br>
+          as it appeared at the time of the Civil War. It has lovely shaded squares surrounded by gorgeous<br>
+          mansions, and its stone-paved streets are lined by trees draped in Spanish moss to create one of<br>
+          the most romantic urdan scenes of any city in the world.<br>
+          Address: Savannah, Georgia<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "http://www.savannah.com/savannah-historic-district/">http://www.savannah.com/savannah-historic-district/</a></p>
 
           <h3>Atlanta Botanic Garden</h3>
-          <p>This Botanic garden sprawls across 30 acres next to Piedmont Park in Midtown Atlanta. It</p>
-          <p>is popular by tourists for its wide variety of foliage that can be seen all year long. Their</p>
-          <p>specialty is nurturing certain plants for each season of the year to bring romantic scenery</p>
-          <p>and lovely smells to the city of Atlanta.</p>
-          <p>Address: 1345 Piedmont Ave NE, Atlanta, Georgia</p>
-          <p>Hours of Operation: Tueday-Sunday 9-5</p>
-          <p>Ticket Prices: Children-$19, Adults-$22</p>
-          <p>Website:<a href = "http://atlantabg.org/">http://atlantabg.org/</a></p>
+          <p>This Botanic garden sprawls across 30 acres next to Piedmont Park in Midtown Atlanta. It<br>
+          is popular by tourists for its wide variety of foliage that can be seen all year long. Their<br>
+          specialty is nurturing certain plants for each season of the year to bring romantic scenery<br>
+          and lovely smells to the city of Atlanta.<br>
+          Address: 1345 Piedmont Ave NE, Atlanta, Georgia<br>
+          Hours of Operation: Tueday-Sunday 9-5<br>
+          Ticket Prices: Children-$19, Adults-$22<br>
+          Website:<a href = "http://atlantabg.org/">http://atlantabg.org/</a></p>
 
           <h3>Chattahoochee National Forest</h3>
-          <p>This lovely forest covers almost 750000 acres in North Georgia and is a great place to camp</p>
-          <p>and hike, and has scenic rivers, waterfalls, and trees you can explore through.</p>
-          <p>Address: Chattahoochee National Forest</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.fs.usda.gov/recmain/conf/recreation">https://www.fs.usda.gov/recmain/conf/recreation</a></p>
+          <p>This lovely forest covers almost 750000 acres in North Georgia and is a great place to camp<br>
+          and hike, and has scenic rivers, waterfalls, and trees you can explore through.<br>
+          Address: Chattahoochee National Forest<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.fs.usda.gov/recmain/conf/recreation">https://www.fs.usda.gov/recmain/conf/recreation</a></p>
         </div>
         <div id = "Hawaii" class = "tabcontent">
           <h3>Pearl Harbor Memorial</h3>
-          <p>Pearl Harbor is considered a National Historic Landmark, and is a memorial for the 1177 servicemen</p>
-          <p>that died during the attack in 1941. You can also explore the deck of many ships including,</p>
-          <p>the USS Oklahoma, USS Utah, and the Battleship uSS.</p>
-          <p>Address: Pearl Harbor</p>
-          <p>Hours of Operation: Everyday 7-5</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://pearlharborvisitorcenter.org/?gclid=Cj0KCQjwkIzlBRDzARIsABgXqV_EPuBwpV5XcYOvlRVlvONe49PxhB7uxD78f45olscpPJNyd1C_BJUaAqxpEALw_wcB">https://pearlharborvisitorcenter.org/?gclid=Cj0KCQjwkIzlBRDzARIsABgXqV_EPuBwpV5XcYOvlRVlvONe49PxhB7uxD78f45olscpPJNyd1C_BJUaAqxpEALw_wcB</a></p>
+          <p>Pearl Harbor is considered a National Historic Landmark, and is a memorial for the 1177 servicemen<br>
+          that died during the attack in 1941. You can also explore the deck of many ships including,<br>
+          the USS Oklahoma, USS Utah, and the Battleship uSS.<br>
+          Address: Pearl Harbor<br>
+          Hours of Operation: Everyday 7-5<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://pearlharborvisitorcenter.org/?gclid=Cj0KCQjwkIzlBRDzARIsABgXqV_EPuBwpV5XcYOvlRVlvONe49PxhB7uxD78f45olscpPJNyd1C_BJUaAqxpEALw_wcB">https://pearlharborvisitorcenter.org/?gclid=Cj0KCQjwkIzlBRDzARIsABgXqV_EPuBwpV5XcYOvlRVlvONe49PxhB7uxD78f45olscpPJNyd1C_BJUaAqxpEALw_wcB</a></p>
 
           <h3>Hanauma Bay Nature Preserve</h3>
-          <p>This nature preserve/beach area is a protected bay that was formed within the crater of a</p>
-          <p>volcano on the island of Oahu. It is a very popular attraction for snorkelers.</p>
-          <p>Address: Oahu, Hawaii</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://hanaumabaystatepark.com/">https://hanaumabaystatepark.com/</a></p>
+          <p>This nature preserve/beach area is a protected bay that was formed within the crater of a<br>
+          volcano on the island of Oahu. It is a very popular attraction for snorkelers.<br>
+          Address: Oahu, Hawaii<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://hanaumabaystatepark.com/">https://hanaumabaystatepark.com/</a></p>
 
           <h3>Polynesian Cultural Center</h3>
-          <p>If you are interested in Polynesion culture, this center is the place to be.</p>
-          <p>Polynesian islanders portray their culture through music, dance, craft</p>
-          <p>demonstrations, and games to bring knowledge about the every day life of the islanders.</p>
-          <p>Address: 55-370 Kamehameha Hwy, Oahu, Hawaii</p>
-          <p>Hours of Operation: Everyday 12-6</p>
-          <p>Ticket Prices: Children-$72, Adults-$90</p>
-          <p>Website:<a href = "https://www.polynesia.com/">https://www.polynesia.com/</a></p>
+          <p>If you are interested in Polynesion culture, this center is the place to be.<br>
+          Polynesian islanders portray their culture through music, dance, craft<br>
+          demonstrations, and games to bring knowledge about the every day life of the islanders.<br>
+          Address: 55-370 Kamehameha Hwy, Oahu, Hawaii<br>
+          Hours of Operation: Everyday 12-6<br>
+          Ticket Prices: Children-$72, Adults-$90<br>
+          Website:<a href = "https://www.polynesia.com/">https://www.polynesia.com/</a></p>
         </div>
         <div id = "Idaho" class = "tabcontent">
           <h3>Sun Valley Resort</h3>
-          <p>Sun Valley is known for its skiing resorts, but also for its winter sports</p>
-          <p>facilities(many winter Olympic athletes train at these). Whether you are a newcomer</p>
-          <p>to skiing or a veteran skiier, there are plenty of options to ski down with more</p>
-          <p>than 2000 acres of skiable terrain.</p>
-          <p>Address: 1 Sun Valley Rd, Sun Valley, Idaho</p>
-          <p>Hours of Operation: Everyday 9-4</p>
-          <p>Ticket Prices: Depends on slope or attraction</p>
-          <p>Website:<a href = "https://www.sunvalley.com/">https://www.sunvalley.com/</a></p>
+          <p>Sun Valley is known for its skiing resorts, but also for its winter sports<br>
+          facilities(many winter Olympic athletes train at these). Whether you are a newcomer<br>
+          to skiing or a veteran skiier, there are plenty of options to ski down with more<br>
+          than 2000 acres of skiable terrain.<br>
+          Address: 1 Sun Valley Rd, Sun Valley, Idaho<br>
+          Hours of Operation: Everyday 9-4<br>
+          Ticket Prices: Depends on slope or attraction<br>
+          Website:<a href = "https://www.sunvalley.com/">https://www.sunvalley.com/</a></p>
 
           <h3>Craters of the Moon National Monument</h3>
-          <p>This geolgical sight is earily similar to the moons surface, and was created</p>
-          <p> volcanic eruptions between 15000-2000 years ago. While this region is still</p>
-          <p>an active volcano sight, there are designated walkways you can walk along and gaze</p>
-          <p>at the expanse around you. There are also 5 caves you can explore in the area, if</p>
-          <p>you enjoy spelunking.</p>
-          <p>Address: N/A</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.nps.gov/crmo/index.htm">https://www.nps.gov/crmo/index.htm</a></p>
+          <p>This geolgical sight is earily similar to the moons surface, and was created<br>
+          volcanic eruptions between 15000-2000 years ago. While this region is still<br>
+          an active volcano sight, there are designated walkways you can walk along and gaze<br>
+          at the expanse around you. There are also 5 caves you can explore in the area, if<br>
+          you enjoy spelunking.<br>
+          Address: N/A<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.nps.gov/crmo/index.htm">https://www.nps.gov/crmo/index.htm</a></p>
 
           <h3>Shoshone Falls</h3>
-          <p>Dubbed the "Niagra of the West", these calls stand at 212 feet tall, and span more than 900 feet.</p>
-          <p>The area around the falls are full of hiking trails, swimming spots, and scenic views of the</p>
-          <p>falls and the wilderness around you.</p>
-          <p>Address: Shoshone Falls Grade Road, Twin Falls, Idaho</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.tfid.org/309/Shoshone-Falls">https://www.tfid.org/309/Shoshone-Falls</a></p>
+          <p>Dubbed the "Niagra of the West", these calls stand at 212 feet tall, and span more than 900 feet.<br>
+          The area around the falls are full of hiking trails, swimming spots, and scenic views of the<br>
+          falls and the wilderness around you.<br>
+          Address: Shoshone Falls Grade Road, Twin Falls, Idaho<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.tfid.org/309/Shoshone-Falls">https://www.tfid.org/309/Shoshone-Falls</a></p>
         </div>
         <div id = "Illinois" class = "tabcontent">
           <h3>Millennium Park and Cloud Gate</h3>
-          <p>This expansive park is popular among tourists and citizens alike because of its massive</p>
-          <p>110-ton polished steel sculpture, which was inspired by liquid mercury. The curved</p>
-          <p>surfaces reflect the Chicago skyline and the people walking by, and contains the</p>
-          <p>Crown Fountain, which is a unique modern interpretation of ancient gargoyles,</p>
-          <p>which reflect the images of the person looking at them in a menacing fashion.</p>
-          <p>Address: 201 East Randolph Street, Chicago, Illinois</p>
-          <p>Hours of Operation: 24/7</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.chicago.gov/city/en/depts/dca/supp_info/millennium_park.html">https://www.chicago.gov/city/en/depts/dca/supp_info/millennium_park.html</a></p>
+          <p>This expansive park is popular among tourists and citizens alike because of its massive<br>
+          110-ton polished steel sculpture, which was inspired by liquid mercury. The curved<br>
+          surfaces reflect the Chicago skyline and the people walking by, and contains the<br>
+          Crown Fountain, which is a unique modern interpretation of ancient gargoyles,<br>
+          which reflect the images of the person looking at them in a menacing fashion.<br>
+          Address: 201 East Randolph Street, Chicago, Illinois<br>
+          Hours of Operation: 24/7<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.chicago.gov/city/en/depts/dca/supp_info/millennium_park.html">https://www.chicago.gov/city/en/depts/dca/supp_info/millennium_park.html</a></p>
 
           <h3>Art Institute of Chicago</h3>
-          <p>The Art Institute of Chicago is one of the city's foremore cultural institutions</p>
-          <p>and is known for its collections. It's housed in a late 1800's building along with</p>
-          <p>other modern extensions. Permanent collections include African Art, medieval and Renaissance</p>
-          <p>arms and armor, contemporary art, and textiles.</p>
-          <p>Address: 111 South Michigan Avenue, Chicago, Illinois</p>
-          <p>Hours of Operation: 10:30-5</p>
-          <p>Ticket Prices: $29</p>
-          <p>Website:<a href = "https://www.artic.edu/">https://www.artic.edu/</a></p>
+          <p>The Art Institute of Chicago is one of the city's foremore cultural institutions<br>
+          and is known for its collections. It's housed in a late 1800's building along with<br>
+          other modern extensions. Permanent collections include African Art, medieval and Renaissance<br>
+          arms and armor, contemporary art, and textiles.<br>
+          Address: 111 South Michigan Avenue, Chicago, Illinois<br>
+          Hours of Operation: 10:30-5<br>
+          Ticket Prices: $29<br>
+          Website:<a href = "https://www.artic.edu/">https://www.artic.edu/</a></p>
 
           <h3>Ulysses S. Grant Home State Historic Site</h3>
-          <p>This lovely building in Galena, Illinois, was the home of the Civil War general</p>
-          <p>Ulysses S. Grant in the 1860s. You can explore the house and learn a little inside</p>
-          <p>knowledge of the Grant household.</p>
-          <p>Address: 500 Bouthillier Street, Galena, Illinois</p>
-          <p>Hours of Operation: Wednesday-Sunday 9-4</p>
-          <p>Ticket Prices: Children-$3, Adults-$5</p>
-          <p>Website:<a href = "http://www.granthome.com/grant_home.htm">http://www.granthome.com/grant_home.htm</a></p>
+          <p>This lovely building in Galena, Illinois, was the home of the Civil War general<br>
+          Ulysses S. Grant in the 1860s. You can explore the house and learn a little inside<br>
+          knowledge of the Grant household.<br>
+          Address: 500 Bouthillier Street, Galena, Illinois<br>
+          Hours of Operation: Wednesday-Sunday 9-4<br>
+          Ticket Prices: Children-$3, Adults-$5<br>
+          Website:<a href = "http://www.granthome.com/grant_home.htm">http://www.granthome.com/grant_home.htm</a></p>
         </div>
         <div id = "Indiana" class = "tabcontent">
           <h3>Eiteljorg Museum of American Indian and Western Art</h3>
-          <p>This museum holds an expansive collection of paintings and sculptures of the west</p>
-          <p>from the early 19th century onward. This entire collection was gathered by Indianapolis</p>
-          <p>businessman Harrison Eiteljorg, and encompasses a day's worth of exploring to get through</p>
-          <p>Address: 500 West Washington Street, Indianapolis, Indiana</p>
-          <p>Hours of Operation: Monday-Saturday 10-5, Sunday 12-5</p>
-          <p>Ticket Prices: Children-$8, Adults-$15</p>
-          <p>Website:<a href = "https://eiteljorg.org/">https://eiteljorg.org/</a></p>
+          <p>This museum holds an expansive collection of paintings and sculptures of the west<br>
+          from the early 19th century onward. This entire collection was gathered by Indianapolis<br>
+          businessman Harrison Eiteljorg, and encompasses a day's worth of exploring to get through<br>
+          Address: 500 West Washington Street, Indianapolis, Indiana<br>
+          Hours of Operation: Monday-Saturday 10-5, Sunday 12-5<br>
+          Ticket Prices: Children-$8, Adults-$15<br>
+          Website:<a href = "https://eiteljorg.org/">https://eiteljorg.org/</a></p>
 
           <h3>Snite Museum of Art</h3>
-          <p>On the campus of the University of Notre Dame, this museum offers free admission</p>
-          <p>to see a dense collection of 19th-20th century artworks.
-          <p>Address: 100 Moose Krause Circle, Notre Dame</p>
-          <p>Hours of Operation: Tuesday-Friday 10-5, Saturday 12-5</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://sniteartmuseum.nd.edu/">https://sniteartmuseum.nd.edu/</a></p>
+          <p>On the campus of the University of Notre Dame, this museum offers free admission<br>
+          to see a dense collection of 19th-20th century artworks.<br>
+          Address: 100 Moose Krause Circle, Notre Dame<br>
+          Hours of Operation: Tuesday-Friday 10-5, Saturday 12-5<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://sniteartmuseum.nd.edu/">https://sniteartmuseum.nd.edu/</a></p>
 
           <h3>Children's Museum of Indianapolis</h3>
-          <p>This museums encompasses 29 acres of Indianapolis and is the largest children's</p>
-          <p>museum in the world. Children can explore multiple hands-on displays that teach</p>
-          <p>about science and history</p>
-          <p>Address: 3000 North Meridian Street, Indianapolis, Indiana</p>
-          <p>Hours of Operation: Monday-Friday 10-5, Saturday 12-5</p>
-          <p>Ticket Prices: $5-$25 depending on day</p>
-          <p>Website:<a href = "https://www.childrensmuseum.org/">https://www.childrensmuseum.org/</a></p>
+          <p>This museums encompasses 29 acres of Indianapolis and is the largest children's<br>
+          museum in the world. Children can explore multiple hands-on displays that teach<br>
+          about science and history<br>
+          Address: 3000 North Meridian Street, Indianapolis, Indiana<br>
+          Hours of Operation: Monday-Friday 10-5, Saturday 12-5<br>
+          Ticket Prices: $5-$25 depending on day<br>
+          Website:<a href = "https://www.childrensmuseum.org/">https://www.childrensmuseum.org/</a></p>
         </div>
         <div id = "Iowa" class = "tabcontent">
           <h3>RAGBRAI</h3>
-          <p>RAGBRAI, or Register's Annual Bike Race Across Iowa, is a must do for any travelers</p>
-          <p>that love to bike. it is a week-long bike race that spans the entire state, from</p>
-          <p>east to west and showcases its midwestern culture through its friendly people,</p>
-          <p>small towns, and open landscape. This event has been going on for more than</p>
-          <p>60 years and attracts thousands of cyclists every year.</p>
-          <p>Address: Iowa</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://ragbrai.com/">https://ragbrai.com/</a></p>
+          <p>RAGBRAI, or Register's Annual Bike Race Across Iowa, is a must do for any travelers<br>
+          that love to bike. it is a week-long bike race that spans the entire state, from<br>
+          east to west and showcases its midwestern culture through its friendly people,<br>
+          small towns, and open landscape. This event has been going on for more than<br>
+          60 years and attracts thousands of cyclists every year.<br>
+          Address: Iowa<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://ragbrai.com/">https://ragbrai.com/</a></p>
 
           <h3>National Czech and Slovak Museum and Library</h3>
-          <p>This museum located in Cedar Rapids is a large institute dedicated to sharing</p>
-          <p>the culture of the Czech and Slovak people. It does this with its permanent</p>
-          <p>exhibits, educational traveling displays, and special events throughout the year</p>
-          <p>Address: 1400 Inspiration Place SW, Cedar Rapids</p>
-          <p>Hours of Operation: Monday-Saturday 9:30-4, Sunday 12-4</p>
-          <p>Ticket Prices: Children-$3, Adults-$10</p>
-          <p>Website:<a href = "https://www.ncsml.org/">https://www.ncsml.org/</a></p>
+          <p>This museum located in Cedar Rapids is a large institute dedicated to sharing<br>
+          the culture of the Czech and Slovak people. It does this with its permanent<br>
+          exhibits, educational traveling displays, and special events throughout the year<br>
+          Address: 1400 Inspiration Place SW, Cedar Rapids<br>
+          Hours of Operation: Monday-Saturday 9:30-4, Sunday 12-4<br>
+          Ticket Prices: Children-$3, Adults-$10<br>
+          Website:<a href = "https://www.ncsml.org/">https://www.ncsml.org/</a></p>
 
           <h3>Herbert Hoover National Historic Site</h3>
-          <p>This building was where Herbert Hoover, the 31st President of the United States, lived</p>
-          <p>from the moment he was born, to the moment he was sworn into office. It was blocked off</p>
-          <p>and preserved from the public but has recently become a museum to see the inner workings</p>
-          <p>of our 31st President's life.</p>
-          <p>Address: 210 Parkside Drive, West Branch</p>
-          <p>Hours of Operation: Everyday 9-5</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.nps.gov/heho/index.htm">https://www.nps.gov/heho/index.htm</a></p>
+          <p>This building was where Herbert Hoover, the 31st President of the United States, lived<br>
+          from the moment he was born, to the moment he was sworn into office. It was blocked off<br>
+          and preserved from the public but has recently become a museum to see the inner workings<br>
+          of our 31st President's life.<br>
+          Address: 210 Parkside Drive, West Branch<br>
+          Hours of Operation: Everyday 9-5<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.nps.gov/heho/index.htm">https://www.nps.gov/heho/index.htm</a></p>
         </div>
         <div id = "Kansas" class = "tabcontent">
           <h3>Boot Hill</h3>
-          <p>Interested in what it would be like in the Wild West in the 1800s? If so, Boot Hill</p>
-          <p>has everything you may want. During the summers there are street shootput reeanactments</p>
-          <p>everyday twice a day, and the city has been relatively untouched since 1870, meaning</p>
-          <p>walking through the Fort Dodge jail will be the genuine thing and not a gift shop, and</p>
-          <p>you can see what the General Store and local Saloon looked like in the early 1900s.</p>
-          <p>Address: 500 W. Wyatt Earp Blvd, Dodge City, Kansas</p>
-          <p>Hours of Operation: Summer: Memorial Day-Labor Day 8-8, Winter: Monday-Saturday 9-5, Sunday 1-5</p>
-          <p>Ticket Prices: Children-$9, Adults-$12</p>
-          <p>Website:<a href = "http://www.boothill.org/">http://www.boothill.org/</a></p>
+          <p>Interested in what it would be like in the Wild West in the 1800s? If so, Boot Hill<br>
+          has everything you may want. During the summers there are street shootput reeanactments<br>
+          everyday twice a day, and the city has been relatively untouched since 1870, meaning<br>
+          walking through the Fort Dodge jail will be the genuine thing and not a gift shop, and<br>
+          you can see what the General Store and local Saloon looked like in the early 1900s.<br>
+          Address: 500 W. Wyatt Earp Blvd, Dodge City, Kansas<br>
+          Hours of Operation: Summer: Memorial Day-Labor Day 8-8, Winter: Monday-Saturday 9-5, Sunday 1-5<br>
+          Ticket Prices: Children-$9, Adults-$12<br>
+          Website:<a href = "http://www.boothill.org/">http://www.boothill.org/</a></p>
 
           <h3>Kansas Speedway</h3>
-          <p>If you love NASCAR and want to see a race in person, make sure to see if there are any races</p>
-          <p>at the Kansas Speedway during your visit. There are more than 200 motorsports events throughout</p>
-          <p>the year every year, including many NASCAR touring series races and special events.</p>
-          <p>Address: 400 Speedway Boulevard, Kansas City, Kansas</p>
-          <p>Hours of Operation: Varies by event</p>
-          <p>Ticket Prices: Varies by event</p>
-          <p>Website:<a href = "http://www.kansasspeedway.com/">http://www.kansasspeedway.com/</a></p>
+          <p>If you love NASCAR and want to see a race in person, make sure to see if there are any races<br>
+          at the Kansas Speedway during your visit. There are more than 200 motorsports events throughout<br>
+          the year every year, including many NASCAR touring series races and special events.<br>
+          Address: 400 Speedway Boulevard, Kansas City, Kansas<br>
+          Hours of Operation: Varies by event<br>
+          Ticket Prices: Varies by event<br>
+          Website:<a href = "http://www.kansasspeedway.com/">http://www.kansasspeedway.com/</a></p>
 
           <h3>Evel Knievel Museum</h3>
-          <p>Topeka is home to the Harley Davidson shop in which you can visit the museum for the American</p>
-          <p>daredevil Evil Knievel. In this museum you will find information about his early life, as well</p>
-          <p>as stories from his daredevil stunts and an immense collection of artifacts from those stunts.</p>
-          <p>Address: 2047 SW Topeka Blvd., Topeka, Kansas</p>
-          <p>Hours of Operation: Tuesday-Friday 10-6, Saturday 9-5, Sunday 12-5</p>
-          <p>Ticket Prices: Children-$7, Adults-$15</p>
-          <p>Website:<a href = "http://evelknievelmuseum.com/">http://evelknievelmuseum.com/</a></p>
+          <p>Topeka is home to the Harley Davidson shop in which you can visit the museum for the American<br>
+          daredevil Evil Knievel. In this museum you will find information about his early life, as well<br>
+          as stories from his daredevil stunts and an immense collection of artifacts from those stunts.<br>
+          Address: 2047 SW Topeka Blvd., Topeka, Kansas<br>
+          Hours of Operation: Tuesday-Friday 10-6, Saturday 9-5, Sunday 12-5<br>
+          Ticket Prices: Children-$7, Adults-$15<br>
+          Website:<a href = "http://evelknievelmuseum.com/">http://evelknievelmuseum.com/</a></p>
         </div>
         <div id = "Kentucky" class = "tabcontent">
           <h3>Kentucky Derby</h3>
-          <p>Horse lovers and race lovers alike, come together every for the Kentucky Derby. Held at Churchill Downs</p>
-          <p>the Kentucky Derby is the horse racing's most prestigious race, and takes place the first Sunday of May</p>
-          <p>Next door to the Churchill Downs racetrack is the Kentucky Derby Museum, where you can explore the history</p>
-          <p>of the race since its first running in 1875.</p>
-          <p>Address: 700 Central Ave, Louisville, Kentucky</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.kentuckyderby.com/">https://www.kentuckyderby.com/</a></p>
+          <p>Horse lovers and race lovers alike, come together every for the Kentucky Derby. Held at Churchill Downs<br>
+          the Kentucky Derby is the horse racing's most prestigious race, and takes place the first Sunday of May<br>
+          Next door to the Churchill Downs racetrack is the Kentucky Derby Museum, where you can explore the history<br>
+          of the race since its first running in 1875.<br>
+          Address: 700 Central Ave, Louisville, Kentucky<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.kentuckyderby.com/">https://www.kentuckyderby.com/</a></p>
 
           <h3>Louisville Slugger Museum and Factory</h3>
-          <p>Home to the 120 foot tall replica of Babe Ruth's Louisville Slugger, tourists can enter the museum</p>
-          <p>to get a taste of how these prestigious bats are made, as well as some sweet memorabilia from some</p>
-          <p>of baseball's most famous players.</p>
-          <p>Address: 800 West Main Street, Louisville, Kentucky</p>
-          <p>Hours of Operation: Everyday 9-5</p>
-          <p>Ticket Prices: Children-$8, Adults-$15</p>
-          <p>Website:<a href = "https://www.sluggermuseum.com/">https://www.sluggermuseum.com/</a></p>
+          <p>Home to the 120 foot tall replica of Babe Ruth's Louisville Slugger, tourists can enter the museum<br>
+          to get a taste of how these prestigious bats are made, as well as some sweet memorabilia from some<br>
+          of baseball's most famous players.<br>
+          Address: 800 West Main Street, Louisville, Kentucky<br>
+          Hours of Operation: Everyday 9-5<br>
+          Ticket Prices: Children-$8, Adults-$15<br>
+          Website:<a href = "https://www.sluggermuseum.com/">https://www.sluggermuseum.com/</a></p>
 
           <h3>Mammoth Cave National Park</h3>
-          <p>Residing within the "Land of 10000 Sinks" or the Caveland Corridor, this cave is one of the world's</p>
-          <p>largest known cave systems, spanning 400 miles of passages surveyed and more left undiscovered.</p>
-          <p>The caves are dated back to the 1st millennium BC where its original inhabitants drew many large,</p>
-          <p>intricate cave paintings.
-          <p>Address: 1 Mammoth Cave Parkway, Mammoth Cave, Kentucky</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.nps.gov/maca/index.htm">https://www.nps.gov/maca/index.htm</a></p>
+          <p>Residing within the "Land of 10000 Sinks" or the Caveland Corridor, this cave is one of the world's<br>
+          largest known cave systems, spanning 400 miles of passages surveyed and more left undiscovered.<br>
+          The caves are dated back to the 1st millennium BC where its original inhabitants drew many large,<br>
+          intricate cave paintings.<br>
+          Address: 1 Mammoth Cave Parkway, Mammoth Cave, Kentucky<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.nps.gov/maca/index.htm">https://www.nps.gov/maca/index.htm</a></p>
         </div>
         <div id = "Louisiana" class = "tabcontent">
           <h3>New Orleans' French Quarter</h3>
-          <p>The French Quarter is New Orleans' oldest and most famous neighborhood. Its beautiful buildings</p>
-          <p>date back as far as 300 years, and are one of many reasons tourists flock to the area</p>
-          <p>During Mardi Gras, this quarter of New Orleans' is the most packed, with people coming</p>
-          <p>from all over to party and celebrate. There are numerous options for shopping, sightseeing,</p>
-          <p>and dining, most with a cajun twist to them. You will see numerous musicians and street</p>
-          <p>artists lining the streets, and can even visit the gorgeous Jackson Square.</p>
-          <p>Address: New Orleans</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.frenchquarter.com/">https://www.frenchquarter.com/</a></p>
+          <p>The French Quarter is New Orleans' oldest and most famous neighborhood. Its beautiful buildings<br>
+          date back as far as 300 years, and are one of many reasons tourists flock to the area<br>
+          During Mardi Gras, this quarter of New Orleans' is the most packed, with people coming<br>
+          from all over to party and celebrate. There are numerous options for shopping, sightseeing,<br>
+          and dining, most with a cajun twist to them. You will see numerous musicians and street<br>
+          artists lining the streets, and can even visit the gorgeous Jackson Square.<br>
+          Address: New Orleans<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.frenchquarter.com/">https://www.frenchquarter.com/</a></p>
 
           <h3>Rosedown Plantation and Gardens</h3>
-          <p>This plantation is one of many within the state of Louisiana,and definitely one of the most</p>
-          <p>beautiful and well preserved. It offers and insight into the lives of both plantation owners</p>
-          <p>and slaves during the mid 19th century in the South. The grounds are well kept, and the mansion</p>
-          <p>is expansive and explorable.</p>
-          <p>Address: 12501 Hwy 10, St. Francisville, Louisiana</p>
-          <p>Hours of Operation: Everyday 9-5</p>
-          <p>Ticket Prices: Children-$5, Adults-$7</p>
-          <p>Website:<a href = "https://www.nps.gov/nr/travel/louisiana/ros.htm">https://www.nps.gov/nr/travel/louisiana/ros.htm</a></p>
+          <p>This plantation is one of many within the state of Louisiana,and definitely one of the most<br>
+          beautiful and well preserved. It offers and insight into the lives of both plantation owners<br>
+          and slaves during the mid 19th century in the South. The grounds are well kept, and the mansion<br>
+          is expansive and explorable.<br>
+          Address: 12501 Hwy 10, St. Francisville, Louisiana<br>
+          Hours of Operation: Everyday 9-5<br>
+          Ticket Prices: Children-$5, Adults-$7<br>
+          Website:<a href = "https://www.nps.gov/nr/travel/louisiana/ros.htm">https://www.nps.gov/nr/travel/louisiana/ros.htm</a></p>
 
           <h3>Old State Capitol</h3>
-          <p>The Old State Capitol is a Gothic-Revival-style building that resembles and old castle.</p>
-          <p>Once the capitol building for the state of Louisiana, this building is now a political</p>
-          <p>history museum, which includes artifacts, documents, and interactive exhibits. You can</p>
-          <p>also learn about the building's histoy and significance in the "Ghost of the Castle" presentation,</p>
-          <p>a 4-D experience.</p>
-          <p>Address: 100 North Blvd, Baton Rouge, Louisiana</p>
-          <p>Hours of Operation: Tuesday-Friday 10-4, Saturday 9-3</p>
-          <p>Ticket Prices: $2</p>
-          <p>Website:<a href = "http://www.louisianaoldstatecapitol.org/">http://www.louisianaoldstatecapitol.org/</a></p>
+          <p>The Old State Capitol is a Gothic-Revival-style building that resembles and old castle.<br>
+          Once the capitol building for the state of Louisiana, this building is now a political<br>
+          history museum, which includes artifacts, documents, and interactive exhibits. You can<br>
+          also learn about the building's histoy and significance in the "Ghost of the Castle" presentation,<br>
+          a 4-D experience.<br>
+          Address: 100 North Blvd, Baton Rouge, Louisiana<br>
+          Hours of Operation: Tuesday-Friday 10-4, Saturday 9-3<br>
+          Ticket Prices: $2<br>
+          Website:<a href = "http://www.louisianaoldstatecapitol.org/">http://www.louisianaoldstatecapitol.org/</a></p>
         </div>
         <div id = "Maine" class = "tabcontent">
           <h3>Maine Maritime Museum</h3>
-          <p>Learn all about 19th century shipbuilding, seafaring, and lobstering in this well preserved shipyard</p>
-          <p>turned museum. You will get the chance to explore this 20 acre campus, which includes a blacksmith</p>
-          <p>shop, a lighthouse, and more than 140 Maine-built or Maine-related ships.</p>
-          <p>Address: 243 Washington Street, Bath, Maine</p>
-          <p>Hours of Operation: Everyday 9-5</p>
-          <p>Ticket Prices: Children-$10.50, Adults-$17.50</p>
-          <p>Website:<a href = "https://www.mainemaritimemuseum.org/">https://www.mainemaritimemuseum.org/</a></p>
+          <p>Learn all about 19th century shipbuilding, seafaring, and lobstering in this well preserved shipyard<br>
+          turned museum. You will get the chance to explore this 20 acre campus, which includes a blacksmith<br>
+          shop, a lighthouse, and more than 140 Maine-built or Maine-related ships.<br>
+          Address: 243 Washington Street, Bath, Maine<br>
+          Hours of Operation: Everyday 9-5<br>
+          Ticket Prices: Children-$10.50, Adults-$17.50<br>
+          Website:<a href = "https://www.mainemaritimemuseum.org/">https://www.mainemaritimemuseum.org/</a></p>
 
           <h3>Nubble Lighthouse</h3>
-          <p>This lighthouse is one of the most famous lighthouses due to it being a vitally important one</p>
-          <p>along the coast of Maine, as well as it being the most photographed and easiest to get to lighthouse</p>
-          <p>Inside you can see the inner working of the lighthouse, and see what a lighthouse keeper must do</p>
-          <p>to make sure it is maintained and working.</p>
-          <p>Address: Cape Neddick</p>
-          <p>Hours of Operation: Everyday 9-7</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "http://nubblelight.org/">http://nubblelight.org/</a></p>
+          <p>This lighthouse is one of the most famous lighthouses due to it being a vitally important one<br>
+          along the coast of Maine, as well as it being the most photographed and easiest to get to lighthouse<br>
+          Inside you can see the inner working of the lighthouse, and see what a lighthouse keeper must do<br>
+          to make sure it is maintained and working.<br>
+          Address: Cape Neddick<br>
+          Hours of Operation: Everyday 9-7<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "http://nubblelight.org/">http://nubblelight.org/</a></p>
 
           <h3>Cruising the Maine Coast</h3>
-          <p>One of Maine's more popular attraction is taking a boat to sea to see the shorelines, as well as</p>
-          <p>how rocky and dangerous the ocean is there. You will also see gorgeous cliffs overhanging the ocean</p>
-          <p>and understand the need for lighthouses in this portion of the world.</p>
-          <p>Address: Depends on the waterway guide</p>
-          <p>Hours of Operation: Depends on the waterway guide</p>
-          <p>Ticket Prices: Depends on the waterway guide</p>
-          <p>Website: N/A<a href = ""></a></p>
+          <p>One of Maine's more popular attraction is taking a boat to sea to see the shorelines, as well as<br>
+          how rocky and dangerous the ocean is there. You will also see gorgeous cliffs overhanging the ocean<br>
+          and understand the need for lighthouses in this portion of the world.<br>
+          Address: Depends on the waterway guide<br>
+          Hours of Operation: Depends on the waterway guide<br>
+          Ticket Prices: Depends on the waterway guide<br>
+          Website: N/A<a href = ""></a></p>
         </div>
         <div id = "Maryland" class = "tabcontent">
-          <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <h3>Antietam National Battlefield</h3>
+          <p>Located in Antietam, scene of the bloodiest battle in the Civil War, this battlefield is now<br>
+          home to numerous monuments, the Dunker Church (where the first clash occured), the Sunken Road,<br>
+          and the Burnside Bridge. For Civil War buffs, this battlefield is a must see, and for anyone interested<br>
+          in American history at all, this is a great place to read up on some of history's major turning points.<br>
+          Address: 302 E Main St, Sharpsburg, MD 21782<br>
+          Hours of Operation: Everyday 9-5<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.nps.gov/anti/index.htm">https://www.nps.gov/anti/index.htm</a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Massachussetts" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Michigan" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Minnesota" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Mississippi" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Missouri" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Montana" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Nebraska" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Nevada" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "New Hampshire" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "New Jersey" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "New Mexico" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "New York" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "North Carolina" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "North Dakota" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Ohio" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Oklahoma" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Oregon" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Pennsylvania" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Rhode Island" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "South Carolina" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "South Dakota" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Tennessee" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Texas" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Utah" class = "tabcontent">
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
 
           <h3></h3>
-          <p></p>
-          <p>Address: </p>
-          <p>Hours of Operation:</p>
-          <p>Ticket Prices: </p>
-          <p>Website:<a href = ""></a></p>
+          <p><br>
+          Address: <br>
+          Hours of Operation:<br>
+          Ticket Prices: <br>
+          Website:<a href = ""></a></p>
         </div>
         <div id = "Vermont" class = "tabcontent">
           <h3>Ben and Jerry's</h3>
-          <p>Vermont's most popular tourist attraction, the Ben and Jerry's original factory is located</p>
-          <p>in Waterbury. Visitors are able to take a 30-minute guided tour where they can see the ice</p>
-          <p>cream being made, processed and packaged for shipment, and at the end of the tour, they are</p>
-          <p>given a pint of the flavor of the day to take home. They can also visit the Flavor Graveyard</p>
-          <p>to see the flavors that have been discontinued over the years.</p>
-          <p>Address: Route 100, Waterbury</p>
-          <p>Hours of Operation: Vary by season</p>
-          <p>Ticket Prices: Vary by season</p>
-          <p>Website:<a href = "https://www.benjerry.com/about-us/factory-tours">https://www.benjerry.com/about-us/factory-tours</a></p>
+          <p>Vermont's most popular tourist attraction, the Ben and Jerry's original factory is located<br>
+          in Waterbury. Visitors are able to take a 30-minute guided tour where they can see the ice<br>
+          cream being made, processed and packaged for shipment, and at the end of the tour, they are<br>
+          given a pint of the flavor of the day to take home. They can also visit the Flavor Graveyard<br>
+          to see the flavors that have been discontinued over the years.<br>
+          Address: Route 100, Waterbury<br>
+          Hours of Operation: Vary by season<br>
+          Ticket Prices: Vary by season<br>
+          Website:<a href = "https://www.benjerry.com/about-us/factory-tours">https://www.benjerry.com/about-us/factory-tours</a></p>
 
           <h3>Lake Champlain</h3>
-          <p>Extending 120 miles between Vermont, New York, and Canada, this lake draws in visitors for it's</p>
-          <p>water activities, wildlife, and historical attractions. While visiting Lake Champlain keep</p>
-          <p>an eye out for a 20-foot serpent-like creature dubbed "Champy" who has been seen throughout</p>
-          <p>the years within the lake.</p>
-          <p>Address: Lake Champlain, Vermont</p>
-          <p>Hours of Operation: Depends on attraction</p>
-          <p>Ticket Prices: Depends on attraction</p>
-          <p>Website:<a href = "https://www.lclt.org/">https://www.lclt.org/</a></p>
+          <p>Extending 120 miles between Vermont, New York, and Canada, this lake draws in visitors for it's<br>
+          water activities, wildlife, and historical attractions. While visiting Lake Champlain keep<br>
+          an eye out for a 20-foot serpent-like creature dubbed "Champy" who has been seen throughout<br>
+          the years within the lake.<br>
+          Address: Lake Champlain, Vermont<br>
+          Hours of Operation: Depends on attraction<br>
+          Ticket Prices: Depends on attraction<br>
+          Website:<a href = "https://www.lclt.org/">https://www.lclt.org/</a></p>
 
           <h3>Bennington Battle Monument and Museum</h3>
-          <p>This 306 foot high obelisk is visible for miles around, and commemorates the 1777 battle fought</p>
-          <p>5 miles west of Bennington, which turned the tide against the British by splitting British</p>
-          <p>General John Burgoyne's forces in half, making the final American victory possible.</p>
-          <p>Address: Route 9, Bennington</p>
-          <p>Hours of Operation: February-December Thursday-Tuesday 10-5</p>
-          <p>Ticket Prices: Children-Free, Adults-$10</p>
-          <p>Website:<a href = "https://benningtonmuseum.org/">https://benningtonmuseum.org/</a></p>
+          <p>This 306 foot high obelisk is visible for miles around, and commemorates the 1777 battle fought<br>
+          5 miles west of Bennington, which turned the tide against the British by splitting British<br>
+          General John Burgoyne's forces in half, making the final American victory possible.<br>
+          Address: Route 9, Bennington<br>
+          Hours of Operation: February-December Thursday-Tuesday 10-5<br>
+          Ticket Prices: Children-Free, Adults-$10<br>
+          Website:<a href = "https://benningtonmuseum.org/">https://benningtonmuseum.org/</a></p>
         </div>
         <div id = "Virginia" class = "tabcontent">
           <h3>Mount Vernon</h3>
-          <p>Home to George Washington from 1754-1799, this magnificient building is one of Washington's</p>
-          <p>own design, which resulted in a 21 room plantation house. Today it is museum and popular visting</p>
-          <p>choice of many presidents over the years, and has information and relics from Washington's time</p>
-          <p>living there including numerous family portraits, crests, and belongings.</p>
-          <p>Address: 3200 Mount Vernon Memorial Hwy, Mount Vernon, Virginia</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "http://www.mountvernon.org/">http://www.mountvernon.org/</a></p>
+          <p>Home to George Washington from 1754-1799, this magnificient building is one of Washington's<br>
+          own design, which resulted in a 21 room plantation house. Today it is museum and popular visting<br>
+          choice of many presidents over the years, and has information and relics from Washington's time<br>
+          living there including numerous family portraits, crests, and belongings.<br>
+          Address: 3200 Mount Vernon Memorial Hwy, Mount Vernon, Virginia<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "http://www.mountvernon.org/">http://www.mountvernon.org/</a></p>
 
           <h3>Arlington National Cemetary</h3>
-          <p>One of the world's most famous cemetaries, this national monument spreads of 600 acres overlooking</p>
-          <p>Washington, D.C. It is the burial place for many famous individuals over the history of the US,</p>
-          <p>including President John F. Kennedy and the Tomb of the Unknown Soldier. The Tomb of the Unknown</p>
-          <p>Soldier is a magnificient white marble structure and is watch 24/7 by an honor guard. A popular</p>
-          <p>event visitors like to see is the changing of the guards of The Tomb of the Unknown Soldier</p>
-          <p>Address: 3200 Mount Vernon Memorial Highway, Mount Vernon, Virginia</p>
-          <p>Hours of Operation: 24/7 365 days a year</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.arlingtoncemetery.mil/">https://www.arlingtoncemetery.mil/</a></p>
+          <p>One of the world's most famous cemetaries, this national monument spreads of 600 acres overlooking<br>
+          Washington, D.C. It is the burial place for many famous individuals over the history of the US,<br>
+          including President John F. Kennedy and the Tomb of the Unknown Soldier. The Tomb of the Unknown<br>
+          Soldier is a magnificient white marble structure and is watch 24/7 by an honor guard. A popular<br>
+          event visitors like to see is the changing of the guards of The Tomb of the Unknown Soldier<br>
+          Address: 3200 Mount Vernon Memorial Highway, Mount Vernon, Virginia<br>
+          Hours of Operation: 24/7 365 days a year<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.arlingtoncemetery.mil/">https://www.arlingtoncemetery.mil/</a></p>
 
           <h3>Manassass National Battlefield Park</h3>
-          <p>Home to two key battles in the Civil War, Manassass has been well preserved and has multiple</p>
-          <p>museums detailing the battles fought there, and has a few reenactments each year.</p>
-          <p>It is also a popular bird-watching location as it is a haven for more than 160 species of</p>
-          <p>resident and migratory birds.</p>
-          <p>Address: 12521 Lee Highway, Manassas, Virginia</p>
-          <p>Hours of Operation: 24/7</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.nps.gov/mana/index.htm">https://www.nps.gov/mana/index.htm</a></p>
+          <p>Home to two key battles in the Civil War, Manassass has been well preserved and has multiple<br>
+          museums detailing the battles fought there, and has a few reenactments each year.<br>
+          It is also a popular bird-watching location as it is a haven for more than 160 species of<br>
+          resident and migratory birds.<br>
+          Address: 12521 Lee Highway, Manassas, Virginia<br>
+          Hours of Operation: 24/7<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.nps.gov/mana/index.htm">https://www.nps.gov/mana/index.htm</a></p>
         </div>
         <div id = "Washington" class = "tabcontent">
           <h3>Seattle Center</h3>
-          <p>The top rated attraction in Washington, this area of Seattle contains many popular attractions</p>
-          <p>such as the Space Needle, built in 1962 for the World's Fair, the Monorail, parklands, highly</p>
-          <p>rated restaurants, and its numerous museums.</p>
-          <p>Address: Seattle Center, Seattle, Washington</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "http://www.seattlecenter.com/">http://www.seattlecenter.com/</a></p>
+          <p>The top rated attraction in Washington, this area of Seattle contains many popular attractions<br>
+          such as the Space Needle, built in 1962 for the World's Fair, the Monorail, parklands, highly<br>
+          rated restaurants, and its numerous museums.<br>
+          Address: Seattle Center, Seattle, Washington<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "http://www.seattlecenter.com/">http://www.seattlecenter.com/</a></p>
 
           <h3>Mount St. Helens National Volcanic Monument</h3>
-          <p>After erupting in 1980, reducing its peak by 1300 feet, razing the area around it, and causing</p>
-          <p>150 square miles of destruction that are still rebounding from the event evne today, is now a</p>
-          <p>National Monument used to show that mass destruction volcanoes can cause, and is left to encourage</p>
-          <p>young minds to research geological processes to help predict future eruptions, so that the area</p>
-          <p>can be evacuated safely.</p>
-          <p>Address: Mount St. Helens, Washington</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "http://www.fs.usda.gov/mountsthelens">http://www.fs.usda.gov/mountsthelens</a></p>
+          <p>After erupting in 1980, reducing its peak by 1300 feet, razing the area around it, and causing<br>
+          150 square miles of destruction that are still rebounding from the event evne today, is now a<br>
+          National Monument used to show that mass destruction volcanoes can cause, and is left to encourage<br>
+          young minds to research geological processes to help predict future eruptions, so that the area<br>
+          can be evacuated safely.<br>
+          Address: Mount St. Helens, Washington<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "http://www.fs.usda.gov/mountsthelens">http://www.fs.usda.gov/mountsthelens</a></p>
 
           <h3>Sol Duc Hot Springs</h3>
-          <p>Within the heart of Olympic National Park, these hot springs are used by the Sol Duc Hot Springs</p>
-          <p>Resort to provide customers with cabins, rooms, and suites within the gorgeous forest, so they can</p>
-          <p>relax within the many mineral pools and hot springs surrounding the area.</p>
-          <p>Address: 12076 Sol Duc Hot Springs Rd., Port Angeles, WA 98363</p>
-          <p>Hours of Operation: 24/7 March 22-October 27</p>
-          <p>Ticket Prices: Varying prices based on room type, or daily use.</p>
-          <p>Website:<a href = "https://www.olympicnationalparks.com/lodging/sol-duc-hot-springs-resort/">https://www.olympicnationalparks.com/lodging/sol-duc-hot-springs-resort/</a></p>
+          <p>Within the heart of Olympic National Park, these hot springs are used by the Sol Duc Hot Springs<br>
+          Resort to provide customers with cabins, rooms, and suites within the gorgeous forest, so they can<br>
+          relax within the many mineral pools and hot springs surrounding the area.<br>
+          Address: 12076 Sol Duc Hot Springs Rd., Port Angeles, WA 98363<br>
+          Hours of Operation: 24/7 March 22-October 27<br>
+          Ticket Prices: Varying prices based on room type, or daily use.<br>
+          Website:<a href = "https://www.olympicnationalparks.com/lodging/sol-duc-hot-springs-resort/">https://www.olympicnationalparks.com/lodging/sol-duc-hot-springs-resort/</a></p>
         </div>
         <div id = "West Virginia" class = "tabcontent">
           <h3>Trans-Allegheny Lunatic Asylum</h3>
-          <p>While unconventional, this tourist attraction brings many visitors from everywhere to see</p>
-          <p>the history of the treatment for the mentally ill, as well as to see the second largest hand-cut</p>
-          <p>stone masonry building in the world, exceeded only by the Kremlin in Moscow. It is also a</p>
-          <p>popular location for paranormal investigators as it is believed to be haunted by its former</p>
-          <p>residents.
-          <p>Address: c, 71 Asylum Dr, Weston, WV 26452</p>
-          <p>Hours of Operation: Tuesday-Saturday 12-6</p>
-          <p>Ticket Prices: $40 per person</p>
-          <p>Website:<a href = "http://trans-alleghenylunaticasylum.com/">http://trans-alleghenylunaticasylum.com/</a></p>
+          <p>While unconventional, this tourist attraction brings many visitors from everywhere to see<br>
+          the history of the treatment for the mentally ill, as well as to see the second largest hand-cut<br>
+          stone masonry building in the world, exceeded only by the Kremlin in Moscow. It is also a<br>
+          popular location for paranormal investigators as it is believed to be haunted by its former<br>
+          residents.
+          <p>Address: c, 71 Asylum Dr, Weston, WV 26452<br>
+          Hours of Operation: Tuesday-Saturday 12-6<br>
+          Ticket Prices: $40 per person<br>
+          Website:<a href = "http://trans-alleghenylunaticasylum.com/">http://trans-alleghenylunaticasylum.com/</a></p>
 
           <h3>Whitewater Rafting</h3>
-          <p>If you are an avid whitewhater rafter, West Virginia is the place to go. There are numerous rivers</p>
-          <p>that have whitewater rafting available in all difficulties, but it is incredibly popular with</p>
-          <p>expert rafters because of the difficulty of the different rivers.</p>
-          <p>Address: West Virginia</p>
-          <p>Hours of Operation: Depends on the rafting business</p>
-          <p>Ticket Prices: Depends on the rafting business</p>
-          <p>Website: Depends on the rafting business<a href = ""></a></p>
+          <p>If you are an avid whitewhater rafter, West Virginia is the place to go. There are numerous rivers<br>
+          that have whitewater rafting available in all difficulties, but it is incredibly popular with<br>
+          expert rafters because of the difficulty of the different rivers.<br>
+          Address: West Virginia<br>
+          Hours of Operation: Depends on the rafting business<br>
+          Ticket Prices: Depends on the rafting business<br>
+          Website: Depends on the rafting business<a href = ""></a></p>
 
           <h3>Seneca Caverns</h3>
-          <p>The formation fo the Seneca Caverns began 460 million years ago, when the cavern's limestone</p>
-          <p>bed first formed. They are believed to be the living area for the native Seneca people in</p>
-          <p>the early 1400s. Visitors can be taken on one-hour guided tours, descending 165 feer below</p>
-          <p>the entrance of the caverns. Spelunkerers also have the chance to explore the cave with a more</p>
-          <p>experienced guide.</p>
-          <p>Address: 3328 Germany Valley Road, Riverton, West Virginia</p>
-          <p>Hours of Operation: Wednesday-Monday 10-5</p>
-          <p>Ticket Prices: Children-$10, Adults-$15</p>
-          <p>Website:<a href = "http://www.senecacaverns.com/">http://www.senecacaverns.com/</a></p>
+          <p>The formation fo the Seneca Caverns began 460 million years ago, when the cavern's limestone<br>
+          bed first formed. They are believed to be the living area for the native Seneca people in<br>
+          the early 1400s. Visitors can be taken on one-hour guided tours, descending 165 feer below<br>
+          the entrance of the caverns. Spelunkerers also have the chance to explore the cave with a more<br>
+          experienced guide.<br>
+          Address: 3328 Germany Valley Road, Riverton, West Virginia<br>
+          Hours of Operation: Wednesday-Monday 10-5<br>
+          Ticket Prices: Children-$10, Adults-$15<br>
+          Website:<a href = "http://www.senecacaverns.com/">http://www.senecacaverns.com/</a></p>
         </div>
         <div id = "Wisconsin" class = "tabcontent">
           <h3>Oshkosh</h3>
-          <p>This small town on the edge of Lake Winnebago holds the world's largest airshow circuit, where</p>
-          <p>nearly 15000 aircraft of all shapes and sizes come to show off their planes to other aviators.</p>
-          <p>Visitors in town get to see cool smoke flying displays during the day, and lit flying displays</p>
-          <p>at night showing off some pilots skills in the air, and giving everyone in the air a fantastic</p>
-          <p>show. Some visitors may even get the chance to ride with pilots in their vintage planes, seeing</p>
-          <p>Lake Winnebago from an aerial view, and getting to feel the high of flying in an open plane.</p>
-          <p>Address: EAA Aviation Center, 3000 Poberezny Road, Oshkosh, Wisconsin</p>
-          <p>Hours of Operation: All Day July 22-28</p>
-          <p>Ticket Prices: Children-$15, Adults-$34</p>
-          <p>Website:<a href = "https://www.eaa.org/en/airventure">https://www.eaa.org/en/airventure</a></p>
+          <p>This small town on the edge of Lake Winnebago holds the world's largest airshow circuit, where<br>
+          nearly 15000 aircraft of all shapes and sizes come to show off their planes to other aviators.<br>
+          Visitors in town get to see cool smoke flying displays during the day, and lit flying displays<br>
+          at night showing off some pilots skills in the air, and giving everyone in the air a fantastic<br>
+          show. Some visitors may even get the chance to ride with pilots in their vintage planes, seeing<br>
+          Lake Winnebago from an aerial view, and getting to feel the high of flying in an open plane.<br>
+          Address: EAA Aviation Center, 3000 Poberezny Road, Oshkosh, Wisconsin<br>
+          Hours of Operation: All Day July 22-28<br>
+          Ticket Prices: Children-$15, Adults-$34<br>
+          Website:<a href = "https://www.eaa.org/en/airventure">https://www.eaa.org/en/airventure</a></p>
 
           <h3>Harley Davidson Museum</h3>
-          <p>For motorcycle enthusiasts, the Harley Davidson museum showcases more than 450 different motorcycles</p>
-          <p>ranging from vintage cycles, to military vehicles, to modern day motorcycles. There is even a "bike night"</p>
-          <p>where fans and owners from all over arrice to drive by and show off their classic machines.</p>
-          <p>Address: 400 W. Canal Street, Milwaukee, Wisconsin</p>
-          <p>Hours of Operation: Sunday-Wednesday 11-7, Thursday-Saturday 11-9</p>
-          <p>Ticket Prices: Children-$10, Adults-$20</p>
-          <p>Website:<a href = "https://www.harley-davidson.com/us/en/museum.html">https://www.harley-davidson.com/us/en/museum.html</a></p>
+          <p>For motorcycle enthusiasts, the Harley Davidson museum showcases more than 450 different motorcycles<br>
+          ranging from vintage cycles, to military vehicles, to modern day motorcycles. There is even a "bike night"<br>
+          where fans and owners from all over arrice to drive by and show off their classic machines.<br>
+          Address: 400 W. Canal Street, Milwaukee, Wisconsin<br>
+          Hours of Operation: Sunday-Wednesday 11-7, Thursday-Saturday 11-9<br>
+          Ticket Prices: Children-$10, Adults-$20<br>
+          Website:<a href = "https://www.harley-davidson.com/us/en/museum.html">https://www.harley-davidson.com/us/en/museum.html</a></p>
 
           <h3>Circus World Museum</h3>
-          <p>Located in the small town of Baraboo, this museum showcases the history of this country's circus'.</p>
-          <p>Inside, children can play with toys and trinkets that would be shown and played with at the circus'</p>
-          <p>while everyone else can admire the fantastical sites that they could have seen in traditional circus acts.</p>
-          <p>There is even a Big Top, where the museum will perform classical shows like trapeze, tightrope walking, etc.</p>
-          <p>Address: 550 Water Street, Baraboo, Wisconsin</p>
-          <p>Hours of Operation: varies on the season</p>
-          <p>Ticket Prices: Varies on the season</p>
-          <p>Website:<a href = "http://www.circusworldbaraboo.org/">http://www.circusworldbaraboo.org/</a></p>
+          <p>Located in the small town of Baraboo, this museum showcases the history of this country's circus'.<br>
+          Inside, children can play with toys and trinkets that would be shown and played with at the circus'<br>
+          while everyone else can admire the fantastical sites that they could have seen in traditional circus acts.<br>
+          There is even a Big Top, where the museum will perform classical shows like trapeze, tightrope walking, etc.<br>
+          Address: 550 Water Street, Baraboo, Wisconsin<br>
+          Hours of Operation: varies on the season<br>
+          Ticket Prices: Varies on the season<br>
+          Website:<a href = "http://www.circusworldbaraboo.org/">http://www.circusworldbaraboo.org/</a></p>
         </div>
         <div id = "Wyoming" class = "tabcontent">
           <h3>Yellowstone National Park</h3>
-          <p>Yellowstone is the world's first and oldest national park, that is described by many tourists</p>
-          <p>as awe-inspiring and stunning. Visiting Yellowstone, you are likely to see huge herds of bison</p>
-          <p>roaming free in the valleys, and possibly bears, wolves, and other wildlife as well. Established</p>
-          <p>in 1872, the park is deemed a geothermal wonderland, filled with hissing geysers, bubbling mud</p>
-          <p>pots, and steaming hot springs. One of the top tourist attractions here is the famous Old Faithful</p>
-          <p>geyser, a stunning geyser that can erupt up to 100 feet in the air.</p>
-          <p>Address: Wyoming</p>
-          <p>Hours of Operation: 24/7</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.nps.gov/yell/index.htm">https://www.nps.gov/yell/index.htm</a></p>
+          <p>Yellowstone is the world's first and oldest national park, that is described by many tourists<br>
+          as awe-inspiring and stunning. Visiting Yellowstone, you are likely to see huge herds of bison<br>
+          roaming free in the valleys, and possibly bears, wolves, and other wildlife as well. Established<br>
+          in 1872, the park is deemed a geothermal wonderland, filled with hissing geysers, bubbling mud<br>
+          pots, and steaming hot springs. One of the top tourist attractions here is the famous Old Faithful<br>
+          geyser, a stunning geyser that can erupt up to 100 feet in the air.<br>
+          Address: Wyoming<br>
+          Hours of Operation: 24/7<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.nps.gov/yell/index.htm">https://www.nps.gov/yell/index.htm</a></p>
 
           <h3>The Buffalo Bill Center of the West</h3>
-          <p>A complex of 5 museums, which house artifacts ranging from items from Buffalo Bill Cody, the</p>
-          <p>the legendary American soldier and showman, to the largest collection of firearms from around</p>
-          <p>the world, to the history of the nearby plains, and the cultures of those plains first inhabitants.</p>
-          <p>Address: 720 Sheridan Ave, Cody</p>
-          <p>Hours of Operation: Everyday 10-5</p>
-          <p>Ticket Prices: Children-$13, Adults-$19.50</p>
-          <p>Website:<a href = "https://centerofthewest.org/">https://centerofthewest.org/</a></p>
+          <p>A complex of 5 museums, which house artifacts ranging from items from Buffalo Bill Cody, the<br>
+          the legendary American soldier and showman, to the largest collection of firearms from around<br>
+          the world, to the history of the nearby plains, and the cultures of those plains first inhabitants.<br>
+          Address: 720 Sheridan Ave, Cody<br>
+          Hours of Operation: Everyday 10-5<br>
+          Ticket Prices: Children-$13, Adults-$19.50<br>
+          Website:<a href = "https://centerofthewest.org/">https://centerofthewest.org/</a></p>
 
           <h3>Devil's Tower National Monument</h3>
-          <p>Rising more than 1200 feet above Wyoming's eastern plains and the Belle Fourche River, this</p>
-          <p>monument is a geological marvel of this flat-topped volcano. Visitors can hike along 8 miles</p>
-          <p>of nature trails, which circumnavigate the rock, and thread through the nearby forest.</p>
-          <p>Address: Wyoming</p>
-          <p>Hours of Operation: N/A</p>
-          <p>Ticket Prices: N/A</p>
-          <p>Website:<a href = "https://www.nps.gov/deto/index.htm">https://www.nps.gov/deto/index.htm</a></p>
+          <p>Rising more than 1200 feet above Wyoming's eastern plains and the Belle Fourche River, this<br>
+          monument is a geological marvel of this flat-topped volcano. Visitors can hike along 8 miles<br>
+          of nature trails, which circumnavigate the rock, and thread through the nearby forest.<br>
+          Address: Wyoming<br>
+          Hours of Operation: N/A<br>
+          Ticket Prices: N/A<br>
+          Website:<a href = "https://www.nps.gov/deto/index.htm">https://www.nps.gov/deto/index.htm</a></p>
         </div>
         <style>
         .tab {
