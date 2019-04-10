@@ -1,4 +1,7 @@
 var map;
+var geocoder;
+var delay = 200;
+var searchInterval = 0;
 
 function initMap() {
   var directionsService = new google.maps.DirectionsService();
@@ -92,9 +95,11 @@ function initMap() {
        }
      ]};
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  geocoder = new google.maps.Geocoder();
   var marker = new google.maps.Marker({position: batonRouge, map: map});
   directionsDisplay.setMap(map);
   new AutocompleteDirectionsHandler(map);
+
 }
 
 function AutocompleteDirectionsHandler(map) {
@@ -192,9 +197,22 @@ AutocompleteDirectionsHandler.prototype.route = function() {
 
           var mainRoute = dir.routes[0].legs[0];
           var arrayPath = dir.routes[0].overview_path;
-          // Every tenth of the journey, make a Place Query
-          var searchInterval = Math.round(arrayPath.length / 25);
-          console.log(arrayPath.length);
+
+          // for (var i = 1; i < arrayPath.length; i++) {
+          // The line below throws OVER_QUERY_LIMIT
+          //   window.setTimeout(directionsQuery(arrayPath, i), 500 * i);
+          // }
+
+          for (var i = 1; i < arrayPath.length; i++)
+          {
+            var service = new google.maps.DistanceMatrixService();
+            service.getDistanceMatrix(
+              {
+                origins: [arrayPath[0]],
+                destinations: [arrayPath[i]],
+                travelMode: 'DRIVING'
+              }, callback);
+          }
 
           //Paint Along Search Path
           // var searchPoint = 0;
@@ -228,12 +246,93 @@ AutocompleteDirectionsHandler.prototype.route = function() {
       });
 };
 
-function nearbySearch(type,keyword,lat,long){
-  fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+','+long+'&radius=1500&keyword='+keyword+'&key=key.js')
+function callback(response, status) {
+  if (status == 'OK') {
+  var origins = response.originAddresses;
+  var destinations = response.destinationAddresses;
+  for (var i = 0; i < origins.length; i++) {
+    var results = response.rows[i].elements;
+    for (var j = 0; j < results.length; j++) {
+      var element = results[j];
+      var distance = element.distance.text;
+      var duration = element.duration.text;
+      var from = origins[i];
+      var to = destinations[j];
+      searchInterval += element.distance.value;
+      // console.log(searchInterval);
+      if (searchInterval >= 10000)
+      {
+        searchInterval = 0;
+        //Both of the below throw OVER_QUERY_LIMIT
+        // geocodeAddress(to);
+        // window.setTimeout(codeAddress(to), 1000);
+      }
+    }
+  }
+  }
+}
+
+function codeAddress(addr) {
+  geocoder.geocode( { 'address': addr}, function(results, status) {
+    if (status == 'OK') {
+      var cityCircle = new google.maps.Circle({
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35,
+          map: map,
+          center: results[0].geometry.location,
+          radius: 5000
+        });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
+function geocodeAddress(addr){
+  fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + addr + '&key=')
     .then(function(response) {
       return response.json();
       })
       .then(function(myJson) {
         console.log(JSON.stringify(myJson));
       });
+}
+
+function nearbySearch(keyword,lat,long){
+  fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+','+long+'&radius=5000&keyword='+keyword+'&key=')
+    .then(function(response) {
+      return response.json();
+      })
+      .then(function(myJson) {
+        console.log(JSON.stringify(myJson));
+      });
+}
+
+function directionsQuery(arr, index) {
+  arrayPath = arr;
+  var dest = index;
+  var distanceCheck = new google.maps.DirectionsService();
+  var distanceDisplay = new google.maps.DirectionsRenderer();
+  var startCheck = arrayPath[0];
+  var endCheck = arrayPath[dest];
+  distanceCheck.route(
+    {
+      origin: startCheck,
+      destination: endCheck,
+      travelMode: 'DRIVING'
+    },
+  function(response, status) {
+    if (status === 'OK') {
+      distanceDisplay.setDirections(response);
+      var segment = distanceDisplay.getDirections();
+      var segmentDistance = segment.routes[0].legs[0].distance.value;
+      console.log(segmentDistance);
+    }
+    else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
 }
