@@ -65,6 +65,10 @@ body{
    width: 200px;
  }
 
+ #search-input {
+   margin-right: 12px;
+ }
+
  #origin-input:focus,
  #destination-input:focus {
    border-color: #4d90fe;
