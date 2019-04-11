@@ -262,9 +262,9 @@ AutocompleteDirectionsHandler.prototype.route = function() {
 
            var circleArray = [];
 
-           for(i = 0;i<=arrayPath.length-1;i++){
-             circleArray[i] = createCircle(arrayPath,i)
-           }
+           // for(i = 0;i<=arrayPath.length-1;i++){
+           //   circleArray[i] = createCircle(arrayPath,i)
+           // }
 
 
 
@@ -295,7 +295,6 @@ function createCircle(array,arrayIndex){
        center: array[arrayIndex],
        radius: 5000
     });
-    //return cityCircle;
 }
 
 // function createMarker(place, waypoints) {
