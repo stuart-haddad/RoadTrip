@@ -298,30 +298,30 @@ function createCircle(array,arrayIndex){
     //return cityCircle;
 }
 
-function createMarker(place, waypoints) {
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location
-  });
-
-  google.maps.event.addListener(marker, 'dblclick', function(){
-    waypoints.push(place.geometry.location);
-    //console.log(waypoints);
-      google.maps.event.addListener(marker, 'dblclick', function(){
-        for( var i = 0; i < waypoints.length; i++){
-          if ( waypoints[i] == place.geometry.location) {
-            waypoints.splice(i, 1);
-
-          }
-        }
-      });
-    });
-
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.formatted_address + '<br>' + ' Rating: ' + place.rating.toString() + '</div>');
-    infowindow.open(map, this);
-  });
-}
+// function createMarker(place, waypoints) {
+//   var marker = new google.maps.Marker({
+//     map: map,
+//     position: place.geometry.location
+//   });
+//
+//   google.maps.event.addListener(marker, 'dblclick', function(){
+//     waypoints.push(place.geometry.location);
+//     //console.log(waypoints);
+//       google.maps.event.addListener(marker, 'dblclick', function(){
+//         for( var i = 0; i < waypoints.length; i++){
+//           if ( waypoints[i] == place.geometry.location) {
+//             waypoints.splice(i, 1);
+//
+//           }
+//         }
+//       });
+//     });
+//
+//   google.maps.event.addListener(marker, 'click', function() {
+//     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.formatted_address + '<br>' + ' Rating: ' + place.rating.toString() + '</div>');
+//     infowindow.open(map, this);
+//   });
+// }
 
 
 
