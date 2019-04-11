@@ -116,6 +116,8 @@ function AutocompleteDirectionsHandler(map) {
   });
   this.directionsDisplay.setMap(map);
 
+  var waypoints = [];
+
   var originInput = document.getElementById('origin-input');
   var destinationInput = document.getElementById('destination-input');
   var searchInput = document.getElementById('search-input');
@@ -130,17 +132,6 @@ function AutocompleteDirectionsHandler(map) {
   destinationAutocomplete.setFields(['place_id']);
 
   var searchBox = new google.maps.places.SearchBox(searchInput);
-
-  this.setupClickListener('changemode-walking', 'WALKING');
-  this.setupClickListener('changemode-transit', 'TRANSIT');
-  this.setupClickListener('changemode-driving', 'DRIVING');
-
-  this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-  this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
-
-  this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
-  this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
-  this.map.controls[google.maps.ControlPosition.TOP_RIGHT].push(searchInput);
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
@@ -161,31 +152,42 @@ function AutocompleteDirectionsHandler(map) {
     markers.forEach(function(marker) {
       marker.setMap(null);
     });
+
     markers = [];
 
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
+
     places.forEach(function(place) {
       if (!place.geometry) {
         console.log("Returned place contains no geometry");
         return;
       }
-      createMarker(place);
-      // var icon = {
-      //   url: place.icon,
-      //   size: new google.maps.Size(71, 71),
-      //   origin: new google.maps.Point(0, 0),
-      //   anchor: new google.maps.Point(17, 34),
-      //   scaledSize: new google.maps.Size(25, 25)
-      // };
-      //
-      // // Create a marker for each place.
-      // markers.push(new google.maps.Marker({
-      //   map: map,
-      //   icon: icon,
-      //   title: place.name,
-      //   position: place.geometry.location
-      // }));
+
+
+      var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+      });
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.formatted_address + '<br>' + ' Rating: ' + place.rating.toString() + '</div>');
+        infowindow.open(map, this);
+      });
+
+      google.maps.event.addListener(marker, 'dblclick', function(){
+        waypoints.push(place.geometry.location);
+        console.log(waypoints);
+
+          google.maps.event.addListener(marker, 'dblclick', function(){
+            for( var i = 0; i < waypoints.length; i++){
+              if ( waypoints[i] == place.geometry.location) {
+                waypoints.splice(i, 1);
+                console.log(waypoints);
+              }
+            }
+          });
+        });
+
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
@@ -194,22 +196,20 @@ function AutocompleteDirectionsHandler(map) {
         bounds.extend(place.geometry.location);
       }
     });
+
     map.fitBounds(bounds);
   });
+
+
+  this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+  this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+
+  this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
+  this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
+  this.map.controls[google.maps.ControlPosition.TOP_RIGHT].push(searchInput);
 }
 
-// Sets a listener on a radio button to change the filter type on Places
-// Autocomplete.
-AutocompleteDirectionsHandler.prototype.setupClickListener = function(
-    id, mode) {
-  var radioButton = document.getElementById(id);
-  var me = this;
 
-  radioButton.addEventListener('click', function() {
-    me.travelMode = mode;
-    me.route();
-  });
-};
 
 AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
     autocomplete, mode) {
@@ -253,37 +253,20 @@ AutocompleteDirectionsHandler.prototype.route = function() {
 
           var mainRoute = dir.routes[0].legs[0];
           var arrayPath = dir.routes[0].overview_path;
-          var partway = Math.round(arrayPath.length / 20);
+          //var partway = Math.round(arrayPath.length / 20);
 
           infowindow = new google.maps.InfoWindow();
 
-          // var cityCircle = new google.maps.Circle({
-          //     strokeColor: '#FF0000',
-          //     strokeOpacity: 0.8,
-          //     strokeWeight: 2,
-          //     fillColor: '#FF0000',
-          //     fillOpacity: 0.35,
-          //     map: map,
-          //     center: arrayPath[0],
-          //     radius: 5000
-          //   });
-          //
-          // var service = new google.maps.places.PlacesService(map);
-          //
-          // var request = {
-          //   query: 'Louisiana State University',
-          //   fields: ['name', 'geometry'],
-          //   locationBias: cityCircle
-          // };
-          //
-          // service.findPlaceFromQuery(request, function(results, status) {
-          //   if (status === google.maps.places.PlacesServiceStatus.OK) {
-          //     for (var i = 0; i < results.length; i++) {
-          //       createMarker(results[i]);
-          //     }
-          //     map.setCenter(results[0].geometry.location);
-          //   }
-          // });
+           var service = new google.maps.places.PlacesService(map);
+
+
+           var circleArray = [];
+
+           for(i = 0;i<=arrayPath.length-1;i++){
+             circleArray[i] = createCircle(arrayPath,i)
+           }
+
+
 
           var distance = mainRoute.distance.text;
           document.getElementById('distance').innerHTML = distance;
@@ -300,14 +283,94 @@ AutocompleteDirectionsHandler.prototype.route = function() {
       });
 };
 
-function createMarker(place) {
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location
-  });
 
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.formatted_address + '<br>' + ' Rating: ' + place.rating.toString() + '</div>');
-    infowindow.open(map, this);
-  });
+function createCircle(array,arrayIndex){
+  var cityCircle = new google.maps.Circle({
+     strokeColor: '#FF0000',
+       strokeOpacity: 0.6,
+       strokeWeight: 1,
+       fillColor: '#FF0000',
+       fillOpacity: 0.1,
+       map: map,
+       center: array[arrayIndex],
+       radius: 5000
+    });
+    //return cityCircle;
 }
+
+// function createMarker(place, waypoints) {
+//   var marker = new google.maps.Marker({
+//     map: map,
+//     position: place.geometry.location
+//   });
+//
+//   google.maps.event.addListener(marker, 'dblclick', function(){
+//     waypoints.push(place.geometry.location);
+//     //console.log(waypoints);
+//       google.maps.event.addListener(marker, 'dblclick', function(){
+//         for( var i = 0; i < waypoints.length; i++){
+//           if ( waypoints[i] == place.geometry.location) {
+//             waypoints.splice(i, 1);
+//
+//           }
+//         }
+//       });
+//     });
+//
+//   google.maps.event.addListener(marker, 'click', function() {
+//     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.formatted_address + '<br>' + ' Rating: ' + place.rating.toString() + '</div>');
+//     infowindow.open(map, this);
+//   });
+// }
+
+
+
+
+
+
+
+
+
+
+
+           // var locBias = new google.maps.Polygon({
+           //   paths: circleArray,
+           //   strokeColor: "#ff0000",
+           //  strokeOpacity: 0.0,
+           //       strokeWeight: 0,
+           //       fillColor: "#FF0000",
+           //       fillOpacity: 0.0
+           // });
+
+
+          // var request = {
+          //   query: 'Louisiana State University',
+          //   fields: ['name', 'geometry'],
+          //   locationBias: cityCircle
+          // };
+          //
+          // service.findPlaceFromQuery(request, function(results, status) {
+          //   if (status === google.maps.places.PlacesServiceStatus.OK) {
+          //     for (var i = 0; i < results.length; i++) {
+          //       createMarker(results[i]);
+          //     }
+          //     map.setCenter(results[0].geometry.location);
+          //   }
+          // });
+
+
+          // var icon = {
+          //   url: place.icon,
+          //   size: new google.maps.Size(71, 71),
+          //   origin: new google.maps.Point(0, 0),
+          //   anchor: new google.maps.Point(17, 34),
+          //   scaledSize: new google.maps.Size(25, 25)
+          // };
+          //
+          // // Create a marker for each place.
+          // markers.push(new google.maps.Marker({
+          //   map: map,
+          //   icon: icon,
+          //   title: place.name,
+          //   position: place.geometry.location
+          // }));
